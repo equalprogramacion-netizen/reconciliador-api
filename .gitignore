@@ -1,0 +1,14 @@
+# venv y caches
+.venv/
+__pycache__/
+*.pyc
+
+# entornos/secretos y artefactos
+.env
+.env.*
+*.db
+*.sqlite3
+*.log
+
+# exportaciones temporales si las hubiera
+temp_exports/
