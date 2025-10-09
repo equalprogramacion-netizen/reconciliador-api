@@ -1,15 +1,13 @@
+# web
 fastapi==0.115.0
 uvicorn==0.32.0
 gunicorn==23.0.0
 
+# db
 SQLAlchemy==2.0.36
 pymysql==1.1.1
 python-dotenv==1.1.1
 
-pandas==2.2.2
-openpyxl==3.1.5
-pyarrow==17.0.0
-httpx==0.27.2
-pydantic==2.8.2
-
-cryptography>=41.0.0
+# data (compatibles con Py 3.13 sin compilar)
+numpy==2.2.2
+pandas==2.2.3
