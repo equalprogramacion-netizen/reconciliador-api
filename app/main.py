@@ -1,6 +1,9 @@
 # app/main.py
 from __future__ import annotations
 
+# ------------------------------------------------------------
+# Importaciones estándar y de terceros
+# ------------------------------------------------------------
 import os, io, json, asyncio, uvicorn
 from typing import List, Optional, Dict, Any
 from time import perf_counter
@@ -12,12 +15,16 @@ from fastapi import (
     FastAPI, Depends, Query, HTTPException,
     UploadFile, File, Form, Body, Security
 )
+# Importamos RedirectResponse y HTMLResponse para el redirect/fallback de la raíz
 from fastapi.responses import RedirectResponse, StreamingResponse, HTMLResponse, JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security.api_key import APIKeyHeader
 from sqlalchemy.orm import Session
 from sqlalchemy import select
 
+# ------------------------------------------------------------
+# Importaciones internas del proyecto
+# ------------------------------------------------------------
 from .db import SessionLocal, engine
 from .models import Base, Taxon, Synonym
 from .schemas import TaxonOut, TaxonESOut
@@ -32,6 +39,9 @@ from .diagnostics import check_gbif, check_col, check_worms, check_itis, check_i
 from .clients import itis as itis_client
 from .clients import col as col_client
 
+# ------------------------------------------------------------
+# Metadatos de tags para la documentación
+# ------------------------------------------------------------
 TAGS_METADATA = [
     {"name": "Salud", "description": "Verificación del servicio y conectores."},
     {"name": "Taxonomía", "description": "Reconciliación de nombres científicos y enriquecimiento desde varias fuentes."},
@@ -39,6 +49,9 @@ TAGS_METADATA = [
     {"name": "UI", "description": "Interfaz web ligera para búsqueda."},
 ]
 
+# ------------------------------------------------------------
+# Instancia FastAPI
+# ------------------------------------------------------------
 app = FastAPI(
     title="Compilador de Especies (Colombia primero)",
     description="API en español para reconciliar nombres científicos con GBIF e integrar IUCN, Catalogue of Life, WoRMS, ITIS y SIB Colombia.",
@@ -46,7 +59,9 @@ app = FastAPI(
     openapi_tags=TAGS_METADATA,
 )
 
-# CORS
+# ------------------------------------------------------------
+# CORS abierto (ajusta en producción si lo necesitas)
+# ------------------------------------------------------------
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -55,21 +70,28 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Inicializa tablas
+# ------------------------------------------------------------
+# Inicializa tablas si no existen
+# ------------------------------------------------------------
 Base.metadata.create_all(bind=engine)
 
-# ---------------- Seguridad opcional por API Key ----------------
+# ------------------------------------------------------------
+# Seguridad por API Key (opcional). Si no hay API_KEY, no exige header.
+# ------------------------------------------------------------
 API_KEY = os.getenv("API_KEY")
 api_key_header = APIKeyHeader(name="X-API-Key", auto_error=False)
 
 async def require_key(api_key: str = Security(api_key_header)):
+    """Valida la API key si está configurada la variable de entorno API_KEY."""
     if not API_KEY:
         return True
     if api_key == API_KEY:
         return True
     raise HTTPException(status_code=401, detail="API key inválida")
 
-# ---------------- Sesión DB ----------------
+# ------------------------------------------------------------
+# Sesión de base de datos (scoped por request)
+# ------------------------------------------------------------
 def get_db():
     db = SessionLocal()
     try:
@@ -77,19 +99,50 @@ def get_db():
     finally:
         db.close()
 
+# ------------------------------------------------------------
+# FRONTEND_URL: si se define, redirigimos la raíz '/' hacia esa UI
+# ------------------------------------------------------------
+FRONTEND_URL = os.getenv("FRONTEND_URL")  # p. ej. https://buscador-ui.onrender.com
+
 # ---------------- Raíz ----------------
 @app.get("/", include_in_schema=False)
 async def root():
-    # Redirige la raíz a la documentación Swagger
-    return RedirectResponse(url="/docs")
+    """
+    Comportamiento al entrar a la raíz '/':
+    - Si FRONTEND_URL está definida, se redirige al frontend de usuarios.
+    - Si no está definida, se muestra una página morada con enlace a /docs.
+    """
+    if FRONTEND_URL:
+        # Redirección 307/302 al frontend (Render, Vercel, etc.)
+        return RedirectResponse(FRONTEND_URL)
+    # Fallback HTML elegante cuando no hay FRONTEND_URL configurada
+    return HTMLResponse("""
+    <!doctype html>
+    <html lang="es">
+      <head>
+        <meta charset="utf-8">
+        <title>Compilador de Especies</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+      </head>
+      <body style="margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu; background:#1f1133; color:#fff; min-height:100vh; display:flex; align-items:center; justify-content:center; text-align:center">
+        <div>
+          <h1 style="margin-bottom:.5rem">Compilador de Especies</h1>
+          <p style="opacity:.8">Configura la variable de entorno <code>FRONTEND_URL</code> para redirigir a la UI de usuarios.</p>
+          <p><a href="/docs" style="color:#a78bfa; text-decoration:underline">Ver documentación de la API</a></p>
+        </div>
+      </body>
+    </html>
+    """)
 
 # ---------------- Salud / Debug ----------------
 @app.get("/health", tags=["Salud"])
 async def health():
+    """Endpoint simple de salud del servicio."""
     return {"status": "ok"}
 
 @app.get("/debug/config", tags=["Salud"])
 async def debug_config():
+    """Devuelve la URL de la base de datos enmascarada (si existe)."""
     db_url = os.getenv("DATABASE_URL", "")
     if not db_url:
         return {"database_url": None}
@@ -105,6 +158,7 @@ async def debug_config():
 
 @app.get("/debug/conectores", tags=["Salud"])
 async def debug_conectores():
+    """Chequea conectividad con GBIF, CoL, WoRMS, ITIS, IUCN y SIB."""
     gbif_r, col_r, worms_r, itis_r, iucn_r, sib_r = await asyncio.gather(
         check_gbif(), check_col(), check_worms(), check_itis(), check_iucn(), check_sib()
     )
@@ -113,11 +167,13 @@ async def debug_conectores():
 # ---------- DEBUG ITIS ----------
 @app.get("/debug/itis/raw", tags=["Salud"], summary="Debug Itis Raw")
 async def debug_itis_raw(q: str = Query(..., description="Nombre científico")):
+    """Devuelve la respuesta cruda del cliente ITIS para un nombre científico."""
     raw = await itis_client.search_by_scientific_name(q)
     return {"query": q, "raw": raw}
 
 @app.get("/debug/itis", tags=["Salud"], summary="Debug Itis (parseado)")
 async def debug_itis(q: str = Query(..., description="Nombre científico")):
+    """Devuelve info parseada desde ITIS (TSN y bandera si trae scientificNames)."""
     from .clients import itis
     info = await itis.lookup_taxonomy(q)
     return {
@@ -130,6 +186,7 @@ async def debug_itis(q: str = Query(..., description="Nombre científico")):
 # ---------- DEBUG CoL ----------
 @app.get("/debug/col/raw", tags=["Salud"], summary="Debug CoL Raw")
 async def debug_col_raw(q: str = Query(..., description="Nombre científico")):
+    """Búsqueda y detalle raw del Catalogue of Life para inspección."""
     qn = normaliza_nombre(q)
     raw = await col_client.search_name(qn)
     usage_id = None
@@ -142,6 +199,7 @@ async def debug_col_raw(q: str = Query(..., description="Nombre científico")):
 
 @app.get("/debug/col", tags=["Salud"], summary="Debug CoL (parseado)")
 async def debug_col(q: str = Query(..., description="Nombre científico")):
+    """Resultado parseado útil para verificar clasificación y campos clave."""
     qn = normaliza_nombre(q)
     raw = await col_client.search_name(qn)
     items = raw.get("result") or raw.get("results") or []
@@ -170,6 +228,7 @@ async def debug_col(q: str = Query(..., description="Nombre científico")):
 # ---------------- Reconciliación simple ----------------
 @app.get("/reconcile", response_model=TaxonOut, tags=["Taxonomía"], dependencies=[Depends(require_key)])
 async def reconcile(q: str, db: Session = Depends(get_db)):
+    """Reconciliación rápida (campos esenciales)."""
     t = await reconcile_name(db, q)
     return TaxonOut(
         scientific_name=t.scientific_name,
@@ -186,6 +245,10 @@ async def reconciliar(
     q: str = Query(..., description="Nombre científico, p. ej., 'Ateles belzebuth'"),
     db: Session = Depends(get_db),
 ):
+    """
+    Reconciliación con nombres y campos amigables en español,
+    incluyendo epíteto y fuentes.
+    """
     q_norm = normaliza_nombre(q)
     t = await reconcile_name(db, q_norm)
     epiteto = obtener_epiteto_especifico(t.canonical_name or t.scientific_name, t.rank)
@@ -204,6 +267,7 @@ async def reconciliar(
 # ---------------- Reconciliación detalle ----------------
 @app.get("/reconciliar/detalle", tags=["Taxonomía"], dependencies=[Depends(require_key)])
 async def reconciliar_detalle(q: str, db: Session = Depends(get_db)):
+    """Devuelve todos los detalles del taxón, sinónimos y provenance."""
     t = await reconcile_name(db, normaliza_nombre(q))
     return {
         "scientific_name": t.scientific_name,
@@ -234,6 +298,7 @@ async def reconciliar_detalle(q: str, db: Session = Depends(get_db)):
 # ---------------- Check rápido de fuentes externas ----------------
 @app.get("/fuentes/check", tags=["Taxonomía"])
 async def check_fuentes(q: str):
+    """Hace un ping rápido a fuentes externas para ver dónde aparece el nombre."""
     ini = perf_counter()
     try:
         fuentes = await buscar_en_fuentes_externas(normaliza_nombre(q))
@@ -245,6 +310,7 @@ async def check_fuentes(q: str):
 # ---------------- Sugerencias (autocompletado) ----------------
 @app.get("/suggest", tags=["Taxonomía"])
 async def suggest(q: str, limit: int = 8):
+    """Sugiere nombres desde GBIF para autocompletar en la UI."""
     if not q or not q.strip():
         return []
     url = "https://api.gbif.org/v1/species/suggest"
@@ -264,6 +330,7 @@ async def suggest(q: str, limit: int = 8):
                 })
             return out
     except Exception:
+        # Silenciamos error para no romper la UI; devolvemos lista vacía
         return []
 
 # ---------------- BULK JSON -> JSON/CSV/XLSX ----------------
@@ -272,6 +339,11 @@ async def reconciliar_bulk(
     payload: dict = Body(..., description='{"names": ["Bos taurus","Ateles belzebuth"], "modo":"resumen|db","format":"json|csv|xlsx"}'),
     db: Session = Depends(get_db),
 ):
+    """
+    Recibe nombres en JSON y devuelve resultados en JSON/CSV/XLSX.
+    - modo='db' -> exporta columnas de la tabla + extras
+    - modo='resumen' -> exporta una vista resumida amigable
+    """
     names = payload.get("names") or []
     modo = (payload.get("modo") or "resumen").lower()
     out_format = (payload.get("format") or "json").lower()
@@ -288,10 +360,12 @@ async def reconciliar_bulk(
         t = await reconcile_name(db, n_norm)
 
         if modo == "db":
+            # Dump de columnas de la tabla Taxon + auxiliares
             row = {col.name: getattr(t, col.name) for col in Taxon.__table__.columns}
             row["nombre_original"] = nombre
             row["_taxon_id"] = t.id
         else:
+            # Vista resumida en español
             epiteto = obtener_epiteto_especifico(t.canonical_name or t.scientific_name, t.rank)
             row = {
                 "_taxon_id": t.id,
@@ -313,6 +387,7 @@ async def reconciliar_bulk(
     out_df = pd.DataFrame(registros)
 
     if modo == "db":
+        # Alinea el orden de columnas para exportes "completos"
         db_cols = [c.name for c in Taxon.__table__.columns]
         cols = ["nombre_original"] + db_cols + ["_taxon_id"]
         for c in cols:
@@ -333,6 +408,7 @@ async def reconciliar_bulk(
         syn_rows = []
         id_to_name = {}
         if modo == "db":
+            # Mapa para adjuntar scientific_name al export "db"
             id_to_name = {int(r["_taxon_id"]): r.get("scientific_name") for _, r in out_df.iterrows()}
 
         for s in syns:
@@ -352,6 +428,7 @@ async def reconciliar_bulk(
 
     # Salidas
     if out_format == "json":
+        # JSON: incluimos taxa y opcionalmente synonyms.
         extra = {}
         if not syn_df.empty and "_taxon_id" in out_df.columns:
             syn_concat = (
@@ -368,6 +445,7 @@ async def reconciliar_bulk(
 
     safe_base = "bulk"
     if out_format == "csv":
+        # CSV: agregamos columna de sinónimos concatenados si aplica.
         if not syn_df.empty and "_taxon_id" in out_df.columns:
             syn_concat = (
                 syn_df.groupby("taxon_id")["name"]
@@ -380,7 +458,7 @@ async def reconciliar_bulk(
         headers = {"Content-Disposition": f'attachment; filename="{safe_base}_reconciliado.csv"'}
         return StreamingResponse(io.BytesIO(csv_buf), media_type="text/csv", headers=headers)
 
-    # xlsx
+    # XLSX con dos hojas si hay sinónimos
     bio_out = io.BytesIO()
     with pd.ExcelWriter(bio_out, engine="openpyxl") as writer:
         (out_df.drop(columns=["_taxon_id"], errors="ignore")).to_excel(writer, index=False, sheet_name="taxones")
@@ -403,12 +481,17 @@ async def reconciliar_archivo(
     incluir_sinonimos: bool = Form(True),
     db: Session = Depends(get_db),
 ):
+    """
+    Recibe un archivo CSV/XLSX con una columna de nombre científico,
+    procesa y devuelve CSV/XLSX reconciliado.
+    """
     data = await file.read()
     if not data:
         raise HTTPException(status_code=400, detail="Archivo vacío.")
 
     filename = (file.filename or "archivo").lower()
 
+    # Lectura tolerante del archivo (CSV/XLSX; intenta ambos si la extensión no ayuda)
     try:
         bio = io.BytesIO(data)
         if filename.endswith(".csv"):
@@ -510,9 +593,11 @@ async def reconciliar_archivo(
                 })
             syn_df = pd.DataFrame(syn_rows)
 
+    # Nombre base seguro para archivos de salida
     safe_base = os.path.splitext(os.path.basename(filename))[0] or "salida"
 
     if output.lower() == "csv":
+        # CSV con opcional columna 'synonyms_csv' agregada
         if incluir_sinonimos and not syn_df.empty and "_taxon_id" in out_df.columns:
             syn_concat = (
                 syn_df.groupby("taxon_id")["name"]
@@ -526,6 +611,7 @@ async def reconciliar_archivo(
         headers = {"Content-Disposition": f'attachment; filename="{safe_base}_reconciliado.csv"'}
         return StreamingResponse(io.BytesIO(csv_buf), media_type="text/csv", headers=headers)
 
+    # XLSX con dos hojas si corresponde
     bio_out = io.BytesIO()
     with pd.ExcelWriter(bio_out, engine="openpyxl") as writer:
         (out_df.drop(columns=["_taxon_id"], errors="ignore")).to_excel(writer, index=False, sheet_name="taxones")
@@ -538,6 +624,7 @@ async def reconciliar_archivo(
 # ---------------- Plantilla Excel simple ----------------
 @app.get("/plantilla.xlsx", tags=["Archivos"])
 async def plantilla():
+    """Descarga una plantilla mínima para cargar nombres científicos."""
     df = pd.DataFrame({"scientific_name": ["Ateles belzebuth", "Bos taurus"]})
     bio = io.BytesIO()
     with pd.ExcelWriter(bio, engine="openpyxl") as w:
@@ -552,6 +639,10 @@ async def plantilla():
 # ---------------- UI Buscador ----------------
 @app.get("/ui/buscador", tags=["UI"], response_class=HTMLResponse)
 async def ui_buscador():
+    """
+    UI ligera (HTML/JS/CSS embebido) para consultas individuales o múltiples,
+    con autocompletado (GBIF) y exportes CSV/XLSX.
+    """
     return HTMLResponse("""<!doctype html>
 <html lang="es">
 <head>
@@ -688,7 +779,7 @@ async def ui_buscador():
 <script>
 const $ = s => document.querySelector(s);
 
-// -------- API KEY
+// -------- API KEY (se guarda en localStorage y se envía como header X-API-Key)
 const keyParam = new URLSearchParams(location.search).get("key");
 if(keyParam){ localStorage.setItem("api_key", keyParam); }
 function headers(){ const k = localStorage.getItem("api_key"); return k ? {"X-API-Key": k} : {}; }
@@ -697,16 +788,16 @@ $("#saveKey").onclick = () => {
   if(v !== null){ localStorage.setItem("api_key", v.trim()); alert("Guardada."); }
 };
 
-// -------- TABS
+// -------- TABS (corregido: quitamos bracket extra en p2)
 function setTab(n){
-  const t1=$("#tab1"), t2=$("#tab2"), p1=$("#pane1"), p2=$("#pane2"]);
+  const t1 = $("#tab1"), t2 = $("#tab2"), p1 = $("#pane1"), p2 = $("#pane2");
   if(n===1){ t1.classList.add("active"); t2.classList.remove("active"); p1.style.display="";   p2.style.display="none"; $("#q1").focus(); }
   else    { t2.classList.add("active"); t1.classList.remove("active"); p2.style.display="";   p1.style.display="none"; $("#q2").focus(); }
 }
 $("#tab1").addEventListener("click", ()=>setTab(1));
 $("#tab2").addEventListener("click", ()=>setTab(2));
 
-// -------- AUTOCOMPLETE
+// -------- AUTOCOMPLETE (GBIF suggest)
 let acTimer=null;
 $("#q1").addEventListener("input", () => {
   const q = $("#q1").value.trim();
@@ -730,7 +821,7 @@ $("#q1").addEventListener("input", () => {
   }, 200);
 });
 
-// -------- SINGLE: buscar y pintar
+// -------- SINGLE: buscar detalle y pintar
 $("#go1").onclick = async () => {
   const q = $("#q1").value.trim();
   if(!q){ $("#msg1").textContent = "Escribe un nombre científico."; return; }
@@ -902,4 +993,5 @@ $("#dlXlsx").onclick = async () => {
 
 # ---------------- Main ----------------
 if __name__ == "__main__":
+    # En local: escuchar en 0.0.0.0 facilita probar desde otro dispositivo de la red
     uvicorn.run("app.main:app", host="0.0.0.0", port=8000, reload=True)
