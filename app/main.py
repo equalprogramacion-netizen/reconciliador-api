@@ -80,6 +80,7 @@ def get_db():
 # ---------------- Raíz ----------------
 @app.get("/", include_in_schema=False)
 async def root():
+    # Redirige la raíz a la documentación Swagger
     return RedirectResponse(url="/docs")
 
 # ---------------- Salud / Debug ----------------
@@ -698,7 +699,7 @@ $("#saveKey").onclick = () => {
 
 // -------- TABS
 function setTab(n){
-  const t1=$("#tab1"), t2=$("#tab2"), p1=$("#pane1"), p2=$("#pane2");
+  const t1=$("#tab1"), t2=$("#tab2"), p1=$("#pane1"), p2=$("#pane2"]);
   if(n===1){ t1.classList.add("active"); t2.classList.remove("active"); p1.style.display="";   p2.style.display="none"; $("#q1").focus(); }
   else    { t2.classList.add("active"); t1.classList.remove("active"); p2.style.display="";   p1.style.display="none"; $("#q2").focus(); }
 }
