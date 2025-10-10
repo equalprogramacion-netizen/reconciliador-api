@@ -1,10 +1,9 @@
-# app/main.py
 from __future__ import annotations
 
 # ------------------------------------------------------------
 # Importaciones estándar y de terceros
 # ------------------------------------------------------------
-import os, io, json, asyncio, uvicorn
+import os, io, json, asyncio, uvicorn, base64, hmac, time
 from typing import List, Optional, Dict, Any
 from time import perf_counter
 from urllib.parse import urlparse
@@ -13,14 +12,15 @@ import pandas as pd
 import httpx
 from fastapi import (
     FastAPI, Depends, Query, HTTPException,
-    UploadFile, File, Form, Body, Security
+    UploadFile, File, Form, Body, Security, Request
 )
-# Importamos RedirectResponse y HTMLResponse para el redirect/fallback de la raíz
-from fastapi.responses import RedirectResponse, StreamingResponse, HTMLResponse, JSONResponse
+from fastapi.responses import RedirectResponse, StreamingResponse, HTMLResponse, JSONResponse, PlainTextResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security.api_key import APIKeyHeader
 from sqlalchemy.orm import Session
 from sqlalchemy import select
+from starlette.middleware.base import BaseHTTPMiddleware
+from itsdangerous import TimestampSigner, BadSignature, SignatureExpired
 
 # ------------------------------------------------------------
 # Importaciones internas del proyecto
@@ -71,6 +71,167 @@ app.add_middleware(
 )
 
 # ------------------------------------------------------------
+# ====== Puerta SSO desde el Hub (ENV) ======
+# ------------------------------------------------------------
+GATEWAY_SHARED_SECRET       = os.getenv("GATEWAY_SHARED_SECRET", "cambia-esto-por-un-secreto-largo-y-unico")
+GATEWAY_SHARED_SECRET_PREV  = os.getenv("GATEWAY_SHARED_SECRET_PREV", "")  # rotación opcional
+GATE_AUD = os.getenv("GATE_AUD", "reconciliador")  # audiencia esperada
+HUB_HOME = os.getenv("HUB_HOME", "http://127.0.0.1:8000/choose")  # a dónde enviar si no hay sesión aquí
+
+# Cookie local de este servicio (no es la del Hub)
+SVC_SESSION_COOKIE = os.getenv("SVC_SESSION_COOKIE", "svc_reconciliador")
+SVC_SESSION_TTL    = int(os.getenv("SVC_SESSION_TTL", "1800"))  # 30 min
+
+# Rutas anónimas permitidas (ajusta según necesites)
+ANON_PATHS = set((
+    "/health", "/healthz", "/favicon.ico", "/robots.txt",
+    "/openapi.json", "/docs", "/redoc",     # si deseas proteger docs, quita estas
+    "/plantilla.xlsx",                       # opcional: permitir descarga de plantilla sin sesión
+    "/static", "/assets"                     # prefijos (ver lógica startswith en middleware)
+))
+
+# ------------------------------------------------------------
+# Helpers de verificación de st + cookie de sesión local
+# ------------------------------------------------------------
+def _b64url_pad(s: str) -> bytes:
+    s += "=" * ((4 - len(s) % 4) % 4)
+    return s.encode("ascii")
+
+def _b64url_decode_to_json(b64: str) -> dict:
+    raw = base64.urlsafe_b64decode(_b64url_pad(b64))
+    return json.loads(raw.decode("utf-8"))
+
+def _compare_digest(a: str, b: str) -> bool:
+    try:
+        return hmac.compare_digest(a, b)
+    except Exception:
+        return a == b
+
+def _sign_st_payload(payload_b64: str, secret: str) -> str:
+    sig = hmac.new(secret.encode("utf-8"), payload_b64.encode("ascii"), digestmod="sha256").digest()
+    return base64.urlsafe_b64encode(sig).rstrip(b"=").decode("ascii")
+
+def _verify_st(token: str) -> dict | None:
+    """
+    st = <base64url(payload)>.<base64url(signature)>
+    payload = {"sub","aud","iat","exp","rid","iss"}
+    - Valida HMAC con GATEWAY_SHARED_SECRET (o PREV)
+    - Revisa exp y aud
+    Devuelve el payload dict si es válido; si no, None
+    """
+    if not token or "." not in token:
+        return None
+    parts = token.split(".")
+    if len(parts) != 2:
+        return None
+    payload_b64, sig_b64 = parts[0], parts[1]
+
+    good_sig = _sign_st_payload(payload_b64, GATEWAY_SHARED_SECRET)
+    if not _compare_digest(sig_b64, good_sig) and GATEWAY_SHARED_SECRET_PREV:
+        good_sig_prev = _sign_st_payload(payload_b64, GATEWAY_SHARED_SECRET_PREV)
+        if not _compare_digest(sig_b64, good_sig_prev):
+            return None
+    elif not _compare_digest(sig_b64, good_sig):
+        return None
+
+    try:
+        payload = _b64url_decode_to_json(payload_b64)
+    except Exception:
+        return None
+
+    now = int(time.time())
+    if int(payload.get("exp", 0)) < now:
+        return None
+    if payload.get("aud") != GATE_AUD:
+        return None
+    # opcional: validar issuer
+    # if payload.get("iss") != "biotico-hub":
+    #     return None
+    return payload
+
+_svc_signer = TimestampSigner(GATEWAY_SHARED_SECRET)
+
+def _set_svc_session(resp, email: str):
+    token = _svc_signer.sign(email.encode("utf-8")).decode("utf-8")
+    # Si estás detrás de HTTPS, cambia secure=True y considera samesite="strict"
+    resp.set_cookie(
+        SVC_SESSION_COOKIE, token,
+        max_age=SVC_SESSION_TTL, httponly=True, samesite="lax", secure=False, path="/"
+    )
+
+def _get_svc_email(request: Request) -> str | None:
+    tok = request.cookies.get(SVC_SESSION_COOKIE)
+    if not tok:
+        return None
+    try:
+        raw = _svc_signer.unsign(tok, max_age=SVC_SESSION_TTL)
+        return raw.decode("utf-8")
+    except (BadSignature, SignatureExpired):
+        return None
+
+def _clear_svc_session(resp):
+    resp.delete_cookie(SVC_SESSION_COOKIE, path="/")
+
+# ------------------------------------------------------------
+# Middleware GateGuard
+# ------------------------------------------------------------
+class GateGuardMiddleware(BaseHTTPMiddleware):
+    """
+    Exige sesión local (cookie firmada) o un st válido.
+    Si recibe st válido (query o Authorization: Bearer), crea la cookie y deja pasar.
+    Excluye rutas anónimas definidas en ANON_PATHS y prefijos /static, /assets.
+    """
+    async def dispatch(self, request: Request, call_next):
+        path = (request.url.path or "").rstrip("/") or "/"
+
+        # Permitir preflight CORS
+        if request.method.upper() == "OPTIONS":
+            return await call_next(request)
+
+        # Permitir prefijos estáticos
+        if path.startswith("/static") or path.startswith("/assets"):
+            return await call_next(request)
+
+        # Permitir rutas exactas anónimas
+        if path in ANON_PATHS:
+            return await call_next(request)
+
+        # ¿Ya hay sesión local?
+        email = _get_svc_email(request)
+        if email:
+            return await call_next(request)
+
+        # ¿Viene un st? (query o Authorization Bearer)
+        st = request.query_params.get("st")
+        if not st:
+            auth = request.headers.get("Authorization", "")
+            if auth.lower().startswith("bearer "):
+                st = auth.split(" ", 1)[1].strip()
+        payload = _verify_st(st) if st else None
+
+        if payload:
+            resp = await call_next(request)
+            _set_svc_session(resp, payload.get("sub", ""))
+            return resp
+
+        # No hay sesión ni st válido → 401 + botón al Hub
+        html = f"""
+        <!doctype html><html><head><meta charset="utf-8"/>
+        <title>401 — Autenticación requerida</title></head>
+        <body style="font-family:system-ui;background:#0b1020;color:#e6ebff;display:grid;place-items:center;height:100vh;margin:0">
+          <div style="max-width:680px;background:#0f162b;border:1px solid rgba(255,255,255,.08);padding:24px;border-radius:14px">
+            <h2 style="margin:0 0 8px">Acceso restringido</h2>
+            <p style="margin:0 0 14px;opacity:.8">Para usar el Reconciliador debes entrar desde el Hub.</p>
+            <a href="{HUB_HOME}" style="display:inline-block;background:#22c55e;color:#08150c;padding:10px 16px;border-radius:10px;font-weight:800;text-decoration:none">Ir al Hub</a>
+          </div>
+        </body></html>
+        """
+        return HTMLResponse(html, status_code=401)
+
+# Registrar el middleware
+app.add_middleware(GateGuardMiddleware)
+
+# ------------------------------------------------------------
 # Inicializa tablas si no existen
 # ------------------------------------------------------------
 Base.metadata.create_all(bind=engine)
@@ -111,11 +272,10 @@ async def root():
     Comportamiento al entrar a la raíz '/':
     - Si FRONTEND_URL está definida, se redirige al frontend de usuarios.
     - Si no está definida, se muestra una página morada con enlace a /docs.
+    Nota: Esta ruta está protegida por GateGuard salvo que agregues "/" a ANON_PATHS.
     """
     if FRONTEND_URL:
-        # Redirección 307/302 al frontend (Render, Vercel, etc.)
         return RedirectResponse(FRONTEND_URL)
-    # Fallback HTML elegante cuando no hay FRONTEND_URL configurada
     return HTMLResponse("""
     <!doctype html>
     <html lang="es">
@@ -134,11 +294,23 @@ async def root():
     </html>
     """)
 
-# ---------------- Salud / Debug ----------------
+# ---------------- Salud / utilidades mínimas ----------------
 @app.get("/health", tags=["Salud"])
 async def health():
-    """Endpoint simple de salud del servicio."""
     return {"status": "ok"}
+
+@app.get("/healthz", include_in_schema=False)
+async def healthz():
+    return PlainTextResponse("ok")
+
+@app.get("/robots.txt", include_in_schema=False)
+async def robots():
+    return PlainTextResponse("User-agent: *\nDisallow: /", media_type="text/plain")
+
+@app.get("/favicon.ico", include_in_schema=False)
+async def favicon():
+    # Deja que CDN/ingress resuelva; 204 si no hay
+    return PlainTextResponse("", status_code=204)
 
 @app.get("/debug/config", tags=["Salud"])
 async def debug_config():
@@ -788,7 +960,7 @@ $("#saveKey").onclick = () => {
   if(v !== null){ localStorage.setItem("api_key", v.trim()); alert("Guardada."); }
 };
 
-// -------- TABS (corregido: quitamos bracket extra en p2)
+// -------- TABS
 function setTab(n){
   const t1 = $("#tab1"), t2 = $("#tab2"), p1 = $("#pane1"), p2 = $("#pane2");
   if(n===1){ t1.classList.add("active"); t2.classList.remove("active"); p1.style.display="";   p2.style.display="none"; $("#q1").focus(); }
@@ -871,7 +1043,7 @@ $("#go1").onclick = async () => {
       ...miscPairs.map(([k, v]) => TR(k, v)),
     ].join("");
 
-    // -------- Sinónimos: mostrar lista o aviso si no hay
+    // -------- Sinónimos
     const syns = Array.isArray(d.synonyms) ? d.synonyms.filter(Boolean) : [];
     $("#synH1").textContent = `Sinónimos${syns.length ? ` (${syns.length})` : ""}`;
     if(syns.length){
@@ -887,7 +1059,7 @@ $("#go1").onclick = async () => {
       $("#syn1").innerHTML = `<li class="ac-secondary">No se registran sinónimos para esta especie.</li>`;
     }
 
-    // -------- Provenance (mantener bloque JSON)
+    // -------- Provenance
     $("#prov1").innerHTML = "<pre style='white-space:pre-wrap'>" + JSON.stringify(d.provenance || {}, null, 2) + "</pre>";
   }catch(e){
     $("#msg1").textContent = "Error de red.";
