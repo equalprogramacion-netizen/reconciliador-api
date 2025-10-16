@@ -1,0 +1,1099 @@
+<eml:eml xmlns:eml="eml://ecoinformatics.org/eml-2.1.1"
+         xmlns:dc="http://purl.org/dc/terms/"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.1 http://rs.gbif.org/schema/eml-gbif-profile/1.1/eml.xsd"
+         packageId="6c9c4b08-4cec-4160-a708-7f16060d7db0/v1.5" system="http://gbif.org" scope="system"
+         xml:lang="spa">
+
+<dataset>
+  <alternateIdentifier>https://ccro.asociacioncolombianadeornitologia.org</alternateIdentifier>
+  <alternateIdentifier>https://asociacioncolombianadeornitologia.org/wp-content/uploads/2023/02/Echeverry-Galvis-et-al.-Lista-oficial-de-las-aves-de-Colombia-2022-FINAL25-51.pdf</alternateIdentifier>
+  <alternateIdentifier>https://asociacioncolombianadeornitologia.org/ojs/index.php/roc/article/view/548/449</alternateIdentifier>
+  <alternateIdentifier>6c9c4b08-4cec-4160-a708-7f16060d7db0</alternateIdentifier>
+  <alternateIdentifier>https://ipt.biodiversidad.co/sib/resource?r=aco_listaavescolombia2017</alternateIdentifier>
+  <title xml:lang="spa">Lista de referencia de especies de aves de Colombia - 2022</title>
+      <creator>
+    <individualName>
+        <givenName>Maria Ángela</givenName>
+      <surName>Echeverri-Galvis</surName>
+    </individualName>
+    <organizationName>Asociación Colombiana de Ornitología</organizationName>
+    <positionName>Miembro Comité Colombiano de Registros Ornitológicos</positionName>
+    <address>
+        <city>Bogotá, D.C.</city>
+        <administrativeArea>Bogotá, D.C.</administrativeArea>
+        <country>CO</country>
+    </address>
+    <electronicMailAddress>mayayito@gmail.com</electronicMailAddress>
+          <userId directory="http://orcid.org/">0000-0002-5273-8694</userId>
+      </creator>
+      <creator>
+    <individualName>
+        <givenName>Orlando</givenName>
+      <surName>Acevedo-Charry</surName>
+    </individualName>
+    <organizationName>Asociación Colombiana de Ornitología</organizationName>
+    <positionName>Miembro Comité Colombiano de Registros Ornitológicos</positionName>
+    <address>
+        <city>Gainesville</city>
+        <administrativeArea>Florida</administrativeArea>
+        <postalCode>32611</postalCode>
+        <country>US</country>
+    </address>
+    <phone>3528889152</phone>
+    <electronicMailAddress>acevedocharry@gmail.com</electronicMailAddress>
+          <userId directory="http://orcid.org/">0000-0003-4964-8994</userId>
+      </creator>
+      <creator>
+    <individualName>
+        <givenName>Jorge Enrique</givenName>
+      <surName>Avendaño C.</surName>
+    </individualName>
+    <organizationName>Asociación Colombiana de Ornitología</organizationName>
+    <positionName>Miembro Comité Colombiano de Registros Ornitológicos</positionName>
+    <address>
+        <country>CO</country>
+    </address>
+    <electronicMailAddress>jorgeavec@gmail.com</electronicMailAddress>
+      </creator>
+      <creator>
+    <individualName>
+        <givenName>Felipe A.</givenName>
+      <surName>Estela</surName>
+    </individualName>
+    <organizationName>Asociación Colombiana de Ornitología</organizationName>
+    <positionName>Miembro Comité Colombiano de Registros Ornitológicos</positionName>
+    <address>
+        <country>CO</country>
+    </address>
+    <electronicMailAddress>felipe.estela@gmail.com</electronicMailAddress>
+      </creator>
+      <creator>
+    <individualName>
+        <givenName>Andrés M.</givenName>
+      <surName>Cuervo</surName>
+    </individualName>
+    <organizationName>Asociación Colombiana de Ornitología</organizationName>
+    <positionName>Miembro Comité Colombiano de Registros Ornitológicos</positionName>
+    <address>
+        <country>CO</country>
+    </address>
+    <electronicMailAddress>amcuervom@unal.edu.co</electronicMailAddress>
+      </creator>
+      <creator>
+    <individualName>
+        <givenName>F. Gary</givenName>
+      <surName>Stiles</surName>
+    </individualName>
+    <organizationName>Asociación Colombiana de Ornitología</organizationName>
+    <positionName>Miembro Comité Colombiano de Registros Ornitológicos</positionName>
+    <address>
+        <country>CO</country>
+    </address>
+    <electronicMailAddress>fgstilesh@unal.edu.co</electronicMailAddress>
+      </creator>
+      <creator>
+    <individualName>
+        <givenName>Camila</givenName>
+      <surName>Gomez</surName>
+    </individualName>
+    <organizationName>Asociación Colombiana de Ornitología</organizationName>
+    <positionName>Miembro Comité Colombiano de Registros Ornitológicos</positionName>
+    <address>
+        <country>CO</country>
+    </address>
+    <electronicMailAddress>camila.gomez@selva.org.co</electronicMailAddress>
+          <userId directory="http://orcid.org/">0000-0002-2770-5794</userId>
+      </creator>
+      <metadataProvider>
+    <individualName>
+        <givenName>Orlando</givenName>
+      <surName>Acevedo-Charry</surName>
+    </individualName>
+    <organizationName>Asociación Colombiana de Ornitología</organizationName>
+    <positionName>Miembro Comité Colombiano de Registros Ornitológicos</positionName>
+    <address>
+        <city>Bogotá, D.C.</city>
+        <administrativeArea>Bogotá, D.C.</administrativeArea>
+        <country>CO</country>
+    </address>
+    <electronicMailAddress>acevedocharry@gmail.com</electronicMailAddress>
+          <userId directory="http://orcid.org/">0000-0003-4964-8994</userId>
+      </metadataProvider>
+      <associatedParty>
+    <individualName>
+        <givenName>Maria Ángela</givenName>
+      <surName>Echeverri-Galvis</surName>
+    </individualName>
+    <organizationName>Asociación Colombiana de Ornitología</organizationName>
+    <positionName>Miembro Comité Colombiano de Registros Ornitológicos</positionName>
+    <address>
+        <city>Bogotá</city>
+        <administrativeArea>Distrito Capital</administrativeArea>
+        <country>CO</country>
+    </address>
+    <role>author</role>
+      </associatedParty>
+      <associatedParty>
+    <individualName>
+        <givenName>Orlando</givenName>
+      <surName>Acevedo-Charry</surName>
+    </individualName>
+    <organizationName>Asociación Colombiana de Ornitología</organizationName>
+    <positionName>Miembro Comité Colombiano de Registros Ornitológicos</positionName>
+    <address>
+        <city>Bogotá</city>
+        <administrativeArea>Distrito Capital</administrativeArea>
+        <country>CO</country>
+    </address>
+    <electronicMailAddress>acevedocharry@gmail.com</electronicMailAddress>
+          <userId directory="http://orcid.org/">https://orcid.org/0000-0003-4964-8994</userId>
+    <role>author</role>
+      </associatedParty>
+      <associatedParty>
+    <individualName>
+        <givenName>Jorge Enrique</givenName>
+      <surName>Avendaño</surName>
+    </individualName>
+    <organizationName>Asociación Colombiana de Ornitología</organizationName>
+    <positionName>Miembro Comité Colombiano de Registros Ornitológicos</positionName>
+    <role>author</role>
+      </associatedParty>
+      <associatedParty>
+    <individualName>
+        <givenName>Camila</givenName>
+      <surName>Gómez</surName>
+    </individualName>
+    <organizationName>Asociación Colombiana de Ornitología</organizationName>
+    <positionName>Miembro Comité Colombiano de Registros Ornitológicos</positionName>
+    <role>author</role>
+      </associatedParty>
+      <associatedParty>
+    <individualName>
+        <givenName>F. Gary</givenName>
+      <surName>Stiles</surName>
+    </individualName>
+    <organizationName>Asociación Colombiana de Ornitología</organizationName>
+    <positionName>Miembro Comité Colombiano de Registros Ornitológicos</positionName>
+    <role>author</role>
+      </associatedParty>
+      <associatedParty>
+    <individualName>
+        <givenName>Felipe A.</givenName>
+      <surName>Estela</surName>
+    </individualName>
+    <organizationName>Asociación Colombiana de Ornitología</organizationName>
+    <positionName>Miembro Comité Colombiano de Registros Ornitológicos</positionName>
+    <role>author</role>
+      </associatedParty>
+      <associatedParty>
+    <individualName>
+        <givenName>Andrés M.</givenName>
+      <surName>Cuervo</surName>
+    </individualName>
+    <organizationName>Asociación Colombiana de Ornitología</organizationName>
+    <positionName>Miembro Comité Colombiano de Registros Ornitológicos</positionName>
+    <role>author</role>
+      </associatedParty>
+  <pubDate>
+      2023-08-18
+  </pubDate>
+  <language>spa</language>
+  <abstract>
+    <para>Presentamos una actualización de la lista de las aves de Colombia con base en registros documentados a partir de septiembre de 2017, siguiendo, por primera vez, criterios estandarizados por el Comité Colombiano de Registros Ornitológicos (CCRO) de la Asociación Colombiana de Ornitología. La lista fue publicada en la revista Ornitología Colombiana (https://asociacioncolombianadeornitologia.org/ojs/index.php/roc/article/view/548/449), y asciende de 1909 a 1966 especies para el territorio continental, insular y las aguas territoriales del país. La mayoría de las adiciones corresponden a especies registradas por primera vez en el territorio colombiano, seguido de especies producto de separaciones taxonómicas y especies exóticas con evidencia de establecimiento en el país. Asimismo, actualizamos el estado de 15 especies con base en evidencia novedosa sobre su presencia espacial y temporal en Colombia. Se resalta la importancia de datos verificables compartidos en plataformas abiertas como aportes de ciencia participativa para la actualización de registros en el país. De acuerdo con esta actualización, Colombia continúa siendo el país con mayor riqueza de especies de aves del planeta.</para>
+  </abstract>
+      <keywordSet>
+            <keyword>Checklist; Aves; Birds; Colombia; Lista de referencia; ampliaciones de distribución; avifauna colombiana; biodiversidad; endemismo; especies nuevas; biodiversity; Colombian avifauna; endemism; new species; range extensions; diversidad  de  aves</keyword>
+            <keyword>ciencia  participativa</keyword>
+            <keyword>especies  exóticas</keyword>
+            <keyword>separaciones taxonómicas; bird diversity</keyword>
+            <keyword>community science</keyword>
+            <keyword>exotic species</keyword>
+            <keyword>range extension</keyword>
+            <keyword>taxonomic splits</keyword>
+        <keywordThesaurus>NA</keywordThesaurus>
+      </keywordSet>
+      <keywordSet>
+            <keyword>LISTA_REFERENCIA</keyword>
+        <keywordThesaurus>SiB Colombia</keywordThesaurus>
+      </keywordSet>
+      <keywordSet>
+            <keyword>Checklist</keyword>
+        <keywordThesaurus>GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type_2015-07-10.xml</keywordThesaurus>
+      </keywordSet>
+      <keywordSet>
+            <keyword>Taxonomicauthority</keyword>
+        <keywordThesaurus>GBIF Dataset Subtype Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_subtype.xml</keywordThesaurus>
+      </keywordSet>
+  <additionalInfo>
+    <para>Ver más información en https://ccro.asociacioncolombianadeornitologia.org.</para>
+  </additionalInfo>
+  <intellectualRights>
+    <para>This work is licensed under a <ulink url="http://creativecommons.org/licenses/by/4.0/legalcode"><citetitle>Creative Commons Attribution (CC-BY) 4.0 License</citetitle></ulink>.</para>
+  </intellectualRights>
+  <coverage>
+      <geographicCoverage>
+          <geographicDescription>Territorio continental e insular de Colombia. Departamentos: Amazonas, Antioquia, Arauca, Atlántico, Cundinamarca, Bolívar, Boyacá, Caldas, Caquetá, Casanare, Cauca, Cesar, Chocó, Córdoba, Cundinamarca, Guainía, Guaviare, Huila, La Guajira, Magdalena, Meta, Nariño, Norte de Santander, Putumayo, Quindío, Risaralda, San Andrés y Providencia, Santander Sucre, Tolima, Valle del Cauca, Vaupés y Vichada.</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-83.167</westBoundingCoordinate>
+          <eastBoundingCoordinate>-66.445</eastBoundingCoordinate>
+          <northBoundingCoordinate>14.562</northBoundingCoordinate>
+          <southBoundingCoordinate>-4.784</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+          <temporalCoverage>
+              <rangeOfDates>
+                  <beginDate>
+                    <calendarDate>2017-09-01</calendarDate>
+                  </beginDate>
+                <endDate>
+                  <calendarDate>2022-12-31</calendarDate>
+                </endDate>
+              </rangeOfDates>
+          </temporalCoverage>
+          <taxonomicCoverage>
+              <generalTaxonomicCoverage>1966 especies reportadas en el territorio continental, insular y en las aguas territoriales del país, representantes de 95 familias y 31 órdenes taxonómicos. 
+
+Estado - # especies: 
+Residentes - 1565; 
+Residentes endémicas - 83; 
+Residente endémica y extinta - 1 (Podiceps andinus); 
+Hipotéticas - 58; 
+Migratorias Boreales - 123; 
+Erráticas - 78; 
+Migratorias Australes - 16; 
+Migratorias boreales y Residentes - 12; 
+Migratorias australes y Residentes - 6; 
+Exóticas establecidas - 6; 
+
+Residentes(?) - 6 (Botaurus pinnatus, Cacicus oseryi, Chalcostigma stanleyi, Circus cinereus, Ixobrychus involucris, Phaethon aethereus); 
+Migratorias boreales (?) y Residentes - 3 (Falco sparverius, Gallinula galeata, Oxyura jamaicensis); 
+Migratorias australes (?) - 2 (Accipiter polyogaster, Porphyrio flavirostris); 
+Residente extinta (?) - 1 (Sporophila maximiliani); 
+Migratoria austral (?) y Residente - 1 (Amazonetta brasiliensis); 
+Migratoria austral y Residente (?) - 1 (Lathrotriccus euleri); 
+Migratoria boreal y austral (?) - 1 (Falco peregrinus); 
+Errática (?) - 1 (Conothraupis speculigera); 
+Migratoria boreal, austral y Residente - 1 (Tyrannus savana); 
+Migratoria austral (?) y Residente (?) - 1 (Alopochelidon fucata).</generalTaxonomicCoverage>
+              <taxonomicClassification>
+                  <taxonRankName>class</taxonRankName>
+                <taxonRankValue>Aves</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>order</taxonRankName>
+                <taxonRankValue>Accipitriformes</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>order</taxonRankName>
+                <taxonRankValue>Anseriformes</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>order</taxonRankName>
+                <taxonRankValue>Apodiformes</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>order</taxonRankName>
+                <taxonRankValue>Caprimulgiformes</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>order</taxonRankName>
+                <taxonRankValue>Cathartiformes</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>order</taxonRankName>
+                <taxonRankValue>Charadriiformes</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>order</taxonRankName>
+                <taxonRankValue>Ciconiiformes</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>order</taxonRankName>
+                <taxonRankValue>Columbiformes</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>order</taxonRankName>
+                <taxonRankValue>Coraciiformes</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>order</taxonRankName>
+                <taxonRankValue>Cuculiformes</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>order</taxonRankName>
+                <taxonRankValue>Eurypygiformes</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>order</taxonRankName>
+                <taxonRankValue>Falconiformes</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>order</taxonRankName>
+                <taxonRankValue>Galbuliformes</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>order</taxonRankName>
+                <taxonRankValue>Galliformes</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>order</taxonRankName>
+                <taxonRankValue>Gruiformes</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>order</taxonRankName>
+                <taxonRankValue>Nyctibiiformes</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>order</taxonRankName>
+                <taxonRankValue>Opisthocomiformes</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>order</taxonRankName>
+                <taxonRankValue>Passeriformes</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>order</taxonRankName>
+                <taxonRankValue>Pelecaniformes</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>order</taxonRankName>
+                <taxonRankValue>Phaethontiformes</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>order</taxonRankName>
+                <taxonRankValue>Phoenicopteriformes</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>order</taxonRankName>
+                <taxonRankValue>Piciformes</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>order</taxonRankName>
+                <taxonRankValue>Podicipediformes</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>order</taxonRankName>
+                <taxonRankValue>Procellariiformes</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>order</taxonRankName>
+                <taxonRankValue>Psittaciformes</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>order</taxonRankName>
+                <taxonRankValue>Sphenisciformes</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>order</taxonRankName>
+                <taxonRankValue>Steatornithiformes</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>order</taxonRankName>
+                <taxonRankValue>Strigiformes</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>order</taxonRankName>
+                <taxonRankValue>Suliformes</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>order</taxonRankName>
+                <taxonRankValue>Tinamiformes</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>order</taxonRankName>
+                <taxonRankValue>Trogoniformes</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Accipitridae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Alaudidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Alcedinidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Anatidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Anhimidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Anhingidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Apodidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Aramidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Ardeidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Bombycillidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Bucconidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Burhinidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Capitonidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Caprimulgidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Cardinalidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Cathartidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Charadriidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Ciconiidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Cinclidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Columbidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Conopophagidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Corvidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Cotingidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Cracidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Cuculidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Diomedeidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Donacobiidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Estrildidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Eurypygidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Falconidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Formicariidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Fregatidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Fringillidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Furnariidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Galbulidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Grallaridae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Haematopodidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Heliornithidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Hirundinidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Hydrobatidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Icteridae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Jacanidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Laridae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Mimidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Momotidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Motacillidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Nyctibiidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Odontophoridae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Opisthocomidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Oxyruncidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Pandionidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Parulidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Passeridae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Pelecanidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Phaethontidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Phalacrocoracidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Phoenicopteridae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Picidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Pipridae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Podicipedidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Polioptilidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Procellariidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Psittacidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Psophiidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Rallidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Ramphastidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Recurvirostridae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Rhinocryptidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Rynchopidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Sapayoidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Scolopacidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Semnornithidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Spheniscidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Steatornithidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Stercorariidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Strigidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Sulidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Thamnophilidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Thraupidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Threskiornithidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Tinamidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Tityridae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Trochilidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Troglodytidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Trogonidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Turdidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Tyrannidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Tytonidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Vireonidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Mitrospingidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Oceanitidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Onychorhynchidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Passerellidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Rhodinocichlidae</taxonRankValue>
+              </taxonomicClassification>
+              <taxonomicClassification>
+                  <taxonRankName>family</taxonRankName>
+                <taxonRankValue>Thinocoridae</taxonRankValue>
+              </taxonomicClassification>
+          </taxonomicCoverage>
+  </coverage>
+  <purpose>
+    <para>La ACO promueve el desarrollo de la ornitología en Colombia mediante la generación y difusión del conocimiento científico de las aves en pro de su conservación.</para>
+  </purpose>
+  <maintenance>
+    <description>
+      <para>El Comité Colombiano de Registros Ornitológicos (CCRO) tiene el propósito principal de revisar, avalar y sintetizar los registros de especies de aves silvestres realizados en el territorio continental, insular, marítimo y aéreo de Colombia. En esa misión, revisa y constata la evidencia documental que soporta la presencia permanente o incidental de aves en el país.
+
+El CCRO está conformado por un grupo diverso de siete ornitólogos investigadores en varias áreas, incluyendo la biología evolutiva y ecología, taxonomía y sistemática, biogeografía, migración, ecomorfología, bioacústica, aves marinas y conservación. Este comité de forma autónoma revisa, actualiza y publica la Lista Oficial de las Aves de Colombia. Esta lista busca tener una referencia que nutra las bases de datos de biodiversidad, los tomadores de decisiones y oficinas del sector público, aficionados a la observación de aves, empresas de aviturismo, asociaciones ornitológicas y la academia.</para>
+    </description>
+    <maintenanceUpdateFrequency>asNeeded</maintenanceUpdateFrequency>
+  </maintenance>
+
+      <contact>
+    <individualName>
+        <givenName>Orlando</givenName>
+      <surName>Acevedo-Charry</surName>
+    </individualName>
+    <organizationName>Asociación Colombiana de Ornitología</organizationName>
+    <positionName>Miembro Comité Colombiano de Registros Ornitológicos</positionName>
+    <address>
+        <city>Bogotá, D.C.</city>
+        <administrativeArea>Bogotá, D.C.</administrativeArea>
+        <country>CO</country>
+    </address>
+    <electronicMailAddress>acevedocharry@gmail.com</electronicMailAddress>
+          <userId directory="http://orcid.org/">0000-0003-4964-8994</userId>
+      </contact>
+  <methods>
+        <methodStep>
+          <description>
+            <para>Para esta actualización tomamos como base el listado de Avendaño et al. (2017b), el cual reportó 1909 especies hasta agosto de 2017. Tuvimos en cuenta información publicada o disponible entre septiembre de 2017 y diciembre de 2022 haciendo un seguimiento    bibliográfico mayormente en Google Académico (https://scholar.google.com/) para registros formalmente publicados; así como en repositorios de ciencia ciudadana como eBird (https://ebird.org/explore), xeno-canto (https://www.xeno-canto.org/), iNaturalist (https://www.inaturalist.org/) y redes sociales en el caso de registros inéditos. Asimismo, consultamos las versiones recientes de las guías de aves del país (McMullan et al. 2018, Ayerbe-Quiñones 2019, 2022, Hilty 2021) para la revisión de algunas especies sugeridas como presentes en el país. Sin embargo, el propósito de esta actualización no fue realizar una revisión exhaustiva de las especies incluidas en esas guías, en principio debido a la variación en criterios taxonómicos y operativos entre autores (Stiles 2021). En este sentido, la presente  actualización sigue la taxonomía y clasificación propuesta por el SACC (Remsen et al. 2022). El comité de la Asociación Colombiana de Ornitología encargado de elaborar y actualizar una lista de las especies de aves registradas en el país es el Comité Colombiano de Registros Ornitológicos (en adelante el CCRO). Este incluye a un grupo de miembros que reúnen un amplio conocimiento de la avifauna, su clasificación, ecología y conservación. En la tarea de actualizar esta lista, seguimos en primera instancia a la clasificación de las aves sudamericanas producido por el South American Classification Committee (en adelante el SACC) de la American Ornithological Society  (AOS). El SACC incluye a miembros expertos en los principios de clasificación y conocimientos directos sobre las aves de varios países de Sudamérica, y acepta contribuciones de ornitólogos no miembros con conocimientos que complementen a los del comité y publica en línea  los argumentos y razones que explican sus decisiones en: http://www.museum.lsu.edu/~Remsen/SACCBaseline.htm. Así, muchas de sus decisiones son aplicables a la avifauna colombiana y son aceptadas por el CCRO. En estos casos, el CCRO presenta estas decisiones resumidas, con una o a veces más citaciones de la literatura con que el SACC sustentó sus decisiones, las cuales son consultables  abiertamente. Sin embargo, hay algunas excepciones en parte debido a que el territorio de Colombia incluye el Archipiélago de San Andrés, Providencia y Santa Catalina, además de algunos cayos aledaños, que se salen del área de Sudamérica propiamente dicha (y así de la jurisdicción del SACC). En tales casos, el otro comité del AOS, el North American Checklist Committee (NACC) está encargado de las decisiones sobre las aves caribeñas, al cual hemos tenido que recurrir en pocas ocasiones. Otra diferencia entre el CCRO y el SACC es que éste último depende del AOS, cuyas sociedades miembros son principalmente norteamericanas, por lo cual parte del mandato del SACC es suministrar nombres en inglés para todas las especies tratadas. Esto ha dado lugar a extensos debates, que a su vez han demorado la implementación de algunas de sus decisiones sobre cambios en la clasificación. En tales casos, este requisito del SACC no atañe al CCRO, que ha aceptado las decisiones de clasificación. Para evaluaciones del rango taxonómico de taxones no considerados por el SACC (por ser  ya conocidos en Sudamérica o por no haber sido tratados hasta ahora), también hemos indicado las fuentes que sostienen sus decisiones,  sean manuscritos ya aceptados para su publicación o por registros en bases de datos de libre consulta (como eBird, xeno-canto o similares).</para>
+          </description>
+        </methodStep>
+      <sampling>
+        <studyExtent>
+          <description>
+            <para>Territorio continental e insular de Colombia</para>
+          </description>
+        </studyExtent>
+        <samplingDescription>
+          <para>Categorías  de  estado.-A  partir  de  estas definiciones evaluamos también las categorías de estado  utilizadas  en  Avendaño et  al. (2017b), considerando  posibles  cambios  para  claridad  o concordancia  con  otros  sistemas  de  listados  de aves  a  lo  largo  de  Latinoamérica  (Freile et  al., 2020, https:listaoficialavesdecostarica.wordpress.com/Fueron  delimitadas  seis  (6)  categorías, algunas con detalles adicionales en su definición: 
+
+1. Residente.–Especies con registros en el país y probabilidad de ser detectada en cualquier época del año, de modo que realiza su reproducción en el país. Puede ser también una especie con una alta   probabilidad   de   que   sea  residente reproductivo,  pero  de  la  cual  no  se  ha documentado reproducción con evidencia. No se incluyen especies no descritas formalmente a la fecha.
+
+Endémica de país: especie cuya distribución geográfica   está   contenida   totalmente dentro de los límites políticos de Colombia.
+
+2. Migratoria.–Cualquier especie o población de una especie que se reproduce fuera del territorio colombiano,  pero  que  pasa  parte  de  su  ciclo anual en el país.Austral: especie o población de una especie que se reproduce en el hemisferio sur y que realiza    desplazamientos    latitudinales regularmente al norte durante la temporada no reproductiva, puede incluir especies más al norte de los países propiamente australes (Chile, Uruguay y Argentina).
+
+Boreal:  cualquier  especie  o  población  de una  especie  que  se  reproduce  en  el hemisferio   norte   y   que   realiza desplazamientos  latitudinales  regularmente al   sur   durante   la   temporada   no reproductiva. 
+
+Migrante-Errática:  especies  con  reportes esporádicos  o  impredecibles,  aislados  en tiempo y espacio para el país.
+
+3. Hipotética.-Son especies cuya presencia está soportada  sólo  por  registros  visuales   o descripciones  de  observaciones  formalmente publicadas (definición tomada de Hilty &amp; Brown 1986, y usada en Avendaño et al. 2017b), sin más evidencia verificable de acuerdo a los criterios de evaluación establecidos en esta revisión (2A-D).
+
+4. Incierta.–Especie cuya evidencia actual (sea o no  publicada,  o  por  material  fotográfico  o similares),  no  es  concluyente  para  definir  su presencia en el territorio.
+
+5. Extinta (global).–Especie sin registro definitivo en los últimos 50 años, o sin reportes después de búsqueda exhaustiva en su área de distribución histórica  y  hábitat  idóneo,  bajo  temporalidades que  abarcan  su  ciclo  de  vida  conocido  o especulado  (UICN:  https://www.iucnredlist.org/). Aplica  para  individuos  de  los  que  se  conocen registros históricos en el país.
+
+6.  Exótica.–Especie  no  nativa  de  los  sitios  de registro  actual  que  pudo  llegar  de  forma intencional   o   accidental,   por   medio   de intervención   humana.   Se   reconocen   dos categorías  que  siguen  la  tendencia  de  invasión descrita por Blackburn et al. (2011):
+
+No establecidas: especie exótica de la cual aún  no  se  cuenta  con  evidencia  robusta sobre  su  reproducción  activa,  que  pueda mantener una  o  más  poblaciones  estables en  vida  silvestre.  Estas  especies  no  se incluyen en el listado principal.
+
+Establecida:   especie   exótica   que   se encuentra  reproductiva  y  mantiene  una  o más poblaciones en vida silvestre.</para>
+        </samplingDescription>
+      </sampling>
+      <qualityControl>
+        <description>
+          <para>Criterios  de  evaluación.-Proponemos  una estandarización  de  criterios  de  evaluación  de registros con el fin de determinar la inclusión o no de  una  especie  en  la  lista  de  las  aves  de Colombia:
+
+1.  El  registro  debe  haber  sido  realizado  y documentado dentro del espacio aéreo, marino, insular o continental de la República de Colombia de  acuerdo  con  la  delimitación  más  reciente adoptada  por  el  estado  colombiano  (https://www.cancilleria.gov.co).
+
+2. El registro debe haber sido documentado por medio  de  evidencia  tangible  y  verificable, incluyendo alguna de las siguientes:
+
+A.  Un  espécimen  físico  que  permita  la identificación a nivel de especie, de forma fenotípica o genética, que esté depositado y catalogado    en    alguna    colección ornitológica.
+
+B. Un espécimen audiovisual (grabación de audio,  fotografía  o  video)  depositado  en alguna  colección  digital  o  repositorio permanente  que  permita  la  identificación independiente  a  nivel  de  especie  y  cuyos metadatos sean legítimos.
+
+C.  Un  registro  de  trazo  o  trayectoria  y localización (GPS) mediante radioseguimiento.  Esto  se  validará  de acuerdo  con  la  descripción  del  método usado  para  el  seguimiento  del  ave, específicamente  la  frecuencia  de  toma  de coordenadas   del   desplazamiento   del animal.
+
+D. Una publicación que describa en detalle (i) evidencia física, (ii) audiovisual, o (iii) de fuente  secundaria  como  comunicaciones con observadores, que sea complementada con  información  ecológica,  de  historia natural,    de    comportamiento    o biogeográfica.</para>
+        </description>
+      </qualityControl>
+  </methods>
+  <project >
+    <title>Lista oficial de las aves de Colombia 2022: Adiciones, cambios taxonómicos y actualizaciones de estado</title>
+      <personnel>
+        <individualName>
+            <givenName>Jorge Enrique</givenName>
+          <surName>Avendaño</surName>
+        </individualName>
+        <role>author</role>
+      </personnel>
+      <personnel>
+        <individualName>
+            <givenName>Felipe A.</givenName>
+          <surName>Estela</surName>
+        </individualName>
+        <role>author</role>
+      </personnel>
+      <personnel>
+        <individualName>
+            <givenName>Andrés M.</givenName>
+          <surName>Cuervo</surName>
+        </individualName>
+        <role>author</role>
+      </personnel>
+      <personnel>
+        <individualName>
+            <givenName>F. Gary</givenName>
+          <surName>Stiles</surName>
+        </individualName>
+        <role>author</role>
+      </personnel>
+      <personnel>
+        <individualName>
+            <givenName>Orlando</givenName>
+          <surName>Acevedo-Charry</surName>
+        </individualName>
+              <userId directory="http://orcid.org/">https://orcid.org/0000-0003-4964-8994</userId>
+        <role>author</role>
+      </personnel>
+      <personnel>
+        <individualName>
+            <givenName>Maria Ángela</givenName>
+          <surName>Echeverri-Galvis</surName>
+        </individualName>
+        <role>author</role>
+      </personnel>
+      <personnel>
+        <individualName>
+            <givenName>Camila</givenName>
+          <surName>Gomez</surName>
+        </individualName>
+        <role>author</role>
+      </personnel>
+      <abstract>
+        <para>Presentamos  una  actualización  de  la  lista  de  las  aves  de  Colombia  con  base  en  registros  documentados  a  partir  de septiembre  de  2017,  siguiendo,  por  primera  vez,  criterios  estandarizados  por  el  Comité  Colombiano  de  Registros Ornitológicos  (CCRO)  de  la  Asociación  Colombiana  de  Ornitología.  La  lista  asciende  de  1909  a  1966  especies  para  el territorio  continental,  insular  y  las  aguas  territoriales  del  país.  La  mayoría  de  las  adiciones  corresponden  a  especies registradas por primera vez  en  el  territorio  colombiano,  seguido de  especies producto de  separaciones  taxonómicas  y especies exóticas con evidencia de establecimiento en el país. Asimismo, actualizamos el estado de 15 especies con base en evidencia novedosa sobre su presencia espacial y temporal en Colombia. Se resalta la importancia de datos verificables compartidos en plataformas abiertas como aportes de ciencia participativa para la actualización de registros en el país. De acuerdo con esta actualización, Colombia continúa siendo el país con mayor riqueza de especies de aves del planeta.</para>
+      </abstract>
+      <funding>
+        <para>Fondos propios.</para>
+      </funding>
+      <studyAreaDescription>
+        <descriptor name="generic"
+                    citableClassificationSystem="false">
+          <descriptorValue>La lista de chequeo cubre el territorio continental e insular de Colombia.</descriptorValue>
+        </descriptor>
+      </studyAreaDescription>
+      <designDescription>
+        <description>
+          <para>Tomado de Echeverri-Galvis et al (2022):
+
+Para  esta  actualización  tomamos  como  base  el listado de Avendaño et al. (2017b), el cual reportó 1909 especies hasta agosto de 2017. Tuvimos en cuenta información publicada o disponible entre septiembre  de  2017  y  diciembre  de  2022 haciendo    un    seguimiento    bibliográfico mayormente  en  Google  Académico  (https://scholar.google.com/) para registros formalmente publicados;  así  como  en  repositorios  de  ciencia ciudadana como eBird (https://ebird.org/explore), xeno-canto (https://www.xeno-canto.org/), iNaturalist  (https://www.inaturalist.org/)  y  redes sociales  en  el  caso  de  registros  inéditos. Asimismo, consultamos las versiones recientes de las guías de aves del país (McMullan et al. 2018, Ayerbe-Quiñones 2019, 2022, Hilty 2021) para la revisión  de  algunas  especies  sugeridas  como presentes en el país. Sin embargo, el propósito de esta  actualización  no  fue  realizar  una  revisión exhaustiva de las especies incluidas en esas guías, en  principio  debido  a  la  variación  en  criterios taxonómicos  y  operativos  entre  autores  (Stiles 2021).  En  este  sentido,  la  presente  actualización sigue la taxonomía y clasificación propuesta por el SACC (Remsen et al. 2022). El  comité  de  la  Asociación  Colombiana  de Ornitología  encargado  de  elaborar  y  actualizar una lista de las especies de aves registradas en el país  es  el  Comité  Colombiano  de  Registros Ornitológicos (en adelante el CCRO). Este incluye a un grupo de miembros que reúnen un amplio conocimiento  de  la  avifauna,  su  clasificación, ecología y conservación. En la tarea de actualizar esta  lista,  seguimos  en  primera  instancia  a  la clasificación de las aves sudamericanas producido por  el  South  American  Classification  Committee (en  adelante  el  SACC)  de  la  American Ornithological  Society  (AOS).  El  SACC  incluye  a miembros  expertos  en  los  principios  de clasificación  y  conocimientos  directos  sobre  las aves  de  varios  países  de  Sudamérica,  y  acepta contribuciones de ornitólogos no miembros con conocimientos  que  complementen  a  los  del comité  y  publica  en  línea  los  argumentos  y razones  que  explican  sus  decisiones en: http://www.museum.lsu.edu/~Remsen/SACCBaseline.htm. Así, muchas de sus decisiones son aplicables a la avifauna  colombiana  y  son  aceptadas  por  el CCRO.  En  estos  casos,  el  CCRO  presenta  estas decisiones  resumidas,  con  una  o  a  veces  más citaciones  de  la  literatura  con  que  el  SACC sustentó   sus   decisiones,   las   cuales   son consultables  abiertamente.  Sin  embargo,  hay algunas  excepciones  en  parte  debido  a  que  el territorio de Colombia incluye el Archipiélago de San Andrés, Providencia y Santa Catalina, además de algunos cayos aledaños, que se salen del área de  Sudamérica  propiamente  dicha  (y  así  de  la jurisdicción  del  SACC).  En  tales  casos,  el  otro comité  del  AOS,  el  North  American  Checklist Committee  (NACC)  está  encargado  de  las decisiones sobre las aves caribeñas, al cual hemos tenido  que  recurrir  en  pocas  ocasiones.    Otra diferencia entre el CCRO y el SACC es que éste último  depende  del  AOS,  cuyas  sociedades miembros  son  principalmente  norteamericanas, por  lo  cual  parte  del  mandato  del  SACC  es suministrar  nombres  en  inglés  para  todas  las especies tratadas. Esto ha dado lugar a extensos debates,  que  a  su  vez  han  demorado  la implementación  de  algunas  de  sus  decisiones sobre cambios en la clasificación. En tales casos, este requisito del SACC no atañe al CCRO, que ha aceptado  las  decisiones  de  clasificación.    Para evaluaciones  del  rango  taxonómico  de  taxones no  considerados  por  el  SACC  (por  ser  ya conocidos  en  Sudamérica  o  por  no  haber  sido tratados  hasta  ahora),  también  hemos  indicado las  fuentes  que  sostienen  sus  decisiones,  sean manuscritos ya aceptados para su publicación o por registros en bases de datos de libre consulta (como eBird, xeno-canto o similares).</para>
+        </description>
+      </designDescription>
+  </project>
+</dataset>
+  <additionalMetadata>
+    <metadata>
+      <gbif>
+          <dateStamp>2018-07-05T10:28:35.650+00:00</dateStamp>
+          <hierarchyLevel>dataset</hierarchyLevel>
+            <citation identifier="https://doi.org/10.15472/qhsz0p">Echeverry-Galvis, M.A., O. Acevedo-Charry, J. E. Avendaño, C. Gómez, F.G. Stiles, F.A. Estela &amp; A.M. Cuervo. 2022. Lista oficial de las aves de Colombia 2022: Adiciones, cambios taxonómicos y actualizaciones de estado. Ornitología Colombiana 22: 25-51.</citation>
+          <bibliography>
+                <citation identifier="https://asociacioncolombianadeornitologia.org/ojs/index.php/roc/article/view/548/449">Acevedo-Charry, O., W. Daza-DÍaz &amp; Z. Colón-Piñeiro. 2020. First record of Rufous-thighed Kite Harpagus diodon in Colombia. Bulletin of the British Ornithologists’ Club 140: 104–109.</citation>
+                <citation>Acevedo-Charry, O., F.Á. Peña-Alzate, J. Beckers, M. Cabezas, B. Coral-Jaramillo, O. Janni, D. Ocampo, S.M. Peñuela-Gómez, D. Rocha-López, J.B. Socolar &amp; Z. Colón-Piñeiro. 2021. Avifauna del interfluvio de la cuenca media Caquetá Putumayo (Japurá-Içá), al sur de la Amazonia colombiana y su respuesta a la huella humana. Revista de la Academia Colombiana de Ciencias Exactas, Físicas y Naturales 45: 229–249.</citation>
+                <citation>Arbeláez-Cortés, E., C. Sánchez-Sarria, D. Ocampo, F. Estela, M. Garcia-Arroyo &amp; I. MacGregor-Fors. 2021. Experiences of surveying urban birds during the Anthropause in Colombia. Ornitologia Neotropical 32: 166–169.</citation>
+                <citation>Avendaño, J.E., E. Arbeláez‐Cortés &amp; C.D. Cadena. 2017a. On the importance of geographic and taxonomic sampling in phylogeography: A reevaluation of diversification and species limits in a Neotropical thrush (Aves, Turdidae). Molecular Phylogenetics and Evolution 111: 87–97.</citation>
+                <citation>Avendaño, J.E., C.I. Bohórquez, L. Rosselli, D. Arzuza-Buelvas, F.A. Estela, A.M. Cuervo, F.G. Stiles &amp; L.M. Renjifo. 2017b. Lista de chequeo de las aves de Colombia: Una síntesis del estado del conocimiento desde Hilty &amp; Brown (1986). Ornitología Colombiana 2017: eA01-1-eA01-83.</citation>
+                <citation>Ayerbe-Quiñones, F. 2019. Guía ilustrada de la Avifauna colombiana. Wildlife Conservation Society-Colombia, Bogotá D.C., Colombia.</citation>
+                <citation>Ayerbe-Quiñones, F. 2022. Guía ilustrada de la Avifauna colombiana. Wildlife Conservation Society-Colombia, Bogotá D.C., Colombia.</citation>
+                <citation>Bravo, G.A. 2006. eBird Checklist: https://ebird.org/caribbean/checklist/S67458940. eBird: An online database of bird distribution and abundance [web app]. eBird, Cornell Lab of Ornithology, Ithaca, NY. Available: http://www.ebird.org. (Accessed: Date [June 15, 2022]).</citation>
+                <citation>Azpiroz, A.B., G. Cormons &amp; J.E. Avendaño. 2020. New documented records of Ring-billed Gull Larus delawarensis and Roseate Tern Sterna dougallii for Colombia. Bulletin of the British Ornithologists’ Club 140: 209–213.</citation>
+                <citation>Baldwin-Centello, W., M. Clark, S. Cornelius, A. Francis, J. Ghazoul, J. Gordon, S. Helevy, N. Mathews, P. Smith, D. Tickner, S. Walmsley, M. Wright &amp; L. Young. 2020. Triple Challenge: synergies, trade-offs and integrated responses to meet our food, climate and biodiversity goals. WWF-UK, Woking paper.</citation>
+                <citation>Ballance, L.T., R.L. Pitman, L.B. Spear &amp; P.C. Fiedler. 2002. Investigations into temporal patterns in distribution, abundance and habitat relationships within seabird communities of the eastern tropical Pacific. NOAA Administrative Report LJ-02-17 (79 pp.). http://swfsc.nmfs.noaa.gov/IDCPA/TunaDol_rep/</citation>
+                <citation>Bayly, N.J. 2018. Confirmación fotográfica de la presencia de Setophaga tigrina y Setophaga palmarum en Colombia. Boletín SAO 27: 4–6.</citation>
+                <citation>Blackburn, T.M., P. Pyšek, S. Bacher, J.T. Carlton, R.P. Duncan, V. Jarošík, J.R.U. Wilson &amp; D.M. Richardson. 2011. A proposed unified framework for biological invasions. Trends in Ecology and Evolution 26: 333–339.</citation>
+                <citation>Bocalini, F. &amp; L.F. Silveira. 2015. Morphological variability and taxonomy of the Blue-winged Parrotlet Forpus xanthopterygius (Psittacidae). Revista Brasileira de Ornitologia 23: 64–75.</citation>
+                <citation>Bryson, R.W., J. Chaves, B.T. Smith, M.J. Miller, K. Winker, J.L. Pérez-Emán &amp; J. Klicka. 2014. Diversification across the New World within the “blue” cardinalids (Aves: Cardinalidae). Journal of Biogeography 41: 587–599.</citation>
+                <citation>Burnett, T. 2017. eBird Checklist: https://ebird.org/checklist/S34247612. eBird: An online database of bird distribution and abundance [web app]. eBird, Cornell Lab of Ornithology, Ithaca, NY. Available: http://www.ebird.org. (Accessed: Date [June 15, 2022]).</citation>
+                <citation>Calderón-Franco, D. 2017. eBird Checklist: https://ebird.org/ebird/view/checklist/S38238508. eBird: An online database of bird distribution and abundance [web app]. eBird, Cornell Lab of Ornithology, Ithaca, NY. Available: http://www.ebird.org. (Accessed: Date [June 15, 2022]).</citation>
+                <citation>Callaghan, C.T. &amp; D.M. Brooks. 2017. History, Current Distribution, and Status of the Egyptian Goose (Alopochen aegyptiaca) in the Contiguous United States. Southwestern Naturalist 62: 296–300.</citation>
+                <citation>Callaghan, C.T., J.E.M. Watson, M.B. Lyons, W.K. Cornwell &amp; R.A. Fuller. 2021. Conservation birding: A quantitative conceptual framework for prioritizing citizen science observations. Biological Conservation 253: 108912.</citation>
+                <citation>Camargo, P., N. Moreno-Salazar &amp; N. Morales. 2021. First breeding record of Killdeer Charadrius vociferus in Colombia. Wader Study 128: 282–283.</citation>
+                <citation>Carantón-Ayala, D., K. Certuche-Cubillos, C. Díaz-Jaramillo, R.M. Parra-Hernández, J. Sanabria-Mejía &amp; M. Moreno-Palacios. 2008. Aspectos biológicos de una nueva población del Capuchino de Cabeza Negra (Lonchura malacca, Estrildidae) en el alto valle del Magdalena, Tolima. Boletín SAO 18: 54–63.</citation>
+                <citation>Cárdenas, G., D. Ramírez-Mosquera, D. Eusse-González, E. Fierro-Calderón, V. Vidal-Astudillo &amp; F.A. Estela. 2020. Aves del departamento del Valle del Cauca, Colombia. Biota colombiana 21: 72–87.</citation>
+                <citation>Castro-Ospina, J.F., J.A. Muñoz-García, J. Collazos-Cardona &amp; O. Acevedo-Charry. 2021. Primeros registros de Amazona kawalli para Colombia y un análisis espaciotemporal preliminar. Ornitología Colombiana 19: 67–77.</citation>
+                <citation>Castro-Vargas, F. 2020. Las aves migratorias y su reproducción en Ecoparque Sabana. Territorio de Vida: cultivar con amor un legado de conservación: 4–5.</citation>
+                <citation>Castro-Vargas, F., J. Candil-Méndez, E. Gómez-Betangur &amp; D. Ortega-Chamorro. 2021. Residencia y nuevos sitios de reproducción del chorlito colirrojo (Charadrius vociferus. Charadriiforme: Charadriidae) en la Sabana de Bogotá, Colombia. Ornitología Colombiana 19: 26–37.</citation>
+                <citation>Castro-Vargas, F., D. Ortega-Chamorro &amp; Y. Cruz. 2019. Aves de Ecoparque Sabana - Parque Jaime Duque. Tocancipá, Cundinamarca, Colombia. The Field Museum. Field Guides.</citation>
+                <citation>Chapman, F.M. 1917. The Distribution of Bird-Life in Colombia; A Contribution to a Biological Survey of South America. In: Bulletin of the American Museum of Natural History 36: 1-169.</citation>
+                <citation>Chaves, J.A., J.R. Hidalgo &amp; J. Klicka. 2013. Biogeography and evolutionary history of the neotropical genus Saltator (Aves: Thraupini). Journal of Biogeography 40: 2180–2190.</citation>
+                <citation>Chaves, J. C., A. M. Cuervo, M. J. Miller, &amp; C. D. Cadena. 2010. Revising species limits in a group of Myrmeciza antbirds reveals a cryptic species within M. laemosticta (Thamnophilidae). Condor 112: 718-730.</citation>
+                <citation>Chesser, R.T., H. Vaseghi, P.A. Hosner, L.M. Bergner, M.N. Cortes-Rodriguez, A.J. Welch &amp; C.T. Collins. 2018. Molecular systematics of swifts of the genus Chaetura (Aves: Apodiformes: Apodidae). Molecular Phylogenetics and Evolution 128: 162–171.</citation>
+                <citation>Chesser, T., M.L. Isler, A.M. Cuervo, C. Daniel Cadena, S.C. Galen, L.M. Bergner, R.C. Fleischer, G.A. Bravo, D.F. Lane &amp; P.A. Hosner. 2020. Conservative plumage masks extraordinary phylogenetic diversity in the Grallaria rufula (Rufous Antpitta) complex of the humid Andes. Auk 137: 1–25.</citation>
+                <citation>Chilton, G., Baker, M.C., Barrentine, C. D. &amp; M. A. Cunningham. 2020. White-crowned Sparrow (Zonotrichia leucophrys), version 1.0. In Birds of the World (A. F. Poole and F. B. Gill, Editors). Cornell Lab of Ornithology, Ithaca, NY, USA. doi.org/10.2173/bow.whcspa.</citation>
+                <citation>Clements, J.F., T.S. Schulenberg, M.J.S. Iliff, M. Billerman, T.A. Fredericks, J.A. Gerbracht, D. Lepage, B.L. Sullivan &amp; C.L. Wood. 2021. The eBird/Clements checklist of Birds of the World: v2021.</citation>
+                <citation>Cortés, O. &amp; T. Donegan. 2012. Records and status of two escaped species of parrots for Colombia. Conservación Colombiana 15: 35–37.</citation>
+                <citation>Cuervo, A.M., C.D. Cadena &amp; J.L. Parra. 2006. Seguir colectando aves en Colombia es imprescindible: Un llamado a fortalecer las colecciones ornitológicas. Ornitología Colombiana 4: 51–58.</citation>
+                <citation>Dantas, S.M., J.D. Weckstein, J.M. Bates, N.K. Krabbe, C.D. Cadena, M.B. Robbins, E. Valderrama &amp; A. Aleixo. 2016. Molecular systematics of the new world screech-owls (Megascops: Aves, Strigidae): Biogeographic and taxonomic implications. Molecular Phylogenetics and Evolution 94: 626–634.</citation>
+                <citation>Delcroix, F. &amp; E. Delcroix. 2018. eBird Checklist: https://ebird.org/checklist/S49551880. eBird: An online database of bird distribution and abundance [web app]. eBird, Cornell Lab of Ornithology, Ithaca, NY. Available: http://www.ebird.org. (Accessed: Date [June 15, 2022]).</citation>
+                <citation>Delgado, J. &amp; H.D. Rodríguez. 2018. Primer registro del Gorrión Brasita de Fuego Coryphospingus cucullatus para Colombia. Conservación Colombiana 25: 25–30.</citation>
+                <citation>Dickens, J., Bitton, J-P., Bravo, G., &amp; L.F. Silveira. 2022. Species limits, patterns of secondary contact and a new species in the Trogon rufus complex (Aves: Trogonidae). Zoological Journal of the Linnean Society 193: 499–540.</citation>
+                <citation>Donegan, T. 2013. An escaped, threatened species: Java sparrow Padda oryzivora in Quindío, Colombia. Conservación Colombiana 19: 44–46.</citation>
+                <citation>Donegan, T., T. Ellery, J.A. Pacheco, J.C. Verhelst &amp; P. Salaman. 2018. Revision of the status of bird species occurring or reported in Colombia 2018. Conservacion Colombiana: 1–47.</citation>
+                <citation>Donegan, T., T. Ellery, J.C. Verhelst &amp; P. Salaman. 2019. Revision of the status of bird species occurring or reported in Colombia 2019. Conservación Colombiana 26: 4–17.</citation>
+                <citation>Donegan, T., J.C. Verhelst, T. Ellery, O. Cortés-Herrera &amp; P. Salaman. 2016. Revision of the status of bird species occurring or reported in Colombia 2016 and assessment of BirdLife International’s new parrot taxonomy. Conservación Colombiana 24: 12–36.</citation>
+                <citation>Donegan, T.M. &amp; B. Huertas. 2020. Providencia island in the Colombian Caribbean: X marks the spot for a treasure of endemic, migrant and vagrant birds. Neotropical Birding 26: 49–55.</citation>
+                <citation>Donegan, T.M., A. Quevedo, J.C. Verhelst, O. Cortés-Herrera, T. Ellery &amp; P. Salaman. 2015. Revision of the status of Bird species occurring in Colombia, with discussion of BirdLife International’s new taxonomy. Conservación Colombiana 23: 3–48.</citation>
+                <citation>eBird [online]. 2021. eBird: An online database of bird distribution and abundance (web application www.ebird.org). Ithaca, NY. &lt;http://www.ebird.org&gt;.</citation>
+                <citation>Echeverry-Galvis, M.A, P, Lozano Ramírez &amp; J.D. Amaya-Espinel. 2023. Long-term Christmas Bird Counts describe neotropical urban bird diversity. PLoS ONE 18(2): e0272754. https://doi.org/10.1371/journal.pone.0272754</citation>
+                <citation>Edwards, D.P. &amp; B.R. Scheffers. 2018. Lincoln’s Sparrow Melospiza lincolnii: first record for Colombia and second record for South America. Cotinga 40: 92–93.</citation>
+                <citation>Ellery, T. &amp; J.F. Salgado. 2018. First confirmed record of Belcher’s Gull Larus belcheri for Colombia with notes on the status of other gull species. Conservacion Colombiana: 51–55.</citation>
+                <citation>Espejo, N., O. Ceballos, J. Meza, I. Gómez, S. Ávila &amp; C. Ruiz-Guerra. 2019. First breeding record of snowy plover Charadrius nivosus in Colombia. Wader Study 126: 57–59.</citation>
+                <citation>Estela, F.A. 2015a. eBird Checklist: https://ebird.org/checklist/S39292485. eBird: An online database of bird distribution and abundance [web app]. eBird, Cornell Lab of Ornithology, Ithaca, NY. Available: http://www.ebird.org. (Accessed: Date [June 15, 2022]).</citation>
+                <citation>Estela, F.A. 2015b. eBird Checklist: https://ebird.org/checklist/S25225840. eBird: An online database of bird distribution and abundance [web app]. eBird, Cornell Lab of Ornithology, Ithaca, NY. Available: http://www.ebird.org. (Accessed: Date [June 15, 2022]).</citation>
+                <citation>Felix, R. &amp; B.M.M. Mosquera-Lima. 2020. First confirmed record of Scissor-tailed Flycatcher Tyrannus forficatus for Colombia and South America. Conservación Colombiana 26: 42.</citation>
+                <citation>Fierro-Calderón, E. &amp; K. Fierro-Calderón. 2020. First record of Psittacara erythrogenys (Psittacidae) in Colombia. Caldasia 42: 347–349.</citation>
+                <citation>Freile, J., S. Olmstead, N. Athanas, D. Brinkhuizen, L. Navarrete, J. Nilsson, M. Sánchez-Nivicela, A. Solano-Ugalde &amp; P. Greenfield. 2020. Fifth Report of the Committee for Ecuadorian Records in Ornithology (Cero), With Comments on Some Published, Undocumented Records. Revista Ecuatoriana de Ornitología 9: 103–133.</citation>
+                <citation>Franz, J, D. J. Álvarez &amp; M. Borges-Martínez. 2020. Species limits in the Tawny-crowned Pygmy-Tyrant complex (Aves: Passeriformes: Tyrannidae). Zootaxa 4809: 475-495.</citation>
+                <citation>Friedel, T. 2019. Records of three new antbirds for Colombia. Conservacion Colombiana 26: 19–20.</citation>
+                <citation>García, J. 2018. eBird Checklist: https://ebird.org/checklist/S44443978. eBird: An online database of bird distribution and abundance [web app]. eBird, Cornell Lab of Ornithology, Ithaca, NY. Available: http://www.ebird.org. (Accessed: Date [June 15, 2022]).</citation>
+                <citation>Garnett, S.T. &amp; L. Christidis. 2017. Taxonomy anarchy hampers conservation. Nature 546: 25–27.</citation>
+                <citation>Gómez, C., C.D. Cadena, A.M. Cuervo, J. Díaz-Cárdenas, F. García-Cardona, N. Niño-Rodríguez, N. Ocampo-Peñuela, D. Ocampo, G. Seeholzer, A. Sierra-Ricaurte &amp; J. Soto-Patiño. 2021. Reexpedición Colombia: Entender el pasado para empoderar acciones que fortalezcan el conocimiento y conservación de las aves. Biota Colombiana 23: e984.</citation>
+                <citation>González, J. &amp; L.F. Jaramillo. 2020. eBird Checklist: https://ebird.org/checklist/S70125304. eBird: An online database of bird distribution and abundance [web app]. eBird, Cornell Lab of Ornithology, Ithaca, NY. Available: http://www.ebird.org. (Accessed: Date [June 15, 2022]).</citation>
+                <citation>Hays, H. 1971. Roseate Tern, Sterna dougallii, banded on Atlantic Coast recovered on Pacific. Bird Banding 42: 295.</citation>
+                <citation>Hilty, S.L. 2021. Birds of Colombia. Lynx Edicions, Barcelona.</citation>
+                <citation>Hilty, S.L. &amp; W.L. Brown. 1986. A Guide to the Birds of Colombia. Princeton University Press, Princeton, New Jersey.</citation>
+                <citation>Imerti, S. 2006. eBird Checklist: https://ebird.org/checklist/S27246380. eBird: An online database of bird distribution and abundance [web app]. eBird, Cornell Lab of Ornithology, Ithaca, NY. Available: http://www.ebird.org. (Accessed: Date [June 15, 2022]).</citation>
+                <citation>IPBES. 2019. Summary for policymakers of the global assessment report on biodiversity and ecosystem services. P. In: Intergovernmental Science-Policy Platform on Biodiversity and Ecosystem Services. S. Díaz, J. Settele, E. S. Brondízio E.S., H. T. Ngo, M. Guèze, J. Agard, A. Arneth, P. Balvanera, K. A. Brauman, S. H. M. Butchart, K. M. A. Chan, L. A. Garibaldi, K. Ichii, J. Liu, S. M. Subramanian, G. F. Midgley, P. Miloslavich, Z. Molnár, D. Obura, A. Pfaff, S. Polasky, A. Purvis, J. Razzaque, B. Reyers, R. Roy Chowdhury, Y. J. Shin, I. J. Visseren-Hamakers, K. J. Willis, and C. N. Zayas (eds.). IPBES secretariat, Bonn, Germany. 56 páginas.</citation>
+                <citation>Isler, M.L., R. Terry Chesser, M.B. Robbins, A.M. Cuervo, C. Daniel Cadena, P.A. Hosner &amp; M. Press. 2020. Taxonomic evaluation of the Grallaria rufula (Rufous Antpitta) complex (Aves: Passeriformes: Grallaridae) distinguishes sixteen species. Zootaxa 4817: 1–74.</citation>
+                <citation>Kirwan, G.M., A. Levesque, M. Oberle &amp; C.J. Sharpe. 2019. Birds of the West Indies. Lynxs Editions, Barcelona.</citation>
+                <citation>Krabbe, N.K. 2017. A new species of Megascops (Strigidae) from the Sierra Nevada de Santa Marta, Colombia, with notes on voices of New World screech-owls. Ornitología Colombiana 16: eA08.</citation>
+                <citation>Levesque, A. 2017. eBird Checklist: https://ebird.org/caribbean/checklist/S40275293. eBird: An online database of bird distribution and abundance [web app]. eBird, Cornell Lab of Ornithology, Ithaca, NY. Available: http://www.ebird.org. (Accessed: Date [June 15, 2022]).</citation>
+                <citation>Levesque, A. &amp; E. Messiah. 2017a. eBird Checklist: https://ebird.org/caribbean/checklist/S40254633. eBird: An online database of bird distribution and abundance [web app]. eBird, Cornell Lab of Ornithology, Ithaca, NY. Available: http://www.ebird.org. (Accessed: Date [June 15, 2022]).</citation>
+                <citation>Levesque, A. &amp; E. Messiah. 2017b. eBird Checklist: https://ebird.org/caribbean/checklist/S40237170. eBird: An online database of bird distribution and abundance [web app]. eBird, Cornell Lab of Ornithology, Ithaca, NY. Available: http://www.ebird.org. (Accessed: Date [June 15, 2022]).</citation>
+                <citation>Loaiza-B, J.M., W.A. Arteaga-Chávez, P.G Molina Criollo &amp; E. Obando. 2022. Primer registro de la Agachona Ventrirrufa (Attagis gayi) en Colombia. Ornitología Colombiana 22: 1-7. NUMERACIÓN TEMPORAL.</citation>
+                <citation>López-O, J.P., J.E. Avendaño, N. Gutiérrez-Pinto &amp; A.M. Cuervo. 2014. The birds of the serranía de Perijá: The northernmost avifauna of the Andes. Ornitología Colombiana 14: 62–93.</citation>
+                <citation>López-Victoria, M. &amp; F.A. Estela. 2006. Additions to the breeding seabirds of Malpelo Island, Colombia. Marine Ornithology 34: 83–84.</citation>
+                <citation>López-Victoria, M. &amp; F.A. Estela. 2007. Una lista anotada de las aves de la Isla Malpelo. Ornitología Colombiana 7: 213–221.</citation>
+                <citation>Mace, G.M. 2004. The role of taxonomy in species conservation. Philosophical Transactions of the Royal Society B: Biological Sciences 359: 711–719.</citation>
+                <citation>McMullan, M., T. Donegan, G. Pantoja-Peña, T. Tuncer-Navarro, A. Bartels &amp; T. Ellery. 2018. Field guide to the birds of Colombia. Rey Naranjo Editores, Bogotá.</citation>
+                <citation>McNish, T. 2011. La fauna del archipiélago de San Andrés, Providencia y Santa Catalina, Colombia, Sudamérica. M&amp;B Producciones y Servicios Ltda., Bogotá.</citation>
+                <citation>Medina-Rangel, G.F., M.E. Thompson, D.H. Ruiz-Valderrama, W. Fajardo-Muñoz, J. Lombana Lugo, C. Londoño, C. Moquena Carbajal, H.D. Ríos Rosero, J.E. Sánchez Pamo &amp; E. Sánchez. 2019. Rapid Inventories 29. P. In: Pitman, N., A. Salazar Molano, F. Samper Samper, C. Vriesendorp, A. Vásquez Cerón, Á. del Campo, T. L. Miller, E. A. Matapi Yucuna, M. E. Thompson, L. de Souza, D. Alvira Reyes, A. Lemos, D.F. Stotz, N. Kotlinski, T. Wachter, E. Woodward &amp; R. Botero García. Colombia: Bajo Caguán-Caquetá. Rapid Biological and Social Inventories Report 30. Field Museum, Chicago. Colombia: Bajo Caguán-Caquetá. Rapid Biological and Social Inventories Report 30.</citation>
+                <citation>Messiah, E. &amp; A. Levesque. 2017. eBird Checklist: https://ebird.org/caribbean/checklist/S40308336. eBird: An online database of bird distribution and abundance [web app]. eBird, Cornell Lab of Ornithology, Ithaca, NY. Available: http://www.ebird.org. (Accessed: Date [June 15, 2022]).</citation>
+                <citation>Meyer de Schauensee, R. 1951. The birds of the Republic of Colombia. Caldasia 5: 251–342.</citation>
+                <citation>Meyer de Schauensee, R. 1964. A guide to the birds of Colombia and adjacent areas of South America. Livingston Publ. Co., Narberth, PA, EUA.</citation>
+                <citation>Moncrieff, A: E., Faircloth, B: C., &amp; R. T. Brumfield. 2022. Systematics of Lepidothrix manakins (Aves: Passeriformes: Pipridae) using RADcap markers. Molecular Phylogenetics and Evolution 173: 107525.</citation>
+                <citation>Naranjo, L. G., Ducuara, D. C., Pinto-Gómez, A. &amp; F. Estela. 2022. Aves del departamento de Guaínia. Pp. 179-205. En: Usma Oviedo, J.S., F. Trujillo &amp; L.G. Naranjo (Eds.). Diversidad biológica y cultural del departamento de Guainía. Gobernación de Guainía, WWF Colombia, Corporación para el Desarrollo Sostenible del Norte y el Oriente Amazónico - CDA &amp; Instituto Amazónico de Investigaciones Científicas SINCHI. Bogotá, Colombia. 250 pp.</citation>
+                <citation>Negret, P.J., M. Maron, R.A. Fuller, H.P. Possingham, J.E.M. Watson &amp; J.S. Simmonds. 2021. Deforestation and bird habitat loss in Colombia. Biological Conservation 257: 109044.</citation>
+                <citation>Naturalista [online]. 2023. Comisión Nacional para el Conocimiento y Uso de la Biodiversidad. (web application www.naturalista.org). California Academy of Science. www.naturalista.org</citation>
+                <citation>Obando, E. &amp; J.M. Loiza-B. 2021. eBird Checklist: https://ebird.org/checklist/S92363649. eBird: An online database of bird distribution and abundance [web app]. eBird, Cornell Lab of Ornithology, Ithaca, NY. Available: http://www.ebird.org. (Accessed: Date [June 15, 2022]).</citation>
+                <citation>Onley, D. &amp; P. Scofield. 2007. Albatrosses, Petrels and Shearwaters of the World. Revista Brasileira de Ornitologia 15: 621–622.</citation>
+                <citation>Ordóñez-Delgado, L. &amp; I. González. 2016. Nuevos registros y revisión de la distribución de Coryphospingus cucullatus (Thraupidae) en Ecuador. Ornitología Colombiana 15: 117–121.</citation>
+                <citation>Pacheco, J.F., L.F. Silveira, A. Aleixo, C.E. Agne, G.A. Bencke, G.A. Bravo, G.R.R. Brito, M. Cohn-Haft, G.N. Maurício, L.N. Naka, F. Olmos, S.R. Posso, A.C. Lees, L.F.A. Figueiredo, E. Carrano, R.C. Guedes, E. Cesari, I. Franz, F. Schunck. 2021. Annotated checklist of the birds of Brazil by the Brazilian Ornithological Records Committee—second edition. Ornithology Research 29: 94–105.</citation>
+                <citation>Peña Alzate, F.Á., C. Manjarrez &amp; O. Acevedo-Charry. 2020. Heterocercus aurantiivertex (Aves: Passeriformes: Pipridae), una nueva especie para Colombia del Parque Nacional Natural La Paya, Leguízamo, Putumayo. Caldasia 42: 142–146.</citation>
+                <citation>Pereira, A., M. Tavares &amp; I.B. Moreno. 2019. Separating black-browed albatross Thalassarche melanophris and atlantic yellow-nosed albatross T. chlororhynchos by osteological morphometric analysis. Marine Ornithology 47: 139–148.</citation>
+                <citation>Pérez-Amaya, N.J. &amp; O. Acevedo‐Charry. 2020. Elevate Catharus dryas maculatus to species rank. Proposal (865) to South American Classification Committee.</citation>
+                <citation>Perlut, N. &amp; A. Levesque. 2020. Light-level geolocation reveals the migration route and non-breeding location of an Antillean Nighthawk (Chordeiles gundlachii). Journal of Caribbean Ornithology 33: 49–53.</citation>
+                <citation>Pitman, N., A. Salazar Molano, F. Samper Samper, C. Vriesendorp, A. Vásquez Cerón, A. Del Campo, T.L. Miller, E.A. Matapi Yacuna, M.E. Thompson, L. de Souza, D. Reyes Alvira, A. Lemos, D.F. Stotz, N. Kotlinski, T. Wachter, E. Woodward &amp; R. Botero García. 2018. Colombia: Bajo Caguán-Caquetá. Rapid Biological and Social Inventories Report 30. Chicago Field Museum of Natural History, Chicago.</citation>
+                <citation>Pitman, R.L., L.B. Spear &amp; M.P. Force. 1995. The marine birds of Malpelo Island. Colonial Waterbirds 18: 113–119.</citation>
+                <citation>Pocock, M.J.O., M. Chandler, R. Bonney, I. Thornhill, A. Albin, T. August, S. Bachman, P.M.J. Brown, D.G.F. Cunha, A. Grez, C. Jackson, M. Peters, N.R. Rabarijaon, H.E. Roy, T. Zaviezo &amp; F. Danielsen. 2018. A vision for global biodiversity monitoring with citizen science. Advances in ecological research 59: 169–223.</citation>
+                <citation>Priddel, D., N. Carlile, D. Portelli, Y. Kim, L. O’Neill, V. Bretagnolle, L.T. Ballance, R.A. Phillips, R.L. Pitman &amp; M.J. Rayner. 2014. Pelagic distribution of Gould’s Petrel (Pterodroma leucoptera): Linking shipboard and onshore observations with remote-tracking data. Emu 114: 360–370.</citation>
+                <citation>Rayner, M.J., N. Carlile, D. Priddel, V. Bretagnolle, M.G.R. Miller, R.A. Phillips, L. Ranjard, S.J. Bury &amp; L.G. Torres. 2016. Niche partitioning by three Pterodroma petrel species during non-breeding in the equatorial Pacific Ocean. Marine Ecology Progress Series 549: 217–229.</citation>
+                <citation>Remsen, J.V.J. 1974. eBird Checklist: https://ebird.org/ebird/view/checklist/S11843701. eBird: An online database of bird distribution and abundance [web app]. eBird, Cornell Lab of Ornithology, Ithaca, NY. Available: http://www.ebird.org. (Accessed: Date [June 15, 2022]).</citation>
+                <citation>Remsen, J.V.J., J.I. Areta, E. Bonaccorso, S. Claramunt, A. Jaramillo, J.F. Pacheco, C. Ribas, M.B. Robbins, F.G. Stiles, D.F. Stotz &amp; K.J. Zimmer [online]. 2021. A classification of the bird species of South America. American Ornithological Society. &lt;http://www.museum.lsu.edu/~Remsen/SACCBaseline.htm&gt; (16 August 2020).</citation>
+                <citation>Renjifo, L. M., A. Repizzo, J. M. Ruiz-Ovalle, S. Ocampo &amp; K. E. Avendaño. 2017. New bird data from Cerro Tacarcuna, with implications for conservation in the Darién highlands of Colombia. Bulletin of the British Ornithological Club 137:46-66.</citation>
+                <citation>Rheindt, F.E., A.M. Cuervo &amp; R.T. Brumfield. 2013. Rampant polyphyly indicates cryptic diversity in a clade of Neotropical flycatchers (Aves: Tyrannidae). Biological Journal of the Linnean Society 108: 889–900.</citation>
+                <citation>Ridgely, R.S. &amp; P.J. Greenfield. 2001. The birds of Ecuador: status, distribution, and taxonomy. Vol. 1. Cornell University Press.</citation>
+                <citation>Robinson, W.D., D. Errichetti, H.S. Pollock, A. Martinez, P.C. Stouffer, F.Y. Shen &amp; J.G. Blake. 2021. Big Bird Plots: Benchmarking Neotropical Bird Communities to Address Questions in Ecology and Conservation in an Era of Rapid Change. Frontiers in Ecology and Evolution 9: 1–15.</citation>
+                <citation>Rocha-López, D., M. Quiñonez-Calle, D. Carantón-Ayala, A. Betancur-López &amp; O. Acevedo-Charry. 2021. La importancia de obtener evidencia multimedia: El caso de los semilleros piquigordos de Colombia, con registros de Sporophila atrirostris y un llamado a buscar Sporophila maximiliani. Boletín SAO 30: 22–30.</citation>
+                <citation>Sánchez-Clavijo, L.M., S.J. Martínez-Callejas, O. Acevedo-Charry, A. Diaz-Pulido, B. Gómez-Valencia, N. Ocampo-Peñuela, D. Ocampo, M.H. Olaya-Rodríguez, J.C. Rey-Velasco, C. Soto-Vargas &amp; J.M. Ochoa-Quintero. 2021. Differential reporting of biodiversity in two citizen science platforms during COVID-19 lockdown in Colombia. Biological Conservation 256: 109077.</citation>
+                <citation>Schoombie, S., B.J. Dilley, D. Davies &amp; P.G. Ryan. 2018. The foraging range of Great Shearwaters (Ardenna gravis) breeding on Gough Island. Polar Biology 41: 2451–2458.</citation>
+                <citation>Sequeda-Zuleta, J., V. Góngora-Fuenmayor &amp; M. Cabanzo-González. 2021. Evidencia reproductiva del chorlito gritón (Charadrius vociferus) en Tumaco, Nariño-Colombia. Boletín SAO 30: 16–21.</citation>
+                <citation>Sibley, D. A. 2020. The Sibley Guide to Birds. Second Edition. Knopf Press. New York City.</citation>
+                <citation>Slager, D.L., C.J. Battey, R.W. Bryson, G. Voelker &amp; J. Klicka. 2014. A multilocus phylogeny of a major New World avian radiation: The Vireonidae. Molecular Phylogenetics and Evolution 80: 95–104.</citation>
+                <citation>Smith, B.T., C.C. Ribas, B.M. Whitney, B.E. HernÁndez‐baÑos &amp; J. Klicka. 2013. Identifying biases at different spatial and temporal scales of diversification: a case study in the Neotropical parrotlet genus Forpus. Molecular Ecology 22: 483–494.</citation>
+                <citation>Socolar, J., Fernando-Castaño, J. &amp; J. Arango. 2022. Noteworthy bird records from the Araracuara area, Amazonas and Caquetá, Colombia. Ornitología Colombiana 21: 1–9</citation>
+                <citation>La Sorte, F.A. &amp; M. Somveille. 2019. Survey completeness of a global citizen-science database of bird occurrence. Ecography 42: 1–10.</citation>
+                <citation>Stiles, F.G. 2021. Una revisión de las guías de campo disponibles para identificación de las aves de Colombia. Ornitologia Colombiana 2021.</citation>
+                <citation>Stiles, F.G. &amp; J.E. Avendaño. 2019. Distribution and status of Turdus thrushes in white-sand areas of eastern Colombia, with a new subspecies of T. leucomelas. Zootaxa 4567: 161–175.</citation>
+                <citation>Stiles, F.G., L. Rosselli &amp; S. De La Zerda. 2017. Changes over 26 years in the avifauna of the Bogotá region, Colombia: Has climate change become important? Frontiers in Ecology and Evolution 5: 58.</citation>
+                <citation>Stiles, F.G., O, Acevedo-Charry &amp; A.M. Cuervo. 2022. The first Colombian records of the Antillean Nighthawk (Chordeiles gundlachii), with notes on migrant Chordeiles in South America. Ornitología Colombiana 22: 1-9. NUMERACIÓN TEMPORAL.</citation>
+                <citation>Sullivan, B.L., C.L. Wood, M.J. Iliff, R.E. Bonney, D. Fink &amp; S. Kelling. 2009. eBird: A citizen-based bird observation network in the biological sciences. Biological Conservation 142: 2282–2292.</citation>
+                <citation>Tigreros-Andrade, A.F., S. Giraldo Dávila &amp; G. Londoño. 2019. First record of the clay-colored sparrow (Passerellidae: Spizella pallida) for South America. Ornitologia Neotropical 30: 85–87.</citation>
+                <citation>Ubaid, F.K., L.F. Silveira, C.A.B. Medolago, T.V.V. Costa, M.R. Francisco, K.V.C. Barbosa &amp; D.S. Adir. 2018. Taxonomy, natural history, and conservation of the Great-billed Seed-Finch Sporophila maximiliani (Cabanis, 1851) (Thraupidae, Sporophilinae). Zootaxa 4442: 551–571.</citation>
+                <citation>Valerio, O. 2022. eBird Checklist: https://ebird.org/checklist/S104682833. eBird: An online database of bird distribution and abundance [web app]. eBird, Cornell Lab of Ornithology, Ithaca, NY. Available: http://www.ebird.org. (Accessed: Date [June 15, 2022]).</citation>
+                <citation>Valerio, O., J. Stahl, N. Desnoyers &amp; O. Janni. 2019. ebird Checklist: https://ebird.org/ebird/view/checklist/S54145797. eBird: An online database of bird distribution and abundance [web app]. eBird, Cornell Lab of Ornithology, Ithaca, NY. Available: http://www.ebird.org. (Accessed: Date [June 15, 2022]).</citation>
+                <citation>Verón, S. M. 2021. Primer registro del querequeté (Chordeiles gundlachii) para Argentina. El Hornero 36: 127-129.</citation>
+                <citation>Yojanan Lobo–y–Henriques, J.C. 2014. Cave Swallow Petrochelidon fulva and Couch’s Kingbird Tyrannus couchii: a discussion of two difficult cases of potential records for Colombia based on museum specimens. Conservación Colombiana 21: 58–62.</citation>
+          </bibliography>
+            <physical>
+              <objectName>Lista oficial de las aves de Colombia 2022: Adiciones, cambios taxonómicos y actualizaciones de estado</objectName>
+              <characterEncoding>UTF-8</characterEncoding>
+              <dataFormat>
+                <externallyDefinedFormat>
+                  <formatName>PDF</formatName>
+                    <formatVersion>1</formatVersion>
+                </externallyDefinedFormat>
+              </dataFormat>
+              <distribution>
+                <online>
+                  <url function="download">https://asociacioncolombianadeornitologia.org/ojs/index.php/roc/article/view/548/449</url>
+                </online>
+              </distribution>
+            </physical>
+          <resourceLogoUrl>https://raw.githubusercontent.com/SIB-Colombia/logos/main/socio-SiB-aco.png</resourceLogoUrl>
+          <dc:replaces>6c9c4b08-4cec-4160-a708-7f16060d7db0/v1.5.xml</dc:replaces>
+      </gbif>
+    </metadata>
+  </additionalMetadata>
+</eml:eml>

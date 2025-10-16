@@ -1,15 +1,119 @@
 # app/services/reconcile.py
 from __future__ import annotations
 
-from typing import List, Optional, Dict, Any
+from typing import List, Optional, Dict, Any, Tuple, Callable, Awaitable
 from sqlalchemy.orm import Session
 from sqlalchemy import select, delete
+from sqlalchemy.exc import SQLAlchemyError
 import re, unicodedata, asyncio, json
 import httpx
+from collections import OrderedDict
+import logging
+from email.utils import parsedate_to_datetime
+from datetime import datetime, timezone
 
 from ..models import Taxon, Synonym
-from ..clients import gbif, iucn, col  # worms/itis/sib se importan lazy y solo si se necesitan
+from ..clients import gbif, col  # iucn se importa lazy en _iucn_category_safe
 
+# --------------------- Logger ---------------------
+log = logging.getLogger(__name__)
+
+# --------------------- Concurrencia, backoff y caching ---------------------
+_SEM = asyncio.Semaphore(8)  # límite de peticiones simultáneas
+
+_http_client: httpx.AsyncClient | None = None
+
+async def _get_http_client() -> httpx.AsyncClient:
+    """Cliente httpx global con HTTP/2 y límites de pool."""
+    global _http_client
+    if _http_client is None:
+        _http_client = httpx.AsyncClient(
+            http2=True,
+            limits=httpx.Limits(
+                max_connections=40,
+                max_keepalive_connections=20,
+            ),
+        )
+    return _http_client
+
+async def close_http_client():
+    """Llamar en el shutdown global (ej. FastAPI on_event('shutdown')) para cerrar el pool."""
+    global _http_client
+    if _http_client is not None:
+        await _http_client.aclose()
+        _http_client = None
+
+async def fetch_json(url: str, params: dict | None = None, timeout=12, retries=2) -> dict:
+    """HTTP GET con backoff exponencial y límite de concurrencia (429/5xx se reintentan)."""
+    backoff = 0.6
+    async with _SEM:
+        for i in range(retries + 1):
+            try:
+                client = await _get_http_client()
+                r = await client.get(url, params=params, timeout=timeout)
+                if r.status_code == 429 or 500 <= r.status_code < 600:
+                    raise httpx.HTTPStatusError("retryable", request=r.request, response=r)
+                if r.status_code >= 400:
+                    return {}
+                try:
+                    return r.json()
+                except ValueError:
+                    # payload no-JSON: degradar a dict vacío
+                    return {}
+            except httpx.HTTPError as e:  # captura amplia: incluye timeouts
+                if i == retries:
+                    if log.isEnabledFor(logging.DEBUG):
+                        log.debug("fetch_json agotó reintentos %s params=%s: %s", url, params, e)
+                    return {}
+                # Respetar Retry-After si viene (segundos o HTTP-date)
+                wait = backoff
+                try:
+                    ra = getattr(e, "response", None).headers.get("Retry-After") if getattr(e, "response", None) else None
+                    if ra:
+                        try:
+                            wait = float(ra)
+                        except ValueError:
+                            try:
+                                dt = parsedate_to_datetime(ra)
+                                if not dt.tzinfo:
+                                    dt = dt.replace(tzinfo=timezone.utc)
+                                wait = max(0.0, (dt - datetime.now(timezone.utc)).total_seconds())
+                            except Exception:
+                                pass
+                except Exception:
+                    pass
+                await asyncio.sleep(wait)
+                backoff *= 2
+
+# --------- LRU cache muy simple para (provider, normalized_name) -> payload ---------
+_MAX_ASYNC_CACHE = 10_000
+_async_cache: "OrderedDict[Tuple[str, str], Any]" = OrderedDict()
+_cache_lock = asyncio.Lock()
+
+def _lru_get(key: Tuple[str, str]):
+    if key in _async_cache:
+        _async_cache.move_to_end(key)
+        return _async_cache[key]
+    return None
+
+def _lru_put(key: Tuple[str, str], value: Any):
+    _async_cache[key] = value
+    _async_cache.move_to_end(key)
+    if len(_async_cache) > _MAX_ASYNC_CACHE:
+        _async_cache.popitem(last=False)
+
+# --- normaliza la clave para maximizar hits entre variantes (acentos/caso/autores) ---
+async def _cached(provider: str, name: str, coro_factory: Callable[[], Awaitable[Any]]) -> Any:
+    """Cache asíncrono LRU por proveedor/nombre normalizado (con lock)."""
+    key = (provider, _canon(name))
+    async with _cache_lock:
+        hit = _lru_get(key)
+    if hit is not None:
+        return hit
+    res = await coro_factory()
+    async with _cache_lock:
+        _lru_put(key, res)
+    return res
 
 # --------------------- Utilidades de normalización ---------------------
 def _quitar_tildes(s: str) -> str:
@@ -20,7 +124,7 @@ def normaliza_nombre(q: str) -> str:
     - elimina autores finales "(Linnaeus, 1758)"
     - colapsa espacios
     - Género Capitalizado; resto minúsculas
-    - elimina acentos
+    - elimina acentos (para comparaciones)
     """
     q = (q or "").strip()
     q = re.sub(r"\s*\([^)]*\)\s*$", "", q)
@@ -49,9 +153,14 @@ def _norm_taxon_value(v: str | None) -> str | None:
     if not v:
         return v
     m = {
-        "Crocodilia": "Crocodylia",      # normaliza a 'y'
-        "Teleostei": "Actinopterygii",   # clado -> clase
-        "Elasmobranchii": "Chondrichthyes",  # subclase/clado -> clase
+        "Crocodilia": "Crocodylia",        # normaliza a 'y'
+        "Teleostei": "Actinopterygii",     # clado -> clase
+        "Elasmobranchii": "Chondrichthyes",# subclase/clado -> clase
+        # capitalización comunes (solo si llegan exactos)
+        "mammalia": "Mammalia",
+        "aves": "Aves",
+        "amphibia": "Amphibia",
+        "reptilia": "Reptilia",
     }
     s = str(v).strip()
     return m.get(s, s)
@@ -76,6 +185,16 @@ ORDER_TO_CLASS = {
     "pomacentriformes": "Actinopterygii",
     # fósiles/otros
     "ichthyosauria": "Reptilia",
+    # --- mamíferos y aves (extras seguros) ---
+    "artiodactyla": "Mammalia",
+    "perissodactyla": "Mammalia",
+    "rodentia": "Mammalia",
+    "chiroptera": "Mammalia",
+    "passeriformes": "Aves",
+    "accipitriformes": "Aves",
+    "charadriiformes": "Aves",
+    "columbiformes": "Aves",
+    "piciformes": "Aves",
 }
 
 def _fix_class_order(base: dict, prov: dict, itis_hint: dict | None = None):
@@ -101,8 +220,7 @@ def _fix_class_order(base: dict, prov: dict, itis_hint: dict | None = None):
         if c2 != target:
             _set_if(base, prov, "class_name", target.capitalize(), "RULE:clado→clase")
 
-
-# ----------------------- Avisos / disclaimers -----------------------
+# ----------------------- Avisos / helpers de fuentes -----------------------
 UNCERTAIN_STATUSES = {"DOUBTFUL", "UNCERTAIN", "PROVISIONAL"}
 
 def _build_warnings(base: dict, provenance: dict) -> list[str]:
@@ -116,7 +234,7 @@ def _build_warnings(base: dict, provenance: dict) -> list[str]:
     if rule_fields:
         warns.append(
             "Campos inferidos por regla interna sin respaldo explícito de fuente: "
-            + ", ".join(rule_fields) + ". Recomendado validar con GBIF/ITIS/CoL."
+            + ", ".join(rule_fields) + ". Recomendado validar con GBIF/ITIS/CoL/WoRMS."
         )
 
     # 2) Estatus dudoso
@@ -130,11 +248,15 @@ def _build_warnings(base: dict, provenance: dict) -> list[str]:
 
     return warns
 
-# --- Recolector seguro de fuentes desde provenance (evita TypeError) ---
+def _collapse_base(src: str) -> str:
+    s = src.split(":", 1)[0] if ":" in src else src
+    return {"CoL": "Catalogue of Life"}.get(s, s)
+
 def _collect_sources(prov: dict | None) -> list[str]:
     """
     Extrae etiquetas de fuente desde provenance sin romper si hay dicts/listas.
-    Normaliza 'PREFERRED:Fuente' -> 'Fuente'. Filtra RULE*.
+    Normaliza 'PREFERRED:Fuente' -> 'Fuente'. Filtra RULE*. Colapsa prefijos "X:detalle".
+    Soporta etiquetas compuestas separadas por comas.
     """
     if not isinstance(prov, dict):
         return []
@@ -151,15 +273,59 @@ def _collect_sources(prov: dict | None) -> list[str]:
                         raw.append(frm)
                     if isinstance(to, str) and to:
                         raw.append(to)
-    cleaned = []
+    cleaned: set[str] = set()
     for s in raw:
         if s.startswith("PREFERRED:"):
             s = s.split(":", 1)[1]
         if s.startswith("RULE"):
             continue  # no meter reglas en fuentes
-        cleaned.append("Catalogue of Life" if s == "CoL" else s)
-    return sorted(set(cleaned))
+        # partir por comas y normalizar cada parte
+        for part in (p.strip() for p in s.split(",") if p.strip()):
+            cleaned.add(_collapse_base(part))
+    return sorted(cleaned)
 
+# Helper global para normalizar etiquetas de fuente
+def _norm_src_label(x: str) -> Optional[str]:
+    if not x:
+        return None
+    if x.startswith("RULE"):
+        return None
+    # colapsar "Fuente:subtag" a "Fuente" (ej. "GBIF:detail" → "GBIF")
+    if ":" in x:
+        x = x.split(":", 1)[0]
+    alias = {
+        "CoL": "Catalogue of Life",
+        "reptile_db": "Reptile Database",
+        "batrachia": "Batrachia",
+        "cites_public": "CITES (Species+)",
+        "aco_aves": "ACO Aves",
+        "mamiferos_2024": "Mamíferos 2024 (SIB)",
+        "SIB": "SIB Colombia",
+        "sib": "SIB Colombia",
+        "SIB-Colombia": "SIB Colombia",
+    }
+    return alias.get(x, x)
+
+# ----------------------- NUEVO: whitelist de fuentes por clase -----------------------
+ALLOWED_BY_CLASS: Dict[str, set[str]] = {
+    "Aves": {"Catalogue of Life", "ITIS", "GBIF", "ACO Aves", "SIB Colombia", "CITES (Species+)"},
+    "Mammalia": {"Catalogue of Life", "ITIS", "GBIF", "SIB Colombia", "Mamíferos 2024 (SIB)", "CITES (Species+)"},
+    "Reptilia": {"Catalogue of Life", "ITIS", "GBIF", "Reptile Database", "SIB Colombia", "CITES (Species+)"},
+    "Amphibia": {"Catalogue of Life", "ITIS", "GBIF", "Batrachia", "SIB Colombia", "CITES (Species+)"},
+    # Fallback si no se conoce la clase
+    "*": {"Catalogue of Life", "ITIS", "GBIF", "SIB Colombia", "CITES (Species+)"},
+}
+
+def filter_sources_by_class(found: List[str], class_name: Optional[str]) -> List[str]:
+    """
+    Filtra etiquetas de presencia según la clase resuelta.
+    - Normaliza etiquetas con _norm_src_label
+    - Aplica ALLOWED_BY_CLASS usando la clase (o '*' si no hay)
+    """
+    allowed = ALLOWED_BY_CLASS.get(class_name or "", ALLOWED_BY_CLASS["*"])
+    normed = [_norm_src_label(s) for s in (found or [])]
+    normed = [s for s in normed if s]  # quita None
+    return [s for s in normed if s in allowed]
 
 # ----------------------- Campos que intentaremos completar -----------------------
 TAXO_FIELDS = [
@@ -186,6 +352,197 @@ MAP_ITIS = {
     "tribe":"tribe","subtribe":"subtribe","genus":"genus","subgenus":"subgenus",
 }
 
+# --- Mapeo genérico DWC/local → columnas internas ---
+MAP_DWC_LOCAL = {
+    "kingdom": "kingdom",
+    "phylum": "phylum",
+    "class": "class_name",
+    "order": "order_name",
+    "superfamily": "superfamily",
+    "family": "family",
+    "subfamily": "subfamily",
+    "tribe": "tribe",
+    "subtribe": "subtribe",
+    "genus": "genus",
+    "subgenus": "subgenus",
+    # otros DWC ignorados para columnas internas
+    "specificEpithet": None,
+    "infraspecificEpithet": None,
+    "taxonRank": None,
+    "taxonomicStatus": None,
+}
+
+# ----------------------- Helpers genéricos de taxonomía -----------------------
+def _taxonomy_from_generic(item: dict, mapping: dict[str, str|None] = MAP_DWC_LOCAL) -> dict:
+    """Mapea campos de item → nuestros nombres, normalizando valores."""
+    out: Dict[str, Any] = {k: None for k in TAXO_FIELDS}
+    if not isinstance(item, dict):
+        return out
+    for src, dst in mapping.items():
+        if not dst:
+            continue
+        v = item.get(src)
+        if v:
+            out[dst] = _norm_taxon_value(v)
+    return out
+
+async def _safe_tax(label: str, coro) -> tuple[str, dict]:
+    """Envoltorio seguro: devuelve (label, dict_tax) o (label, {})."""
+    try:
+        d = await coro
+        if isinstance(d, dict):
+            return (label, d)
+    except Exception as e:
+        if log.isEnabledFor(logging.DEBUG):
+            log.debug("Extractor %s falló: %s", label, e)
+    return (label, {})
+
+# ---------- extractores por fuente (flexibles) ----------
+async def _tax_from_reptile_db(nombre: str) -> dict:
+    try:
+        from ..clients import reptile_db
+        for fn in ("taxonomy", "get", "fetch", "detail", "lookup"):
+            f = getattr(reptile_db, fn, None)
+            if callable(f):
+                raw = await f(nombre)
+                if isinstance(raw, dict) and raw:
+                    m = {
+                        "kingdom": "kingdom", "phylum": "phylum",
+                        "class": "class_name", "order": "order_name",
+                        "superfamily": "superfamily", "family": "family",
+                        "subfamily": "subfamily", "tribe": "tribe", "subtribe": "subtribe",
+                        "genus": "genus", "subgenus": "subgenus",
+                        "class_name": "class_name", "order_name": "order_name"
+                    }
+                    return _taxonomy_from_generic(raw, m)
+    except Exception as e:
+        if log.isEnabledFor(logging.DEBUG):
+            log.debug("Reptile DB falló: %s", e)
+    return {}
+
+async def _tax_from_batrachia(nombre: str) -> dict:
+    try:
+        from ..clients import batrachia
+        for fn in ("taxonomy", "get", "fetch", "detail", "lookup"):
+            f = getattr(batrachia, fn, None)
+            if callable(f):
+                raw = await f(nombre)
+                if isinstance(raw, dict) and raw:
+                    m = {
+                        "kingdom": "kingdom", "phylum": "phylum",
+                        "class": "class_name", "order": "order_name",
+                        "superfamily": "superfamily", "family": "family",
+                        "subfamily": "subfamily", "tribe": "tribe", "subtribe": "subtribe",
+                        "genus": "genus", "subgenus": "subgenus",
+                        "class_name": "class_name", "order_name": "order_name"
+                    }
+                    return _taxonomy_from_generic(raw, m)
+    except Exception as e:
+        if log.isEnabledFor(logging.DEBUG):
+            log.debug("Batrachia falló: %s", e)
+    return {}
+
+async def _tax_from_cites(nombre: str) -> dict:
+    """CITES suele no aportar jerarquía completa; intentamos lo que haya."""
+    try:
+        from ..clients import cites_public
+        for fn in ("taxonomy", "get", "fetch", "detail", "lookup"):
+            f = getattr(cites_public, fn, None)
+            if callable(f):
+                raw = await f(nombre)
+                if isinstance(raw, dict) and raw:
+                    m = {
+                        "class": "class_name", "order": "order_name",
+                        "family": "family", "genus": "genus",
+                    }
+                    return _taxonomy_from_generic(raw, m)
+    except Exception as e:
+        if log.isEnabledFor(logging.DEBUG):
+            log.debug("CITES falló: %s", e)
+    return {}
+
+async def _tax_from_aco_birds(nombre: str) -> dict:
+    """De la ingesta local de ACO: intenta exponer jerarquía."""
+    try:
+        from ..ingestors import aco_birds as ing_aco
+        for fn in ("taxonomy", "get", "lookup", "detail"):
+            f = getattr(ing_aco, fn, None)
+            if callable(f):
+                raw = await f(nombre)
+                if isinstance(raw, dict) and raw:
+                    m = {
+                        "kingdom": "kingdom", "phylum": "phylum",
+                        "class": "class_name", "order": "order_name",
+                        "superfamily": "superfamily", "family": "family",
+                        "subfamily": "subfamily", "tribe": "tribe",
+                        "genus": "genus", "subgenus": "subgenus",
+                        "class_name": "class_name", "order_name": "order_name"
+                    }
+                    return _taxonomy_from_generic(raw, m)
+    except Exception as e:
+        if log.isEnabledFor(logging.DEBUG):
+            log.debug("ACO Birds falló: %s", e)
+    return {}
+
+async def _tax_from_mammals_2024(nombre: str) -> dict:
+    """De la ingesta local de Mamíferos 2024 SIB: intenta exponer jerarquía."""
+    try:
+        from ..ingestors import sib_mammals_2024 as ing_mam
+        for fn in ("taxonomy", "get", "lookup", "detail"):
+            f = getattr(ing_mam, fn, None)
+            if callable(f):
+                raw = await f(nombre)
+                if isinstance(raw, dict) and raw:
+                    m = {
+                        "kingdom": "kingdom", "phylum": "phylum",
+                        "class": "class_name", "order": "order_name",
+                        "superfamily": "superfamily", "family": "family",
+                        "subfamily": "subfamily", "tribe": "tribe",
+                        "genus": "genus", "subgenus": "subgenus",
+                        "class_name": "class_name", "order_name": "order_name"
+                    }
+                    return _taxonomy_from_generic(raw, m)
+    except Exception as e:
+        if log.isEnabledFor(logging.DEBUG):
+            log.debug("Mamíferos 2024 falló: %s", e)
+    return {}
+
+async def _tax_from_sib(nombre: str) -> dict:
+    """Extractor simple del SIB (general) desde el primer match."""
+    try:
+        from ..clients import sib
+        j = await sib.record_search(nombre, size=1)
+
+        items = None
+        if isinstance(j, dict):
+            for k in ("results", "data", "records", "items"):
+                if isinstance(j.get(k), list) and j[k]:
+                    items = j[k]
+                    break
+        elif isinstance(j, list):
+            items = j
+
+        if not items:
+            return {}
+
+        it = items[0] or {}
+        m = {
+            "kingdom": "kingdom", "phylum": "phylum",
+            "class": "class_name", "order": "order_name",
+            "superfamily": "superfamily", "family": "family",
+            "subfamily": "subfamily", "tribe": "tribe", "subtribe": "subtribe",
+            "genus": "genus", "subgenus": "subgenus",
+        }
+        out = {k: None for k in TAXO_FIELDS}
+        for src, dst in m.items():
+            v = it.get(src)
+            if v:
+                out[dst] = _norm_taxon_value(v)
+        return out
+    except Exception as e:
+        if log.isEnabledFor(logging.DEBUG):
+            log.debug("SIB general falló: %s", e)
+        return {}
 
 # ----------------------------- Compatibilidad de clasificación (A) -----------------------------
 def _compatible_taxonomy(base: Dict[str, Any], cand: Dict[str, Any]) -> bool:
@@ -193,6 +550,7 @@ def _compatible_taxonomy(base: Dict[str, Any], cand: Dict[str, Any]) -> bool:
     Coincidencias en >=2 (phylum, class, order, family, genus)
     PERO si ambos traen family y difiere, no es compatible.
     Además, exigimos match en family o genus cuando ambos existan.
+    Para rank GENUS, permitimos compatibilidad si coincide family (1 match).
     """
     def norm(x):
         s = _norm_taxon_value(x)
@@ -225,8 +583,11 @@ def _compatible_taxonomy(base: Dict[str, Any], cand: Dict[str, Any]) -> bool:
         return False
 
     matches = sum(1 for k in ("phylum","class","order","family","genus") if b[k] and c[k] and b[k] == c[k])
-    return matches >= 2
 
+    if (base.get("rank") or "").upper() == "GENUS":
+        return (b["family"] and c["family"] and b["family"] == c["family"]) or matches >= 2
+
+    return matches >= 2
 
 # ----------------------------- Lectores por fuente -----------------------------
 async def _col_best(nombre: str, base_for_compat: Dict[str, Any] | None = None) -> Dict[str, Any] | None:
@@ -238,7 +599,7 @@ async def _col_best(nombre: str, base_for_compat: Dict[str, Any] | None = None) 
       4) Si no hay exactos, elegir el primer aceptado compatible.
     """
     try:
-        data = await col.search_name(nombre)
+        data = await _cached("col.search", nombre, lambda: col.search_name(nombre))
         if not isinstance(data, dict):
             return None
         items = data.get("result") or data.get("results") or data.get("items") or []
@@ -252,8 +613,11 @@ async def _col_best(nombre: str, base_for_compat: Dict[str, Any] | None = None) 
             detail = None
             if usage_id:
                 try:
-                    detail = await col._detail_for_usage(usage_id)  # type: ignore[attr-defined]
-                except Exception:
+                    # TODO: si existe un endpoint público estable, reemplazar este método privado
+                    detail = await _cached(f"col.detail:{usage_id}", str(usage_id), lambda: col._detail_for_usage(usage_id))  # type: ignore[attr-defined]
+                except Exception as e:
+                    if log.isEnabledFor(logging.DEBUG):
+                        log.debug("CoL detail fallo id=%s: %s", usage_id, e)
                     detail = None
             merged = dict(it)
             if isinstance(detail, dict) and detail:
@@ -321,7 +685,9 @@ async def _col_best(nombre: str, base_for_compat: Dict[str, Any] | None = None) 
             if b:
                 return b[0]
         return None
-    except Exception:
+    except Exception as e:
+        if log.isEnabledFor(logging.DEBUG):
+            log.debug("CoL search/detail fallo para %s: %s", nombre, e)
         return None
 
 def _taxonomy_from_col(item: dict) -> dict:
@@ -342,8 +708,13 @@ def _taxonomy_from_col(item: dict) -> dict:
             or node.get("labelHtml")
             or ""
         )
-        if isinstance(n, str): n = n.strip()
-        else: n = str(n).strip()
+        if not isinstance(n, str):
+            n = str(n)
+        n = n.strip()
+        # limpieza defensiva de HTML (p. ej. <i>Genus</i>)
+        if "<" in n and ">" in n:
+            n = re.sub(r"<[^>]+>", "", n)
+
         if not r or not n:
             continue
 
@@ -389,37 +760,59 @@ def _taxonomy_from_itis_hierarchy(hierarchy_list: list[dict]) -> dict:
 
     return tax
 
+# --------- CAMBIO: WoRMS usando fetch_best + caching ---------
 async def _worms_best(nombre: str) -> Dict[str, Any] | None:
     try:
         from ..clients import worms
-        arr = await worms.search_name(nombre)
-        if isinstance(arr, list) and arr:
-            return arr[0]
-    except Exception:
-        pass
+        best: Dict[str, Any] | None = await _cached("worms.fetch_best", nombre, lambda: worms.fetch_best(nombre))
+        if isinstance(best, dict) and best:
+            return best
+    except Exception as e:
+        if log.isEnabledFor(logging.DEBUG):
+            log.debug("WoRMS fetch_best falló: %s", e)
     return None
 
 def _taxonomy_from_worms(item: dict) -> dict:
-    res: Dict[str,str] = {}
+    """
+    Mapea campos de WoRMS a nuestros nombres, tolerando variaciones de clave
+    como 'Class'/'Order' u objetos híbridos.
+    """
+    res: Dict[str, str] = {}
     if not isinstance(item, dict):
         return res
+    # Normaliza claves a minúscula para evitar misses (e.g., 'Class', 'Order')
+    src_item = { (k.lower() if isinstance(k, str) else k): v for k, v in item.items() }
     for src, dst in MAP_WRMS.items():
-        v = item.get(src)
+        v = src_item.get(src)  # src está en minúsculas en MAP_WRMS
         if v:
             res[dst] = v
     return res
 
-
 # ----------------------------- Preferencias por "fuente más actual" -----------------------------
 SOURCE_PRIORITY = {
-    # mayor es "más fresco": CoL (mensual) > WoRMS (curado continuo marino) > ITIS > GBIF > RULE
+    # mayor es "más fresco": CoL (mensual) > WoRMS (curado continuo marino) > ITIS/SIB > temáticos/locales > GBIF > RULE
     "Catalogue of Life": 4,
-    "CoL": 4,  # compat
+    "CoL": 4,
     "WoRMS": 3,
     "ITIS": 2,
+    "SIB Colombia": 2,                 # ← SIB al nivel de ITIS
+    "Reptile Database": 2,
+    "Batrachia": 2,
+    "ACO Aves": 2,
+    "Mamíferos 2024 (SIB)": 2,
+    # CITES es normativa
+    "CITES (Species+)": 1,
     "GBIF": 1,
     "GBIF:detail": 1,
     "RULE": 0,  # cualquier prefijo RULE*
+}
+
+LOCAL_SOURCE_WEIGHTS = {
+    "Catalogue of Life": 4, "WoRMS": 3, "ITIS": 2,
+    "GBIF": 1, "GBIF:detail": 1,
+    "ACO Aves": 2, "Mamíferos 2024 (SIB)": 2,
+    "Reptile Database": 2, "Batrachia": 2, "CITES (Species+)": 1,
+    "SIB Colombia": 2, "RULE": 0,
 }
 
 def _src_rank(src: str) -> int:
@@ -427,10 +820,30 @@ def _src_rank(src: str) -> int:
         return -1
     if src.startswith("PREFERRED:"):
         src = src.split(":", 1)[1]
-    base = src.split(":", 1)[0]
-    if base == "CoL":
-        base = "Catalogue of Life"
-    return SOURCE_PRIORITY.get(base, 0)
+    # soportar etiquetas compuestas "A,B"
+    parts = [p.strip() for p in src.split(",") if p.strip()]
+    best = -1
+    for p in parts or [""]:
+        base = p.split(":", 1)[0]
+        if base == "CoL":
+            base = "Catalogue of Life"
+        best = max(best, SOURCE_PRIORITY.get(base, 0))
+    return best
+
+def _src_weight(label: str) -> int:
+    if not isinstance(label, str) or not label:
+        return 0
+    # Normaliza igual que _src_rank
+    if label.startswith("PREFERRED:"):
+        label = label.split(":", 1)[1]
+    parts = [p.strip() for p in label.split(",") if p.strip()]
+    best = 0
+    for p in parts or [""]:
+        base = p.split(":", 1)[0]
+        if base == "CoL":
+            base = "Catalogue of Life"
+        best = max(best, LOCAL_SOURCE_WEIGHTS.get(base, SOURCE_PRIORITY.get(base, 0)))
+    return best
 
 def _record_override(prov: dict, field: str, old_val, old_src: str, new_val, new_src: str):
     prov.setdefault("_overrides", {})
@@ -507,6 +920,46 @@ def _apply_fresh_overrides(base: dict, prov: dict, candidates: list[tuple[str, d
             if tax.get(field) and _lowrank_guard_ok(field, base, tax):
                 _prefer_if_better(base, prov, field, tax[field], label)
 
+# ---------- Ajuste: limitar a RULE* y evaluar compat con copia temporal ----------
+def _apply_fresh_overrides_only_rules(base: dict, prov: dict, candidates: list[tuple[str, dict]]):
+    """
+    Reemplaza SOLO campos cuya fuente actual sea RULE*, y SOLO ese campo.
+    Evalúa compatibilidad usando una copia temporal de base con el campo puesto en None.
+    """
+    for field in TAXO_FIELDS:
+        cur_src = prov.get(field)
+        if not (isinstance(cur_src, str) and cur_src.startswith("RULE")):
+            continue
+
+        cur_val = base.get(field)
+        cur_src_val = prov.pop(field, None)
+        base[field] = None  # deja vacío para evaluar fresco
+
+        best_val, best_src_rank, best_src = None, -10**9, None
+        for label, tax in candidates:
+            if not isinstance(tax, dict) or not tax:
+                continue
+            tmp_base = dict(base)
+            tmp_base[field] = None
+            if not _compatible_taxonomy(tmp_base, tax):
+                continue
+            if not _lowrank_guard_ok(field, tmp_base, tax):
+                continue
+            v = tax.get(field)
+            if v in (None, ""):
+                continue
+            rank = _src_rank(label)
+            if (rank > best_src_rank) or (rank == best_src_rank and str(v) < str(best_val or "\uffff")):
+                best_val, best_src_rank, best_src = v, rank, label
+
+        if best_val is not None:
+            base[field] = _norm_taxon_value(best_val) if field in {"kingdom","phylum","class_name","order_name","superfamily","family","subfamily","tribe","subtribe","genus","subgenus"} else best_val
+            prov[field] = f"PREFERRED:{best_src}"
+            _record_override(prov, field, cur_val, cur_src_val if isinstance(cur_src_val, str) else "", best_val, f"PREFERRED:{best_src}")
+        else:
+            base[field] = cur_val
+            if cur_src_val is not None:
+                prov[field] = cur_src_val
 
 # ----------------------------- Adopción laxa -----------------------------
 def _norm_lc(x):
@@ -534,7 +987,6 @@ def _lenient_highrank_merge(base: dict, prov: dict, src_tax: dict, label: str):
     if not base.get("order_name") and src_tax.get("order_name") and (same_cls or same_ph):
         _prefer_if_better(base, prov, "order_name", src_tax["order_name"], label)
 
-
 # ----------------------------- Enriquecimiento ITIS (full/partial) -----------------------------
 async def _enrich_with_itis(base: dict, itis_client, tsn: str | None) -> dict:
     """
@@ -548,7 +1000,9 @@ async def _enrich_with_itis(base: dict, itis_client, tsn: str | None) -> dict:
     fr = None
     try:
         fr = await itis_client.get_full_record(tsn)
-    except Exception:
+    except Exception as e:
+        if log.isEnabledFor(logging.DEBUG):
+            log.debug("ITIS get_full_record falló: %s", e)
         fr = None
 
     hlist = None
@@ -564,7 +1018,9 @@ async def _enrich_with_itis(base: dict, itis_client, tsn: str | None) -> dict:
             fh = await itis_client.get_full_hierarchy(tsn)
             if isinstance(fh, dict):
                 hlist = fh.get("hierarchyList") or fh.get("hierarchy") or None
-        except Exception:
+        except Exception as e:
+            if log.isEnabledFor(logging.DEBUG):
+                log.debug("ITIS get_full_hierarchy falló: %s", e)
             hlist = None
 
     if not hlist:
@@ -572,7 +1028,9 @@ async def _enrich_with_itis(base: dict, itis_client, tsn: str | None) -> dict:
             up = await itis_client.get_hierarchy_up(tsn)
             if isinstance(up, dict):
                 hlist = up.get("hierarchyList") or up.get("hierarchy") or None
-        except Exception:
+        except Exception as e:
+            if log.isEnabledFor(logging.DEBUG):
+                log.debug("ITIS get_hierarchy_up falló: %s", e)
             hlist = None
 
     if hlist:
@@ -587,7 +1045,7 @@ async def _enrich_with_itis(base: dict, itis_client, tsn: str | None) -> dict:
 async def _itis_hierarchy_by_name(nombre: str) -> dict:
     try:
         from ..clients import itis
-        d = await itis.search_by_scientific_name(nombre)
+        d = await _cached("itis.search", nombre, lambda: itis.search_by_scientific_name(nombre))
         if not isinstance(d, dict):
             return {}
 
@@ -612,9 +1070,7 @@ async def _itis_hierarchy_by_name(nombre: str) -> dict:
 
         # -------- helpers locales --------
         async def _http_get(url: str, params: dict) -> dict:
-            async with httpx.AsyncClient(timeout=12) as client:
-                r = await client.get(url, params=params)
-            return r.json() if r.status_code < 400 else {}
+            return await fetch_json(url, params=params, timeout=12, retries=2)
 
         def _nodes_to_maps(nodes: list[dict]) -> tuple[dict, dict]:
             """Devuelve (tax_dict, tsn_por_rango_en_minusculas)."""
@@ -659,6 +1115,7 @@ async def _itis_hierarchy_by_name(nombre: str) -> dict:
             if isinstance(nodes2, list) and nodes2:
                 parsed, tsn_by_rank = _nodes_to_maps(nodes2)
 
+        # >>> Corrección de NameError: encapsular en if not parsed <<<
         if not parsed:
             j3 = await _http_get("https://www.itis.gov/ITISWebService/jsonservice/getHierarchyUpFromTSN", {"tsn": tsn})
             nodes3 = ((j3 or {}).get("hierarchyList") or {}).get("hierarchy")
@@ -700,7 +1157,9 @@ async def _itis_hierarchy_by_name(nombre: str) -> dict:
             parsed["subfamily"] = val or parsed.get("subfamily")
 
         return parsed
-    except Exception:
+    except Exception as e:
+        if log.isEnabledFor(logging.DEBUG):
+            log.debug("ITIS hierarchy por nombre falló para %s: %s", nombre, e)
         return {}
 
 # ----------------------------- Marcadores de presencia (solo etiquetas) -----------------------------
@@ -709,7 +1168,9 @@ async def _found_in_worms(nombre: str) -> bool:
         from ..clients import worms
         w = await worms.search_name(nombre)
         return isinstance(w, list) and len(w) > 0
-    except Exception:
+    except Exception as e:
+        if log.isEnabledFor(logging.DEBUG):
+            log.debug("Presence WoRMS falló: %s", e)
         return False
 
 async def _found_in_itis(nombre: str) -> bool:
@@ -719,14 +1180,18 @@ async def _found_in_itis(nombre: str) -> bool:
         if not isinstance(d, dict):
             return False
         return bool(d.get("scientificNames") or d.get("acceptedNameList"))
-    except Exception:
+    except Exception as e:
+        if log.isEnabledFor(logging.DEBUG):
+            log.debug("Presence ITIS falló: %s", e)
         return False
 
 async def _found_in_col(nombre: str) -> bool:
     try:
         data = await col.search_name(nombre)
         return isinstance(data, dict) and ((data.get("total") or 0) > 0)
-    except Exception:
+    except Exception as e:
+        if log.isEnabledFor(logging.DEBUG):
+            log.debug("Presence CoL falló: %s", e)
         return False
 
 async def _found_in_sib(nombre: str) -> bool:
@@ -741,27 +1206,84 @@ async def _found_in_sib(nombre: str) -> bool:
                 if isinstance(v, list) and len(v) > 0:
                     return True
         return False
-    except Exception:
+    except Exception as e:
+        if log.isEnabledFor(logging.DEBUG):
+            log.debug("Presence SIB falló: %s", e)
+        return False
+
+# --- nuevas presencias de tus conectores/ingestas ---
+async def _found_in_reptile_db(nombre: str) -> bool:
+    try:
+        from ..clients import reptile_db
+        return await reptile_db.exists(nombre)
+    except Exception as e:
+        if log.isEnabledFor(logging.DEBUG):
+            log.debug("Presence Reptile DB falló: %s", e)
+        return False
+
+async def _found_in_batrachia(nombre: str) -> bool:
+    try:
+        from ..clients import batrachia
+        return await batrachia.exists(nombre)
+    except Exception as e:
+        if log.isEnabledFor(logging.DEBUG):
+            log.debug("Presence Batrachia falló: %s", e)
+        return False
+
+async def _found_in_cites_public(nombre: str) -> bool:
+    try:
+        from ..clients import cites_public
+        return await cites_public.exists(nombre)
+    except Exception as e:
+        if log.isEnabledFor(logging.DEBUG):
+            log.debug("Presence CITES falló: %s", e)
+        return False
+
+async def _found_in_aco_birds(nombre: str) -> bool:
+    try:
+        from ..ingestors import aco_birds as ing_aco
+        return await ing_aco.exists(nombre)
+    except Exception as e:
+        if log.isEnabledFor(logging.DEBUG):
+            log.debug("Presence ACO Birds falló: %s", e)
+        return False
+
+async def _found_in_sib_mammals(nombre: str) -> bool:
+    try:
+        from ..ingestors import sib_mammals_2024 as ing_mam
+        return await ing_mam.exists(nombre)
+    except Exception as e:
+        if log.isEnabledFor(logging.DEBUG):
+            log.debug("Presence Mamíferos 2024 falló: %s", e)
         return False
 
 async def buscar_en_fuentes_externas(nombre: str) -> List[str]:
     nombre_n = normaliza_nombre(nombre)
-    checks: List[tuple[str, asyncio.Task]] = [
-        ("Catalogue of Life", asyncio.create_task(_found_in_col(nombre_n))),
-        ("WoRMS",             asyncio.create_task(_found_in_worms(nombre_n))),
-        ("ITIS",              asyncio.create_task(_found_in_itis(nombre_n))),
-        ("SIB Colombia",      asyncio.create_task(_found_in_sib(nombre_n))),
-    ]
-    halladas: List[str] = []
-    await asyncio.gather(*(t for _, t in checks), return_exceptions=True)
-    for label, task in checks:
-        try:
-            if task.result():
-                halladas.append(label)
-        except Exception:
-            pass
-    return halladas
 
+    async def _with_timeout(coro, seconds=5):
+        try:
+            return await asyncio.wait_for(coro, timeout=seconds)
+        except Exception:
+            return False
+
+    tasks: List[tuple[str, asyncio.Task]] = [
+        ("Catalogue of Life", asyncio.create_task(_with_timeout(_found_in_col(nombre_n)))),
+        ("WoRMS",             asyncio.create_task(_with_timeout(_found_in_worms(nombre_n)))),
+        ("ITIS",              asyncio.create_task(_with_timeout(_found_in_itis(nombre_n)))),
+        ("SIB Colombia",      asyncio.create_task(_with_timeout(_found_in_sib(nombre_n)))),
+        ("reptile_db",        asyncio.create_task(_with_timeout(_found_in_reptile_db(nombre_n)))),
+        ("batrachia",         asyncio.create_task(_with_timeout(_found_in_batrachia(nombre_n)))),
+        ("cites_public",      asyncio.create_task(_with_timeout(_found_in_cites_public(nombre_n)))),
+        ("aco_aves",          asyncio.create_task(_with_timeout(_found_in_aco_birds(nombre_n)))),
+        ("mamiferos_2024",    asyncio.create_task(_with_timeout(_found_in_sib_mammals(nombre_n)))),
+    ]
+
+    halladas: List[str] = []
+    results = await asyncio.gather(*(t for _, t in tasks), return_exceptions=True)
+    for (label, _), res in zip(tasks, results):
+        if isinstance(res, bool) and res:
+            halladas.append(label)
+    return sorted(set(halladas))
 
 # ----------------------------- Fusor / Enriquecedor -----------------------------
 def _set_if(target: dict, prov: dict, field: str, value, src: str):
@@ -819,19 +1341,165 @@ def _extract_authorship_from_scientific(sci: Optional[str]) -> Optional[str]:
     m = re.search(r"\(([^()]*)\)\s*$", sci)
     return m.group(1) if m else None
 
+# --------- AUTORÍA ROBUSTA: extractor flexible desde la cadena final ----------
+AUTH_TAIL = re.compile(
+    r"""
+    (?:
+      ^|                # inicio de cadena o cualquier prefijo
+      .*?\b[a-z\-]+     # último epíteto (minúsculas) previo a la autoría
+    )
+    \s+
+    (?P<auth>
+      (?:[A-Z][\w\.\-']+(?:\s+(?:ex|in)\s+[A-Z][\w\.\-']+)?   # Autor o "Autor ex/in Autor"
+         (?:\s*(?:&|et)\s*[A-Z][\w\.\-']+)*                  # &/et otro autor
+      )
+      ,\s*\d{3,4}(?:[a-z])?                                  # año (1758 o 1758a)
+    )
+    \s*$               # fin de cadena
+    """,
+    re.VERBOSE
+)
+
+def _extract_authorship_flexible(sci: Optional[str]) -> Optional[str]:
+    """
+    Extrae autoría desde la cadena científica final:
+      - con paréntesis: "... (Autor, 1758)" -> "Autor, 1758"
+      - sin paréntesis (común en géneros): "Melanoides Olivier, 1804" -> "Olivier, 1804"
+      - soporta "ex"/"in", "&"/"et", abreviaturas y sufijo de año con letra.
+    """
+    if not sci:
+        return None
+    s = sci.strip()
+
+    # 1) Con paréntesis al final
+    m = re.search(r"\(([^()]*)\)\s*$", s)
+    if m:
+        val = m.group(1).strip()
+        return val or None
+
+    # 2) Sin paréntesis: cola de autoría robusta (uso search para mayor tolerancia)
+    m2 = AUTH_TAIL.search(s)
+    if m2:
+        return m2.group("auth").strip()
+
+    return None
+
+# ----------------------------- Sinónimos GBIF (paginado + dedupe robusto) -----------------------------
+def _norm_syn_key(syn: dict) -> tuple[str, str, str]:
+    def n(x): 
+        return (x or "").strip().lower()
+    return (n(syn.get("scientificName")), n(syn.get("authorship")), n(syn.get("rank")))
+
 async def _gbif_synonyms(usage_key: int) -> list[dict]:
     try:
-        async with httpx.AsyncClient(timeout=20) as client:
-            r = await client.get(f"https://api.gbif.org/v1/species/{usage_key}/synonyms")
-            if r.status_code < 400:
-                j = r.json()
-                if isinstance(j, dict) and "results" in j:
-                    return j["results"]
-                if isinstance(j, list):
-                    return j
-    except Exception:
-        pass
-    return []
+        base = f"https://api.gbif.org/v1/species/{usage_key}/synonyms"
+        out, limit, offset = [], 500, 0
+        while True:
+            j = await fetch_json(base, params={"limit": limit, "offset": offset}, timeout=20, retries=2)
+            rows = j.get("results") if isinstance(j, dict) else (j if isinstance(j, list) else [])
+            out.extend(rows or [])
+            if not isinstance(j, dict) or (offset + limit) >= (j.get("count") or len(rows or [])):
+                break
+            offset += limit
+        # Dedupe robusto
+        seen: set[tuple[str,str,str]] = set()
+        uniq: list[dict] = []
+        for s in out:
+            key = _norm_syn_key(s)
+            if key in seen:
+                continue
+            seen.add(key)
+            uniq.append(s)
+        return uniq
+    except Exception as e:
+        if log.isEnabledFor(logging.DEBUG):
+            log.debug("GBIF synonyms falló para %s: %s", usage_key, e)
+        return []
+
+# --------- NUEVOS: Scoring y Quorum ---------
+def _field_score(base: dict, cand_tax: dict, label: str, field: str, status: str | None) -> int:
+    score = _src_weight(label)
+    st = (status or "").upper()
+    if st == "ACCEPTED":
+        score += 1
+    if st in UNCERTAIN_STATUSES:
+        score -= 1
+
+    # señales de compatibilidad
+    fam_b = (base.get("family") or "").strip().lower()
+    fam_c = (cand_tax.get("family") or "").strip().lower()
+    gen_b = (base.get("genus") or "").strip().lower()
+    gen_c = (cand_tax.get("genus") or "").strip().lower()
+    if fam_b and fam_c and fam_b == fam_c:
+        score += 1
+    if gen_b and gen_c and gen_b == gen_c:
+        score += 1
+
+    highs = sum(bool(cand_tax.get(k)) for k in ("phylum","class_name","order_name","family","genus"))
+    if highs >= 4:
+        score += 1
+    return score
+
+def _apply_scores_and_quorum(base: dict, prov: dict, candidates: list[tuple[str, dict, dict]]):
+    """
+    candidates: [(label, tax_dict, meta_dict)]
+    meta_dict puede incluir {"status": "..."} u otros hints.
+    """
+    decisions = {}
+
+    def _best_tuple(srcs: list[tuple[str,int]]) -> tuple[int,int,int]:
+        uniq = {s for s,_ in srcs}
+        best_priority = max((_src_weight(s) for s,_ in srcs), default=-999)
+        return (len(uniq), sum(sc for s,sc in srcs), best_priority)
+
+    for field in TAXO_FIELDS:
+        props = []
+        for label, tax, meta in candidates:
+            v = tax.get(field)
+            if not v:
+                continue
+            sc = _field_score(base, tax, label, field, (meta or {}).get("status"))
+            props.append((label, v, sc))
+
+        if not props:
+            continue
+
+        # agrupa por valor
+        quorum_map: dict[str, list[tuple[str,int]]] = {}
+        for label, v, sc in props:
+            quorum_map.setdefault(str(v), []).append((label, sc))
+
+        best_val = None; best_srcs = []; best_key = (-1, -1, -1)
+        for val, srcs in quorum_map.items():
+            key = _best_tuple(srcs)
+            if key > best_key or (key == best_key and str(val) < str(best_val or "\uffff")):
+                best_val, best_srcs, best_key = val, srcs, key
+
+        cur_src = prov.get(field)
+        cur_weight = _src_weight(cur_src if isinstance(cur_src, str) else "")
+        cur_is_rule = isinstance(cur_src, str) and cur_src.startswith("RULE")
+        cur_val = base.get(field)
+
+        if best_val is not None and (str(cur_val) != str(best_val)):
+            has_quorum = len({s for s,_ in best_srcs}) >= 2
+            best_top_score = max(sc for _, sc in best_srcs)
+            if has_quorum or cur_is_rule or (best_top_score > cur_weight):
+                _record_override(prov, field, cur_val, cur_src if isinstance(cur_src, str) else "", best_val, f"PREFERRED:{','.join(s for s,_ in best_srcs)}")
+                base[field] = _norm_taxon_value(best_val) if field in {"kingdom","phylum","class_name","order_name","superfamily","family","subfamily","tribe","subtribe","genus","subgenus"} else best_val
+                prov[field] = f"PREFERRED:{','.join(s for s,_ in best_srcs)}"
+
+        decisions[field] = {
+            "candidates": [{"source": s, "value": v, "score": sc} for s, v, sc in props],
+            "chosen": base.get(field),
+        }
+
+    # (Opcional: truncar candidates a top-5 por campo si preocupa tamaño)
+    for fld, info in decisions.items():
+        cand = info.get("candidates") or []
+        if len(cand) > 5:
+            decisions[fld]["candidates"] = sorted(cand, key=lambda x: (-x["score"], str(x["value"])))[:5]
+
+    prov.setdefault("_decisions", {})["_last"] = decisions
 
 # --------- NUEVOS HELPERS PARA AUTORÍA ---------
 def _col_authorship(best_col: dict) -> str | None:
@@ -861,13 +1529,51 @@ def _col_authorship(best_col: dict) -> str | None:
                 return str(year).strip()
     return None
 
-async def _gbif_detail(usage_key: int) -> dict:
+async def _gbif_detail(usage_key: int) -> Dict[str, Any]:
     try:
-        async with httpx.AsyncClient(timeout=12) as client:
-            r = await client.get(f"https://api.gbif.org/v1/species/{usage_key}")
-            return r.json() if r.status_code < 400 else {}
-    except Exception:
+        url = f"https://api.gbif.org/v1/species/{usage_key}"
+        j: Dict[str, Any] = await fetch_json(url, timeout=12, retries=2)
+        return j
+    except Exception as e:
+        if log.isEnabledFor(logging.DEBUG):
+            log.debug("GBIF detail falló para %s: %s", usage_key, e)
         return {}
+
+# --- Wrapper seguro para IUCN: intenta varias firmas y nunca rompe ---
+async def _iucn_category_safe(name: str | None) -> str | None:
+    if not name:
+        return None
+    try:
+        from ..clients import iucn as iucn_client
+    except Exception:
+        return None
+
+    import asyncio as _asyncio
+    candidates = (
+        "category_for_name",
+        "category_for",
+        "get_category",
+        "category",
+        "status_for_name",
+    )
+    for attr in candidates:
+        fn = getattr(iucn_client, attr, None)
+        if not fn:
+            continue
+        try:
+            res = await fn(name) if _asyncio.iscoroutinefunction(fn) else fn(name)
+            if isinstance(res, str):
+                return res or None
+            if isinstance(res, dict):
+                for k in ("category", "iucn_category", "status"):
+                    v = res.get(k)
+                    if v:
+                        return str(v)
+        except Exception as e:
+            if log.isEnabledFor(logging.DEBUG):
+                log.debug("IUCN wrapper fallo en %s: %s", attr, e)
+            continue
+    return None
 
 # --- Reparaciones/curaduría post-merge ---
 def _post_sanity_repairs(base: dict, provenance: dict):
@@ -892,6 +1598,26 @@ def _post_sanity_repairs(base: dict, provenance: dict):
         if should and base.get("superfamily") != should:
             _set_if(base, provenance, "superfamily", should, "RULE")
 
+    # Gastropoda marinos: Cerithioidea pertenece a Littorinimorpha, no a Pteropoda/incertae sedis/Cerithiida
+    if (str(base.get("class_name") or "").strip().lower() == "gastropoda" and
+        str(base.get("superfamily") or "").strip().lower() == "cerithioidea"):
+        bad = {"pteropoda", "caenogastropoda incertae sedis", "cerithiida"}
+        cur = (base.get("order_name") or "").strip().lower()
+        if cur in bad:
+            _set_if(base, provenance, "order_name", "Littorinimorpha", "RULE:gastropoda-cerithioidea→littorinimorpha@v1")
+
+def _prefer_gastropoda_order_if_consensus(base: dict, prov: dict, tax_col: dict | None, tax_wrms: dict | None):
+    """Si CoL y WoRMS coinciden en Gastropoda/Cerithioidea, usamos ese orden."""
+    if (str(base.get("class_name") or "").lower() != "gastropoda" or
+        str(base.get("superfamily") or "").lower() != "cerithioidea"):
+        return
+    col_ord = (tax_col or {}).get("order_name")
+    wrms_ord = (tax_wrms or {}).get("order_name")
+    if col_ord and wrms_ord and _norm_taxon_value(col_ord).lower() == _norm_taxon_value(wrms_ord).lower():
+        if base.get("order_name") != col_ord:
+            _record_override(prov, "order_name", base.get("order_name"), prov.get("order_name",""), col_ord, "PREFERRED:Catalogue of Life,WoRMS")
+            base["order_name"] = col_ord
+            prov["order_name"] = "PREFERRED:Catalogue of Life,WoRMS"
 
 # --- Reglas internas con metadatos (auditables) ---
 def _apply_internal_rules(base: dict, provenance: dict):
@@ -916,21 +1642,29 @@ def _apply_internal_rules(base: dict, provenance: dict):
         value, rule_tag, _note = fam2order[fam]
         _set_if(base, provenance, "order_name", value, rule_tag)
 
+# --- Trimming de provenance para evitar crecimiento descontrolado ---
+def _trim_overrides(prov: dict, max_per_field: int = 3):
+    ov = prov.get("_overrides")
+    if not isinstance(ov, dict):
+        return
+    # Hook para cuando _overrides almacene listas por campo (slice aquí).
+    return
 
 # ----------------------------- Reconciliación principal -----------------------------
 async def reconcile_name(db: Session, name: str) -> Taxon:
     """
     Flujo:
       1) GBIF species_match
-      1.1) GBIF detail: completar class/order si faltan (autoridad)
+      1.1) GBIF detail: completar class/order/autoría si faltan (autoridad)
       2) Enriquecimiento: CoL → WoRMS → ITIS (para cualquier campo faltante)
       2.5) Adopción laxa / Fallback por familia (ITIS + CoL + WoRMS)
-      3) Overrides por "fuente más actual" (CoL > WoRMS > ITIS) con guardas
+      2.7) Temáticos/Locales + SIB
+      3) Overrides por "fuente más actual" + limpieza RULE* + Scoring/Quorum (+ consenso Gastropoda)
       4) IUCN
       5) Epíteto
-      6) Marcas de otras fuentes
-      7) UPSERT en DB
-      8) Sinónimos GBIF
+      6) Fuentes/Presencia
+      7) UPSERT
+      8) Sinónimos (transaccional + dedupe, sin I/O dentro de la transacción)
     """
     name_n = normaliza_nombre(name)
 
@@ -971,17 +1705,22 @@ async def reconcile_name(db: Session, name: str) -> Taxon:
 
     # Si sigue sin GBIF → guardamos mínimo con marcas de presencia
     if not usage_key:
-        fuentes = await buscar_en_fuentes_externas(name_n)
+        # Presencias (cacheadas para evitar re-consulta si vuelve a pedirse por el mismo nombre)
+        fuentes = await _cached("presence", name_n, lambda: buscar_en_fuentes_externas(name_n))
         prov_json: Dict[str, Any] = {"scientific_name": "INPUT"}
         warnings_min = _build_warnings({"gbif_key": None, "status": (m or {}).get("status")}, prov_json)
         if warnings_min:
             prov_json["_warnings"] = warnings_min
 
+        presence = { _norm_src_label(s) for s in (fuentes or []) }
+        presence.discard(None)
+        fuentes_sorted = sorted(presence, key=lambda x: -LOCAL_SOURCE_WEIGHTS.get(x,0))
+
         t = Taxon(
             scientific_name=name_n,
             status=None,
             gbif_key=None,
-            sources_csv=",".join(fuentes) if fuentes else None,
+            sources_csv=",".join(fuentes_sorted) if fuentes_sorted else None,
             provenance_json=json.dumps(prov_json),
         )
         db.add(t); db.commit(); db.refresh(t)
@@ -994,7 +1733,7 @@ async def reconcile_name(db: Session, name: str) -> Taxon:
     sci_name = m.get("scientificName") or name_n
 
     base: Dict[str, Any] = {
-        "scientific_name": sci_name,
+        "scientific_name": sci_name,  # conservar cadena original (NFC) para display
         "canonical_name": m.get("canonicalName"),
         "authorship": m.get("authorship") or _extract_authorship_from_scientific(sci_name),
         "gbif_key": usage_key,
@@ -1015,14 +1754,18 @@ async def reconcile_name(db: Session, name: str) -> Taxon:
     }
     provenance: Dict[str, str] = {k: "GBIF" for k, v in base.items() if v not in (None, "")}
 
-    # --- GBIF detail: completar orden/clase si faltan (autoridad)
-    if (not base.get("order_name")) or (not base.get("class_name")):
-        det0 = await _gbif_detail(usage_key)
-        if isinstance(det0, dict):
-            if not base.get("order_name") and det0.get("order"):
-                _set_if(base, provenance, "order_name", det0.get("order"), "GBIF:detail")
-            if not base.get("class_name") and det0.get("class"):
-                _set_if(base, provenance, "class_name", det0.get("class"), "GBIF:detail")
+    # --- GBIF detail (orden/clase/autoría) con cache local para evitar doble fetch ---
+    gbif_detail_cache: Dict[str, Any] | None = None
+    if (not base.get("order_name")) or (not base.get("class_name")) or (not base.get("authorship")):
+        gbif_detail_cache = await _gbif_detail(usage_key)
+
+    if isinstance(gbif_detail_cache, dict) and gbif_detail_cache:
+        if not base.get("order_name") and gbif_detail_cache.get("order"):
+            _set_if(base, provenance, "order_name", gbif_detail_cache.get("order"), "GBIF:detail")
+        if not base.get("class_name") and gbif_detail_cache.get("class"):
+            _set_if(base, provenance, "class_name", gbif_detail_cache.get("class"), "GBIF:detail")
+        if not base.get("authorship") and gbif_detail_cache.get("authorship"):
+            _set_if(base, provenance, "authorship", gbif_detail_cache.get("authorship"), "GBIF:detail")
 
     # --- Saneamiento: si class == order, dejamos class vacío para permitir corrección
     if base.get("class_name") and base.get("order_name") and \
@@ -1042,9 +1785,10 @@ async def reconcile_name(db: Session, name: str) -> Taxon:
         if _faltantes(base):
             if _compatible_taxonomy(base, tax_col) or all(base.get(k) is None for k in ["phylum","class_name","order_name","family","genus"]):
                 _copy_if_consistent(base, provenance, tax_col, "Catalogue of Life")
-                col_author = _col_authorship(best_col)
-                if not base.get("authorship") and col_author:
-                    _set_if(base, provenance, "authorship", col_author, "Catalogue of Life")
+        # preferir autoría de CoL incluso si ya existe
+        col_author = _col_authorship(best_col)
+        if col_author:
+            _prefer_if_better(base, provenance, "authorship", col_author, "Catalogue of Life")
 
     # ---- WoRMS
     best_wrms = await _worms_best(sci_name)
@@ -1053,7 +1797,15 @@ async def reconcile_name(db: Session, name: str) -> Taxon:
         if _faltantes(base):
             if _compatible_taxonomy(base, tax_wrms) or all(base.get(k) is None for k in ["phylum","class_name","order_name","family","genus"]):
                 _copy_if_consistent(base, provenance, tax_wrms, "WoRMS")
-                _set_if(base, provenance, "authorship", best_wrms.get("authority"), "WoRMS")
+        # preferir autoría de WoRMS incluso si ya existe
+        if best_wrms.get("authority"):
+            _prefer_if_better(base, provenance, "authorship", best_wrms.get("authority"), "WoRMS")
+
+    # ---- Si tras GBIF/CoL/WoRMS aún no hay autoría, aplica extractor flexible (RULE) ----
+    if not base.get("authorship"):
+        flex = _extract_authorship_flexible(base.get("scientific_name"))
+        if flex:
+            _set_if(base, provenance, "authorship", flex, "RULE:authorship-tail@v1")
 
     # ---- ITIS (lookup + deep merge si faltan campos)
     try:
@@ -1070,7 +1822,9 @@ async def reconcile_name(db: Session, name: str) -> Taxon:
             for k, v in (deep or {}).items():
                 if v and not tax_itis.get(k):
                     tax_itis[k] = v
-    except Exception:
+    except Exception as e:
+        if log.isEnabledFor(logging.DEBUG):
+            log.debug("ITIS lookup/merge falló: %s", e)
         tax_itis = {}
 
     if tax_itis:
@@ -1100,109 +1854,208 @@ async def reconcile_name(db: Session, name: str) -> Taxon:
             fam_itis = await _itis_hierarchy_by_name(fam)
             if fam_itis:
                 _copy_if_consistent(base, provenance, fam_itis, "ITIS")
-        except Exception:
-            pass
+        except Exception as e:
+            if log.isEnabledFor(logging.DEBUG):
+                log.debug("ITIS por familia falló: %s", e)
 
         try:
             fam_col_best = await _col_best(fam)
             if fam_col_best:
                 fam_col = _taxonomy_from_col(fam_col_best)
                 _copy_if_consistent(base, provenance, fam_col, "Catalogue of Life")
-        except Exception:
-            pass
+        except Exception as e:
+            if log.isEnabledFor(logging.DEBUG):
+                log.debug("CoL por familia falló: %s", e)
 
         try:
             fam_wrms_raw = await _worms_best(fam)
             if fam_wrms_raw:
                 fam_wrms = _taxonomy_from_worms(fam_wrms_raw)
                 _copy_if_consistent(base, provenance, fam_wrms, "WoRMS")
-        except Exception:
-            pass
+        except Exception as e:
+            if log.isEnabledFor(logging.DEBUG):
+                log.debug("WoRMS por familia falló: %s", e)
 
     # --- Sanity fixes de clase/orden (después de todo lo anterior) ---
     _fix_class_order(base, provenance, tax_itis if isinstance(tax_itis, dict) else None)
 
-    # 3) Overrides por fuente más fresca (CoL > WoRMS > ITIS), con guardas
-    cand_list: list[tuple[str, dict]] = []
-    if isinstance(tax_col, dict) and tax_col:
-        cand_list.append(("Catalogue of Life", tax_col))
-    if isinstance(tax_wrms, dict) and tax_wrms:
-        cand_list.append(("WoRMS", tax_wrms))
-    if isinstance(tax_itis, dict) and tax_itis:
-        cand_list.append(("ITIS", tax_itis))
-    # incluir también taxonomías derivadas por familia
-    if isinstance(fam_col, dict) and fam_col:
-        cand_list.append(("Catalogue of Life", fam_col))
-    if isinstance(fam_itis, dict) and fam_itis:
-        cand_list.append(("ITIS", fam_itis))
-    if isinstance(fam_wrms, dict) and fam_wrms:
-        cand_list.append(("WoRMS", fam_wrms))
+    # 2.7) Temáticos/locales + SIB general
+    tax_rep = tax_bat = tax_aco = tax_mam = tax_cites = tax_sib = {}
 
-    if cand_list:
-        _apply_fresh_overrides(base, provenance, cand_list)
+    label_sib = "SIB Colombia"
 
-    # 4) Fallback de autoría desde detalle GBIF (si aún falta)
-    if not base.get("authorship") and usage_key:
-        det = await _gbif_detail(usage_key)
-        a = det.get("authorship")
-        if a:
-            _set_if(base, provenance, "authorship", a, "GBIF:detail")
+    more_tasks = [
+        _safe_tax("Reptile Database", _tax_from_reptile_db(sci_name)),
+        _safe_tax("Batrachia", _tax_from_batrachia(sci_name)),
+        _safe_tax("ACO Aves", _tax_from_aco_birds(sci_name)),
+        _safe_tax("Mamíferos 2024 (SIB)", _tax_from_mammals_2024(sci_name)),
+        _safe_tax("CITES (Species+)", _tax_from_cites(sci_name)),
+        _safe_tax(label_sib, _tax_from_sib(sci_name)),
+    ]
+    try:
+        results = await asyncio.gather(*more_tasks, return_exceptions=True)
+        for label, dtx in (r for r in results if isinstance(r, tuple)):
+            if label == "Reptile Database":        tax_rep = dtx or {}
+            elif label == "Batrachia":             tax_bat = dtx or {}
+            elif label == "ACO Aves":              tax_aco = dtx or {}
+            elif label == "Mamíferos 2024 (SIB)":  tax_mam = dtx or {}
+            elif label == "CITES (Species+)":      tax_cites = dtx or {}
+            elif label == label_sib:               tax_sib = dtx or {}
+    except Exception as e:
+        if log.isEnabledFor(logging.DEBUG):
+            log.debug("gather temáticos/locales falló: %s", e)
 
-    # 5) Reglas internas auditables (último recurso)
+    # Adopción laxa con estas fuentes (si falta class/order)
+    for lbl, taxsrc in (("Reptile Database", tax_rep), ("Batrachia", tax_bat),
+                        ("ACO Aves", tax_aco), ("Mamíferos 2024 (SIB)", tax_mam),
+                        ("CITES (Species+)", tax_cites), (label_sib, tax_sib)):
+        if isinstance(taxsrc, dict) and taxsrc:
+            _lenient_highrank_merge(base, provenance, taxsrc, lbl)
+
+    # --- Aplica reglas internas (después de merges/fallbacks y antes de reparaciones finales) ---
     _apply_internal_rules(base, provenance)
 
-    # 5.1) Segunda pasada de overrides para pisar cualquier RULE con fuentes reales
+    # 3) Overrides por fuente más fresca (incluye temáticos/locales y SIB)
+    cand_list: list[tuple[str, dict]] = []
+    if isinstance(tax_col, dict) and tax_col:    cand_list.append(("Catalogue of Life", tax_col))
+    if isinstance(tax_wrms, dict) and tax_wrms:  cand_list.append(("WoRMS", tax_wrms))
+    if isinstance(tax_itis, dict) and tax_itis:  cand_list.append(("ITIS", tax_itis))
+
+    # familiares (fallback previos)
+    if isinstance(fam_col, dict) and fam_col:    cand_list.append(("Catalogue of Life", fam_col))
+    if isinstance(fam_itis, dict) and fam_itis:  cand_list.append(("ITIS", fam_itis))
+    if isinstance(fam_wrms, dict) and fam_wrms:  cand_list.append(("WoRMS", fam_wrms))
+
+    # temáticos/locales + SIB
+    if isinstance(tax_rep, dict) and tax_rep:    cand_list.append(("Reptile Database", tax_rep))
+    if isinstance(tax_bat, dict) and tax_bat:    cand_list.append(("Batrachia", tax_bat))
+    if isinstance(tax_aco, dict) and tax_aco:    cand_list.append(("ACO Aves", tax_aco))
+    if isinstance(tax_mam, dict) and tax_mam:    cand_list.append(("Mamíferos 2024 (SIB)", tax_mam))
+    if isinstance(tax_cites, dict) and tax_cites:cand_list.append(("CITES (Species+)", tax_cites))
+    if isinstance(tax_sib, dict) and tax_sib:    cand_list.append((label_sib, tax_sib))
+
     if cand_list:
         _apply_fresh_overrides(base, provenance, cand_list)
+        # --- Limpieza selectiva: reemplazar únicamente campos marcados como RULE* si hay mejores fuentes ---
+        _apply_fresh_overrides_only_rules(base, provenance, cand_list)
 
-    # 5.2) Reintentar clase a partir del orden tras todo
-    _fix_class_order(base, provenance, tax_itis if isinstance(tax_itis, dict) else None)
+    # --- Scoring + Quorum (pulido final con desempate determinista) ---
+    scored_cands: list[tuple[str, dict, dict]] = []
+    for label, tax in cand_list:
+        meta = {}
+        if label == "Catalogue of Life" and best_col:
+            meta["status"] = (best_col.get("status") or (best_col.get("usage") or {}).get("status"))
+        elif label == "WoRMS" and best_wrms:
+            meta["status"] = (best_wrms.get("status") or best_wrms.get("taxonstatus") or best_wrms.get("valid_name_status"))
+        elif label == "ITIS" and tax_itis:
+            meta["status"] = "ACCEPTED"
+        elif label == "ACO Aves" and tax_aco:
+            meta["status"] = "ACCEPTED"
+        elif label == "Mamíferos 2024 (SIB)" and tax_mam:
+            meta["status"] = "ACCEPTED"
+        elif label in {"Reptile Database", "Batrachia", "CITES (Species+)"}:
+            meta["status"] = "ACCEPTED"
+        elif label == "SIB Colombia":
+            meta["status"] = None
+        scored_cands.append((label, tax, meta))
+    if scored_cands:
+        _apply_scores_and_quorum(base, provenance, scored_cands)
+        # Trim de decisiones y overrides para contener tamaño
+        provenance["_decisions"] = {"_last": provenance.get("_decisions", {}).get("_last")}
+        _trim_overrides(provenance)
 
-    # 6) Reparaciones curatoriales extra
-    _post_sanity_repairs(base, provenance)
+    # Consenso estable para Gastropoda/Cerithioidea (CoL+WoRMS)
+    _prefer_gastropoda_order_if_consensus(base, provenance, tax_col, tax_wrms)
 
-    # 7) IUCN (usar canónico si existe)
-    iucn_cat = await iucn.category_by_name(base.get("canonical_name") or sci_name)
+    # 4) IUCN (usar canónico si existe) – wrapper tolerante
+    iucn_cat = await _iucn_category_safe(base.get("canonical_name") or sci_name)
 
-    # 8) Epíteto
+    # 5) Epíteto
     epiteto = obtener_epiteto_especifico(
         base.get("canonical_name") or base.get("scientific_name"),
         base.get("rank")
     )
 
-    # 9) Fuentes (provenance + presencia; sin RULE; normaliza CoL)
+    # 6) Fuentes (provenance + presencia) normalizadas (sin RULE, colapsando X:subtag)
     prov_sources_raw = _collect_sources(provenance)
-    presence_raw = await buscar_en_fuentes_externas(base.get("canonical_name") or sci_name)
-
-    def _norm_src_label(x: str) -> Optional[str]:
-        if not x: return None
-        if x.startswith("RULE"): return None
-        return "Catalogue of Life" if x == "CoL" else x
+    presence_raw = await _cached("presence", base.get("canonical_name") or sci_name, lambda: buscar_en_fuentes_externas(base.get("canonical_name") or sci_name))
 
     prov_sources = { _norm_src_label(s) for s in prov_sources_raw }
-    presence = { _norm_src_label(s) for s in presence_raw }
-    prov_sources.discard(None); presence.discard(None)
+    prov_sources.discard(None)
 
-    fuentes = sorted(prov_sources | presence)
+    # >>> NUEVO: filtra presencia por clase resuelta antes de unir con provenance
+    presence_filtered = filter_sources_by_class(list(presence_raw or []), base.get("class_name"))
+    presence = set(presence_filtered)
+
+    fuentes = sorted(prov_sources | presence, key=lambda x: -LOCAL_SOURCE_WEIGHTS.get(x,0))
     fuentes_csv = ",".join(fuentes) if fuentes else None
 
-    # 10) Avisos
+    # 7) Avisos + reparaciones de cordura
+    _post_sanity_repairs(base, provenance)
+
+    # --- Alinear scientific_name con la autoría elegida (solo para GENUS) ---
+    if (str(base.get("rank") or "").upper() == "GENUS"
+        and base.get("canonical_name") and base.get("authorship")):
+        recomposed = f"{base['canonical_name']} {base['authorship']}"
+        if base.get("scientific_name") != recomposed:
+            base["scientific_name"] = recomposed
+            # etiqueta la misma fuente que decidió la autoría (evita RULE y evita warning)
+            provenance["scientific_name"] = provenance.get("authorship") or provenance.get("scientific_name") or "Catalogue of Life"
+
+    # --- Alinear scientific_name con la autoría elegida (species-group) ---
+    if (str(base.get("rank") or "").upper() in {"SPECIES", "SUBSPECIES", "VARIETY", "FORM"}
+        and base.get("canonical_name") and base.get("authorship")):
+        # ¿la cadena actual ya trae paréntesis?
+        sci_tail = base.get("scientific_name") or ""
+        had_parens = bool(re.search(r"\([^()]*\)\s*$", sci_tail))
+        new_tail = f"({base['authorship']})" if had_parens else base["authorship"]
+        recomposed = f"{base['canonical_name']} {new_tail}"
+        if base.get("scientific_name") != recomposed:
+            base["scientific_name"] = recomposed
+            # etiqueta con la misma fuente que decidió la autoría
+            provenance["scientific_name"] = provenance.get("authorship") or provenance.get("scientific_name") or "Catalogue of Life"
+
+    # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    # RE-CÁLCULO FINAL DE _decisions PARA ALINEAR "chosen" CON EL ESTADO FINAL
+    # (no toca 'base', solo refresca provenance["_decisions"])
+    # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    if scored_cands:
+        # construimos un decisions ligero usando los mismos candidatos y puntuaciones,
+        # pero fijando 'chosen' = base[field] (post reglas/reparaciones)
+        decisions: dict[str, dict[str, Any]] = {}
+        for field in TAXO_FIELDS:
+            props = []
+            for label, tax, meta in scored_cands:
+                v = tax.get(field)
+                if not v:
+                    continue
+                sc = _field_score(base, tax, label, field, (meta or {}).get("status"))
+                props.append({"source": label, "value": v, "score": sc})
+            if not props:
+                continue
+            # top-5 determinista como en _apply_scores_and_quorum
+            if len(props) > 5:
+                props = sorted(props, key=lambda x: (-x["score"], str(x["value"])))[:5]
+            decisions[field] = {"candidates": props, "chosen": base.get(field)}
+        provenance["_decisions"] = {"_last": decisions}
+    # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
     warnings = _build_warnings(base, provenance)
 
-    # 11) UPSERT
+    # 8) UPSERT
     existente: Optional[Taxon] = db.execute(
         select(Taxon).where(Taxon.gbif_key == usage_key)
     ).scalars().first()
 
     if existente:
         for k, v in base.items():
-            if v is not None:
+            if v is not None and getattr(existente, k) != v:
                 setattr(existente, k, v)
         if epiteto:
             existente.epiteto_especifico = epiteto
         if iucn_cat:
             existente.iucn_category = iucn_cat
-        if fuentes_csv:
+        if fuentes_csv and existente.sources_csv != fuentes_csv:
             existente.sources_csv = fuentes_csv
 
         old_prov: Dict[str, Any] = {}
@@ -1213,9 +2066,16 @@ async def reconcile_name(db: Session, name: str) -> Taxon:
                 old_prov = {}
         # merge simple
         old_prov.update(provenance)
-        if warnings:
-            ws = set(old_prov.get("_warnings", [])) | set(warnings)
-            old_prov["_warnings"] = sorted(ws)
+        # Recalcular warnings frescos según el provenance actual
+        fresh_warnings = _build_warnings(base, old_prov)
+        if fresh_warnings:
+            old_prov["_warnings"] = fresh_warnings
+        else:
+            old_prov.pop("_warnings", None)
+        # también aplicamos trimming al persistir
+        old_prov["_decisions"] = {"_last": old_prov.get("_decisions", {}).get("_last")}
+        _trim_overrides(old_prov)
+
         existente.provenance_json = json.dumps(old_prov) if old_prov else None
 
         db.commit(); db.refresh(existente)
@@ -1224,6 +2084,8 @@ async def reconcile_name(db: Session, name: str) -> Taxon:
         prov_json: Dict[str, Any] = dict(provenance)
         if warnings:
             prov_json["_warnings"] = warnings
+        prov_json["_decisions"] = {"_last": prov_json.get("_decisions", {}).get("_last")}
+        _trim_overrides(prov_json)
 
         taxon_obj = Taxon(
             **base,
@@ -1234,24 +2096,30 @@ async def reconcile_name(db: Session, name: str) -> Taxon:
         )
         db.add(taxon_obj); db.commit(); db.refresh(taxon_obj)
 
-    # 12) Sinónimos GBIF (limpiamos y volvemos a insertar)
+    # 9) Sinónimos GBIF (sin abrir una transacción manual: usar commit/rollback explícitos)
+    syns = await _gbif_synonyms(usage_key)  # << fuera de la transacción
     try:
-        syns = await _gbif_synonyms(usage_key)
         db.execute(delete(Synonym).where(Synonym.taxon_id == taxon_obj.id))
-        for s in syns or []:
-            sn = Synonym(
-                taxon_id=taxon_obj.id,
-                name=s.get("scientificName"),
-                authorship=s.get("authorship"),
-                status=s.get("taxonomicStatus") or s.get("status") or "SYNONYM",
-                source="GBIF",
-                external_key=str(s.get("key") or ""),
-                rank=s.get("rank"),
-                accepted_name=taxon_obj.scientific_name,
-            )
-            db.add(sn)
+
+        if syns:
+            db.add_all([
+                Synonym(
+                    taxon_id=taxon_obj.id,
+                    name=s.get("scientificName"),
+                    authorship=s.get("authorship"),
+                    status=s.get("taxonomicStatus") or s.get("status") or "SYNONYM",
+                    source="GBIF",
+                    external_key=str(s.get("key") or ""),
+                    rank=s.get("rank"),
+                    accepted_name=taxon_obj.scientific_name,
+                )
+                for s in syns
+            ])
+
         db.commit()
-    except Exception:
-        pass
+    except SQLAlchemyError:
+        db.rollback()
+        # Stack trace útil en WARNING/ERROR:
+        log.exception("Persistencia de sinónimos falló para taxon_id=%s", getattr(taxon_obj, "id", None))
 
     return taxon_obj

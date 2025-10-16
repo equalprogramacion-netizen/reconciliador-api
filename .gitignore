@@ -12,3 +12,7 @@ __pycache__/
 
 # exportaciones temporales si las hubiera
 temp_exports/
+*.xlsx
+*.xls
+*.xlsb
+*.csv

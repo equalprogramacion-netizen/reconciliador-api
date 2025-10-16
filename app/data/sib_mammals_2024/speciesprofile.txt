@@ -1,0 +1,1967 @@
+id	isMarine	isTerrestrial	isInvasive	isExtinct	habitat
+gbif.org/species/2477472	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2477473	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2477572	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2477622	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2477618	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2477630	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2477621	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2477528	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2477533	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2477507	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2477535	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2477560	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2477534	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2477546	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2477557	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2477527	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2477532	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2477556	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2477570	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2497983	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/5959223	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2498402	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2498396	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2498393	FALSO	VERDADERO	FALSO	FALSO	Riverine
+gbif.org/species/7373023	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/9751099	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2498003	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2498252	FALSO	VERDADERO	VERDADERO	FALSO	Wetland | Humedal
+gbif.org/species/2498411	FALSO	VERDADERO	FALSO	FALSO	Riverine
+gbif.org/species/2498275	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/9583342	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/8332393	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/9422220	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/9345027	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2498155	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2498090	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2498112	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2498127	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/8214667	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2498068	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/9362027	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2498177	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2498264	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2498257	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2498250	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2498375	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2498316	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2498305	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482183	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482208	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482216	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482198	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9462558	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482225	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482224	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482310	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482313	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/5229450	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/5229446	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/5229447	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229435	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/5229460	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2482254	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229436	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482190	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482168	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482178	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482172	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482173	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482171	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482282	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482276	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482278	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482271	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2474165	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228112	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228058	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228053	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228045	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228067	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228049	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228035	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228040	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228041	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2481110	FALSO	VERDADERO	FALSO	FALSO	Coastal | Costero
+gbif.org/species/9691034	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2482044	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2482077	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2482050	FALSO	VERDADERO	FALSO	VERDADERO	Wetland | Humedal
+gbif.org/species/2482063	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/2495414	FALSO	VERDADERO	VERDADERO	FALSO	Woodland
+gbif.org/species/2495310	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2495339	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2495331	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2495266	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2495295	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2495314	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2495321	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2495284	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2495333	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5843937	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2496115	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2496121	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2496109	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/8320381	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2496060	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2496089	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2496093	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2496098	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2496075	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2496081	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2496078	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/8243080	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7671500	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/8184592	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2495370	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/2495358	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/2495347	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2495922	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/11100322	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2495178	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2495869	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2495853	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/2495858	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2495892	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/2495888	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/2495865	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/2495891	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2496210	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/2496209	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/2496211	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/5231932	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2496517	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2496516	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5232020	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5232019	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5232014	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5232016	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7340209	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/5788391	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/5788393	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2496432	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2496431	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2496297	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2496287	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2496293	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2496294	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2496286	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2496292	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2497150	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2496801	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2496796	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2496811	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2496800	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/10159747	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2496814	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/7342291	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2497045	FALSO	VERDADERO	FALSO	FALSO	Riverine
+gbif.org/species/2497028	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2497052	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2497035	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2497031	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2497082	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2497088	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2496817	FALSO	VERDADERO	FALSO	FALSO	Rock
+gbif.org/species/7658073	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/7784172	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2496990	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2497078	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2497074	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/8265214	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/7676017	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/7792881	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2497011	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2497009	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2497005	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/6101173	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/6101180	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2477289	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2477280	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2477282	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/2477290	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2477071	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2477082	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228621	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228635	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228633	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/4409023	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228630	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228629	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/5228607	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2477116	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2477430	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2477436	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2477137	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228593	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476195	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476380	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476377	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476888	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476892	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228462	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228472	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476580	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476632	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476600	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476584	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476636	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476628	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476595	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476619	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476588	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476607	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476589	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476576	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476621	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476612	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476971	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476968	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/8752472	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476199	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228485	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9053125	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/5228474	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476330	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476219	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476220	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2477020	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2477024	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476721	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476346	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2476722	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2476718	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476711	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476699	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476710	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476708	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476911	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476903	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476907	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476905	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/2477005	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/2477010	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2477001	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476245	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476168	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476388	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476385	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2476681	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2476693	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/5228496	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/5228490	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476057	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476052	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/8847274	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/7858664	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/5228550	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476804	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2476800	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2476811	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2476805	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476860	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2476870	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476875	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476336	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476344	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5788552	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228524	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228538	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228535	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228537	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228518	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228534	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228536	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/6101165	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2476308	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2477062	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2477042	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2477039	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2477053	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2477041	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2477035	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2477040	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2477033	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2477050	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476238	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476884	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476159	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476787	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476790	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476786	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476351	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476897	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/8165005	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476279	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476281	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476952	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476935	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476943	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476931	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476948	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476953	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476938	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2476964	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476985	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476994	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476998	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5788533	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228583	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228575	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228584	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/5228579	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476373	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228511	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476094	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2476063	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476077	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2476076	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476065	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476069	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476066	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476226	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228486	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7516718	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476116	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476125	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2476132	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476127	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476774	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476769	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476528	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476533	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/11110017	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228540	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/2476178	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2476233	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476313	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/10918272	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/10902385	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/10755999	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/9088790	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/11077667	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/11027010	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476441	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/10912964	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/11021619	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/11006952	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2476152	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/10962601	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/10983511	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/9134116	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/11038734	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/10941997	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228570	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/10925050	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5788536	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/10933955	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/10933139	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/11080380	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7342331	FALSO	VERDADERO	FALSO	FALSO	Riverine
+gbif.org/species/2496202	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2474337	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2474363	FALSO	VERDADERO	FALSO	FALSO	Coastal | Costero
+gbif.org/species/9395900	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2474825	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2474837	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/5228136	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/5228154	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/2474486	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2474489	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2474493	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2474585	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2474599	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2474589	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2474590	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/5228186	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2474400	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/7532956	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/8340372	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/8418047	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2474711	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2474707	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2474448	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2474669	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+organismnames.com/details.htm?lsid=5227256	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2474671	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2474784	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2474640	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2474639	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/7340222	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2474393	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2474383	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2474343	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2480328	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2480327	FALSO	VERDADERO	FALSO	FALSO	Riverine
+gbif.org/species/5229152	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/5229146	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/5229141	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2480320	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2480295	FALSO	VERDADERO	FALSO	FALSO	Coastal | Costero
+gbif.org/species/2480302	FALSO	VERDADERO	FALSO	FALSO	Riverine
+gbif.org/species/2480296	FALSO	VERDADERO	FALSO	FALSO	Coastal | Costero
+gbif.org/species/6065879	FALSO	VERDADERO	FALSO	FALSO	Coastal | Costero
+gbif.org/species/2480273	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/5229128	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2480258	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2482101	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2481705	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2481784	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2481794	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2481680	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2481684	FALSO	VERDADERO	FALSO	FALSO	Coastal | Costero
+gbif.org/species/2481776	FALSO	VERDADERO	FALSO	FALSO	Coastal | Costero
+gbif.org/species/2481765	FALSO	VERDADERO	FALSO	FALSO	Coastal | Costero
+gbif.org/species/7964835	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/8250742	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/5229400	FALSO	VERDADERO	FALSO	FALSO	Coastal | Costero
+gbif.org/species/2481748	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2481759	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2481770	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2481745	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2481756	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/8292425	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2481744	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2481764	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2481742	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2481672	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2481670	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2481814	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2481816	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2481827	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2481812	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2481817	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2481829	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/5229389	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/5739290	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/5229390	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2481798	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2481710	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/9733156	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2481720	FALSO	VERDADERO	FALSO	FALSO	Coastal | Costero
+gbif.org/species/5789298	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2481721	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2480958	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2481846	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/2481618	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/2481616	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/2481609	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/2481621	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/2481613	FALSO	VERDADERO	FALSO	FALSO	Riverine
+gbif.org/species/2481209	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/2481225	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/2481221	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/6065825	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/6065820	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/6065824	FALSO	VERDADERO	FALSO	FALSO	Coastal | Costero
+gbif.org/species/6065841	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/6065847	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/6065844	FALSO	VERDADERO	FALSO	FALSO	Coastal | Costero
+gbif.org/species/5846430	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/2481179	FALSO	VERDADERO	FALSO	FALSO	Coastal | Costero
+gbif.org/species/2481134	FALSO	VERDADERO	FALSO	FALSO	Coastal | Costero
+gbif.org/species/2481172	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/2481173	FALSO	VERDADERO	FALSO	FALSO	Coastal | Costero
+gbif.org/species/2481174	FALSO	VERDADERO	FALSO	FALSO	Coastal | Costero
+gbif.org/species/2481139	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/9512459	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/9803471	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/2481213	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/5789284	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/5789286	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/5789285	FALSO	VERDADERO	FALSO	FALSO	Riverine
+gbif.org/species/5789280	FALSO	VERDADERO	FALSO	FALSO	Riverine
+gbif.org/species/5229213	FALSO	VERDADERO	FALSO	FALSO	Coastal | Costero
+gbif.org/species/2481263	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2481236	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/2481125	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2481119	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/9367409	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/5229249	FALSO	VERDADERO	FALSO	FALSO	Coastal | Costero
+gbif.org/species/5229230	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/5229231	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/5229247	FALSO	VERDADERO	FALSO	FALSO	Coastal | Costero
+gbif.org/species/2481285	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/2481240	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/5789281	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2474332	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/9743996	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/2481361	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/2481364	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/5229386	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/5229383	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/5229385	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/2481379	FALSO	VERDADERO	FALSO	FALSO	Marine | Marino
+gbif.org/species/2481399	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/2481410	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/2481982	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/5229416	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/2481991	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/10965233	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/11043398	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/9272607	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/9461262	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/10910683	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/10764845	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/11068810	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/2481545	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/2481452	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/2481477	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/2481460	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/2481467	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/2481506	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/2481495	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/2481499	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/2481494	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/2481521	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/7763948	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/8249990	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/8596590	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/8475930	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/5229340	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/5229380	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/5843962	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/5229361	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2481910	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2481953	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2481937	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/2480189	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/2480187	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/2480978	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/2480970	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/2480967	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/2480971	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/2480972	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/2480975	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2482082	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/9399113	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2481875	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/2481884	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/5229155	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/5229158	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2480869	FALSO	VERDADERO	FALSO	FALSO	Riverine
+gbif.org/species/2480868	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2480867	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2480836	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2480833	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229211	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2480913	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2480852	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2480851	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2480863	FALSO	VERDADERO	FALSO	FALSO	Coastal | Costero
+gbif.org/species/2480953	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/9539567	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2480824	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/2480830	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/9630752	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2480951	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/9752617	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2480921	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2480816	FALSO	VERDADERO	FALSO	FALSO	Coastal | Costero
+gbif.org/species/2480881	FALSO	VERDADERO	FALSO	FALSO	Coastal | Costero
+gbif.org/species/2480888	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2480873	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2480894	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/5229205	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/5229204	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2480773	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2480795	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2480808	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2480812	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2480790	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2480803	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2481923	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2481907	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/2481942	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/2481930	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2481928	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2481929	VERDADERO	FALSO	FALSO	FALSO	Marine | Marino
+gbif.org/species/2480726	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2480710	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/2480367	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2480571	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229197	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2480461	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2480576	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2480516	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2480672	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5788513	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2480679	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5788512	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2480692	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2480415	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5788500	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229191	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229192	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2480719	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2480720	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/6101217	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/5229170	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/5229178	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2480597	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9740253	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2480621	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2480599	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/12003679	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/12152602	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2480435	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7506330	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7951098	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2480651	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2480655	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2480657	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7836955	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/8298810	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5844398	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2480410	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7982966	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/7787493	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/8033105	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2480668	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/8357600	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2480395	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2480402	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2480556	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2480538	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2480535	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2480553	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2480562	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2480541	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2480542	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/2497921	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2497376	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2497408	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/2497365	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2497328	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2497379	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/6101162	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/6101164	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/10784281	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2497332	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2497873	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2497878	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2497886	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5959118	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2497440	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/4843093	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/4843089	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2497536	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5232136	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5232137	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5232095	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5232132	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/5232118	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2497240	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5232210	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/4843115	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2497311	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2497295	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2496718	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2496720	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2496715	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2496719	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2496643	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2496669	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9429836	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5788448	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2496647	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5788446	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7340140	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2496659	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2496683	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9213738	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/11236628	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2496700	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2496673	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2475285	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2475321	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2475270	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7342297	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2475290	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2475311	FALSO	VERDADERO	FALSO	FALSO	Riverine
+gbif.org/species/2475466	FALSO	VERDADERO	FALSO	FALSO	Riverine
+gbif.org/species/2475472	FALSO	VERDADERO	FALSO	FALSO	Riverine
+gbif.org/species/2475482	FALSO	VERDADERO	FALSO	FALSO	Riverine
+gbif.org/species/2475483	FALSO	VERDADERO	FALSO	FALSO	Riverine
+gbif.org/species/2475486	FALSO	VERDADERO	FALSO	FALSO	Riverine
+gbif.org/species/2475492	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2475087	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2475040	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2475049	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2475051	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228253	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228236	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228252	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228249	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228247	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228261	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/5228243	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228256	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2475080	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7340220	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2475108	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2475107	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2475098	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228265	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228270	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228275	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228276	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2475200	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/8223154	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2475165	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2475157	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2475147	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2475143	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2475142	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2475207	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2475122	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2475135	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2475136	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2475130	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2475205	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2475187	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2475179	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2475178	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/5228262	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2479050	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2479041	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2479030	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2479046	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2479040	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2479031	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2478973	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2478979	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2478863	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2478779	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2478774	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2478771	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2478769	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2478782	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/6101211	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229028	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229006	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229012	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229025	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2478858	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2478861	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2478854	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2478758	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2478761	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2478759	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2478814	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2478838	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2478822	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2478826	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2478817	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228784	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228724	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228757	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228733	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/9541146	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228797	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228751	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228723	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228725	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228793	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/5228762	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2478605	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2478133	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2478122	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5789377	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2478068	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2478125	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/10809442	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/10860672	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/10721806	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/10680427	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/10835052	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/10768037	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/10705931	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/10701057	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2478569	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2478584	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2478573	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2478564	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2478579	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228831	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228950	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228945	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228935	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228966	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228920	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228959	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228885	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228881	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228883	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228869	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5228906	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7340161	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7340159	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2478237	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2481071	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2481082	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2481086	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2481084	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2481083	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2481088	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2481087	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2480989	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2480994	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2481094	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2481073	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2481066	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/9685907	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/9813242	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2481033	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2481021	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2481006	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2481047	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2480122	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2480135	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2480138	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2480131	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2480129	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229121	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/5229120	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2479573	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2479582	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2479563	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2479576	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2479473	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2479477	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7340177	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5788420	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5788422	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7340175	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2479912	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2479917	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2479913	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2479902	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2479901	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2479735	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2479652	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2479623	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2479612	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2479606	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2479605	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2479666	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+organismnames.com/details.htm?lsid=4501534	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2479060	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5788410	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2479071	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2479087	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2479081	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/8732196	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2479437	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2479441	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2479535	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2479831	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2479854	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2479824	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2479816	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/7926461	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2479113	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/9173084	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5959231	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5959228	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5959230	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5959233	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5959227	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5959225	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2480179	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2480100	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/7826906	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7634300	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/8317396	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2492883	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/8360089	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7371197	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490079	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/6093919	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490224	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2490049	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/5959208	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/5959202	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/7341969	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/5959210	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5959200	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5959219	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5959209	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5959217	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5959218	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5959201	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5959203	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/5959204	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5959212	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5959213	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/6093113	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5959206	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490220	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490238	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490227	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9485798	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490033	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490029	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490030	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490035	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5788618	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490114	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490106	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9133663	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490218	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490217	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490037	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7444611	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490142	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5788655	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7341734	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7341727	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7341751	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7341740	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490203	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490173	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490179	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2490184	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2490200	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2490172	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2490183	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490198	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490191	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490202	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490192	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490190	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490181	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490178	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490201	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490236	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490240	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2490042	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230838	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7421670	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/8210181	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230840	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7493446	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5788641	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7341402	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230842	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/8307977	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/8354252	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/8402378	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7362531	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/8029817	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490137	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490135	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/11033593	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490122	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490124	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490125	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490123	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490010	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490009	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2490101	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490070	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490205	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490116	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9610566	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9383100	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9530969	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2490154	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9599432	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9456848	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9478448	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5788647	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/11064386	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9389579	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9630233	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9572442	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9379128	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9452007	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9617367	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9422157	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9300893	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490222	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230844	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490005	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490003	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490213	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490210	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230831	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7341184	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5788605	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7341168	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490230	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490231	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490166	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490573	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490572	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488939	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488936	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490525	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490517	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490545	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490520	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490529	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490518	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490526	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490523	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490522	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490530	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490540	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490528	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490539	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/11163929	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/10717908	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490543	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490533	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/11142889	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/11144039	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2490542	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/6101111	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490519	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490514	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490511	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490515	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490509	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490510	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490558	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490562	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+organismnames.com/details.htm?lsid=5426733	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+organismnames.com/details.htm?lsid=5426732	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490554	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490961	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490975	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490963	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/6087863	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2491005	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490992	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5789075	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490989	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7340755	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490999	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490978	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490983	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5789077	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5789072	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9472726	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490998	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2491000	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/8986607	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490984	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490548	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490551	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490550	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490552	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490570	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490569	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490565	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490566	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/8867648	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485209	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485239	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485214	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485229	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7340380	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485628	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485200	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485976	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485965	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485979	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485950	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485341	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2484920	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230046	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485796	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485789	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9680445	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485244	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485461	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230149	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230190	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230133	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230198	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230139	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230187	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230172	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230123	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7342224	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5788709	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485917	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485932	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485937	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/6085997	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2486044	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2486011	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9599337	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9438773	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230220	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230207	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230284	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5846364	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/6100763	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485617	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/6100762	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/9309489	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485813	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2485830	FALSO	VERDADERO	FALSO	FALSO	Riverine
+gbif.org/species/2485506	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/9434745	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2485064	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485496	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485697	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485721	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485705	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485682	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485691	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7586894	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485362	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485039	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/10930571	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/10952035	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/8009306	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7604570	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485256	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485272	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485265	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485257	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485269	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230246	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230235	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230249	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/8243431	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230257	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485279	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485845	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485847	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485846	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2485160	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2485126	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485088	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/5230077	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/5230067	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/6088359	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/7340791	FALSO	VERDADERO	FALSO	FALSO	Riverine
+gbif.org/species/2485947	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485904	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485913	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2486008	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485291	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485329	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485288	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485336	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485323	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485319	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485302	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2486060	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2486070	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/9255047	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2485007	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2485023	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2484994	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2484950	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2485019	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/6089868	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2484936	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9492770	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2484971	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2484933	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2484927	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2484995	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2484963	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2484990	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2487708	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/5230515	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2487706	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2487765	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2487766	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2487740	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2487779	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2487777	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2487700	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7467919	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/12122613	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230528	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230521	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230538	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230537	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2487672	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2487626	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2487754	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/6101077	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9226874	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/8338270	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/8381098	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2486371	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2486368	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2486386	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2486363	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2486362	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2486381	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2486328	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2486397	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2486420	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2486417	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2486344	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230373	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230374	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2486236	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2486238	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2486487	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2486253	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2486243	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5959196	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5959195	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2486342	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230387	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230382	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230388	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230383	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2486501	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2486506	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2486504	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2486505	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2486400	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2486351	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2486497	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2486348	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2486232	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2486476	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2486483	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2486467	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2486462	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7792707	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7850153	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/8118237	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2486447	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2486353	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2486357	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2486517	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2486411	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230324	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230348	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230318	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230338	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230306	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230363	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230352	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230343	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230358	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230362	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2486438	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483680	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2484022	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483293	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483306	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483298	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2486429	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483463	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229571	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9701018	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229602	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229580	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229575	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483814	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483820	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2484069	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483222	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483217	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483200	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483201	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483236	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483225	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229534	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9504121	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229541	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229517	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229505	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229514	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483288	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229698	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229708	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229712	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229713	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482882	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482873	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482899	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482908	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482874	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482867	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482868	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229773	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229772	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483402	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483396	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/2483401	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2483807	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483023	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482984	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482988	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2482999	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482976	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2483012	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483882	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483898	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483871	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483899	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483887	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483268	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2483274	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483261	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483260	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483262	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483666	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7341904	FALSO	VERDADERO	FALSO	FALSO	Rock
+gbif.org/species/2483242	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483914	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483943	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483949	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5789111	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483950	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483936	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2483249	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/5229715	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229719	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229716	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2483318	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/8896866	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483382	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483380	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2483511	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/5229606	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229632	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/5229614	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229651	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229612	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/5229631	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/5229643	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229630	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/5229640	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/5229615	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/8921536	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/5229650	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229622	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9514023	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2483855	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482965	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482960	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482946	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482945	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482947	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483845	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2484049	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2484033	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2484038	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2484046	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2484048	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2484047	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2484076	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483836	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483838	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483822	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483842	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2482688	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/5229775	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2482649	FALSO	VERDADERO	FALSO	FALSO	Riverine
+gbif.org/species/2483963	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2483959	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482693	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2483784	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483645	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483628	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483641	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483624	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483629	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482940	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483862	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483861	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483868	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/2482755	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2482751	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2482934	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2483971	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2483410	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483490	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2483494	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483497	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2482921	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2482913	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482929	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482926	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482664	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+organismnames.com/details.htm?lsid=1818685	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482661	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483418	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2484090	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2484086	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/5229677	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/9394888	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/5229662	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/5229687	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/5229693	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/5229688	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229678	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483673	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483676	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2483672	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/6101055	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/8356516	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483531	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483567	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9544285	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2483546	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483559	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2483558	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483528	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2483597	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2483589	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229809	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229791	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229797	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/5229801	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483194	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483172	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2483152	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483157	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/9597316	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2483420	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2483427	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2483428	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2483647	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/5229564	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/5229568	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2482671	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2483038	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483043	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483027	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2482673	FALSO	VERDADERO	FALSO	FALSO	Riverine
+gbif.org/species/11351659	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2483709	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2483719	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2483701	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2483780	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2483480	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2483326	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483334	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483329	FALSO	VERDADERO	FALSO	FALSO	Riverine
+gbif.org/species/2483664	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483387	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483929	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483792	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2483453	FALSO	VERDADERO	FALSO	FALSO	Rock
+gbif.org/species/2483612	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482785	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482802	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2482786	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2482809	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482791	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229743	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229760	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229754	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229734	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229745	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229739	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2487404	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2487405	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/5230506	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/5230498	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/5230495	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230504	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2487486	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2487484	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/8321293	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7623200	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7997843	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/7787690	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7971774	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2487413	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2487453	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2487433	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/6100766	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2487431	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2487408	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2487452	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2487430	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/8345406	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2487426	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2487463	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482544	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482549	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482546	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482564	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482559	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482573	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2482565	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/9415596	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/2489207	FALSO	VERDADERO	FALSO	FALSO	Riverine
+gbif.org/species/6086702	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/4352334	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/7340421	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/6086696	FALSO	VERDADERO	FALSO	FALSO	Riverine
+gbif.org/species/5230746	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7340409	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2489202	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2489203	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2489136	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2489129	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2489133	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2489140	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2489181	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230754	FALSO	VERDADERO	FALSO	FALSO	Riverine
+gbif.org/species/5230759	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/5230762	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/5230758	FALSO	VERDADERO	FALSO	FALSO	Riverine
+gbif.org/species/2489160	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/9515886	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2489169	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2489166	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2493836	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2493834	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2493953	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/5231459	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5231453	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5231437	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5231458	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2493890	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2493862	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5231470	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5231469	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/5231472	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/5231480	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5231468	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7341222	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7341215	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7341209	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7341190	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7341156	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7341141	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/7341126	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7341088	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7652738	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/6089798	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7341082	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7341063	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7341038	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2493788	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7341239	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2493958	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2493957	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9118881	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5789241	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5231434	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5231435	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7340634	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230510	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230511	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9393917	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2487583	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2487584	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/6101142	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2487582	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2493895	FALSO	VERDADERO	FALSO	FALSO	Riverine
+gbif.org/species/5231776	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2484609	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490835	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490848	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490801	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490802	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9784421	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490804	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490826	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490821	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490872	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490712	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490933	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5789052	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7342122	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490726	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9354950	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490743	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490754	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490716	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2490763	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/8015451	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490736	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490722	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7765228	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490738	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490787	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490717	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490784	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9529632	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490782	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2494936	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/5231676	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2493623	FALSO	VERDADERO	VERDADERO	FALSO	Wetland | Humedal
+gbif.org/species/2493626	FALSO	VERDADERO	VERDADERO	FALSO	Human Modified
+gbif.org/species/4845776	FALSO	VERDADERO	VERDADERO	FALSO	Human Modified
+gbif.org/species/5231190	FALSO	VERDADERO	VERDADERO	FALSO	Grassland
+gbif.org/species/2490263	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/10884972	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2490249	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/7341772	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/6092655	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5845578	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/7341745	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7341765	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/5231647	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/11296330	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488315	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488312	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488313	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2487989	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2487959	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2487964	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2487974	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2487963	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2487991	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488004	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2487998	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488027	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2487960	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488011	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2487955	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488007	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2488552	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2492007	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488703	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488746	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488739	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488710	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488750	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488745	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488735	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2491123	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2491303	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2491298	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2491024	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2491041	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/6093284	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/6093266	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7341906	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7341896	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2491628	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2491624	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2491614	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7341947	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5788840	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5788842	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2492101	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/5231132	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/5231103	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2492192	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2491453	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2491399	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2491466	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2491430	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2491438	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2491464	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2491439	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2491398	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2491392	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2491445	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5788834	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2491404	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/5231142	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2484417	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2484254	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/4846744	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/9653580	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2484419	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2484222	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2484216	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2484237	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2484217	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2484235	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2484244	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2484230	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229826	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229827	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229817	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229832	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229822	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7642358	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229828	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/8065606	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229915	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/7340254	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/5229869	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229845	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5229935	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/5229923	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/5229924	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2484340	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/5229931	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/5229939	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2484386	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2484404	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2484396	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/6100778	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/2484159	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/9476062	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2484188	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2484281	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2484109	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2484179	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2484103	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2489636	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2489590	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2489603	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/6093856	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/6093862	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/5230811	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/6093846	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2489613	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2489871	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7415507	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7531611	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2489611	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2489649	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5789148	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/6093586	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2489641	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/2489670	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/6093374	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2489985	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/6093357	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/6093350	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/6093345	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7341895	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/6093209	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/6093202	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/6093199	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/7341834	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/6092942	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/6092935	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7341828	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7341822	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7341816	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7341805	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7341800	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/7341789	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/6092651	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/6092631	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7341680	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7832100	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/8082419	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7811145	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7341658	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7341642	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/8330576	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7341638	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7646544	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2489785	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2489770	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2489759	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2489815	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/6091946	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7341606	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2489837	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2489856	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2489859	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2489830	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488752	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488498	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488485	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488517	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488518	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488493	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230705	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230697	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230724	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230723	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488765	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488773	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488770	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490491	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490499	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490494	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2489620	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2490404	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2490354	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2491733	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9332343	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9419574	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9555348	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230862	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2490327	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/5230852	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2490363	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230589	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488675	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2490506	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488915	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230641	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488677	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488535	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/2488533	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488266	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488072	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488081	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/5230618	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230625	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230621	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230608	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9594691	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230603	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230627	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/5230617	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/5230612	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2491841	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2491857	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2491862	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2491846	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/9491290	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2491185	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2491197	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2491193	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/5230666	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230669	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/5230680	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/5230673	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230649	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5788714	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230689	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7342093	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7342083	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/7342077	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2491290	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/2491741	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2488775	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488782	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/10901072	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/10802560	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488566	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488592	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2488583	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2488571	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488524	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2491988	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2491984	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488438	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2488424	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/2488442	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488439	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488285	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2491895	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488902	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488909	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488903	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488890	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488545	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488371	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488364	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488370	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488350	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488361	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488352	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488349	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488368	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2491339	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2491330	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2491354	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2491348	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2491367	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/7465752	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/8239823	FALSO	VERDADERO	FALSO	FALSO	Wetland | Humedal
+gbif.org/species/7350166	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/8362699	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/7969087	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/2491356	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2491310	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2491332	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/7383562	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2491313	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2491335	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2491376	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2491321	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/2491380	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/5230942	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230952	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/5230925	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/9105847	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/9819034	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/5230928	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230940	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230955	FALSO	VERDADERO	FALSO	FALSO	Grassland
+gbif.org/species/5231162	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9577208	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488759	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9377161	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9370602	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9398243	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488692	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/2488684	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9637395	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2488696	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2492180	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2493744	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/5231037	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/11049909	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/10731561	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/9426540	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230596	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230598	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230597	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/5845551	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2492082	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/2488064	FALSO	VERDADERO	FALSO	FALSO	Woodland
+gbif.org/species/2488854	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488913	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488652	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488655	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488644	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488795	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488325	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230546	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230558	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230541	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230547	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230540	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488303	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/10728818	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/8965072	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/5230635	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/8161703	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488333	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488330	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488332	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488336	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488331	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9697915	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/10985391	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/11090140	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/10969159	FALSO	VERDADERO	FALSO	FALSO	Human Modified
+gbif.org/species/10913109	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/10895981	FALSO	VERDADERO	FALSO	FALSO	Shrubland
+gbif.org/species/11081628	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/10921174	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/10955666	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/10992187	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488175	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488106	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488162	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488101	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488203	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488164	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488169	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488217	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488157	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488113	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488206	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488114	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488163	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488242	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488192	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488133	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488153	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488179	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488189	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488222	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488602	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/2488633	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9436876	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9268217	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9315630	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9628189	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9552743	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque
+gbif.org/species/9334801	FALSO	VERDADERO	FALSO	FALSO	Forest | Bosque

@@ -162,6 +162,48 @@ async def check_sib() -> Dict[str, Any]:
         fb.setdefault("error_client", _safe_text(e))
         return fb
 
+# ---- NUEVOS checks por clientes (exists)
+async def check_reptile_db() -> Dict[str, Any]:
+    try:
+        from .clients import reptile_db
+        ok = bool(await reptile_db.exists("Caiman crocodilus"))
+        return {"status": "OK" if ok else "FALLA", "via": "client"}
+    except Exception as e:
+        return {"status": "FALLA", "via": "client", "error_client": _safe_text(e)}
+
+async def check_batrachia() -> Dict[str, Any]:
+    try:
+        from .clients import batrachia
+        ok = bool(await batrachia.exists("Rhinella marina"))
+        return {"status": "OK" if ok else "FALLA", "via": "client"}
+    except Exception as e:
+        return {"status": "FALLA", "via": "client", "error_client": _safe_text(e)}
+
+async def check_aco_birds() -> Dict[str, Any]:
+    try:
+        from .clients import aco_birds
+        ok = bool(await aco_birds.exists("Tyrannus melancholicus"))
+        return {"status": "OK" if ok else "FALLA", "via": "client"}
+    except Exception as e:
+        return {"status": "FALLA", "via": "client", "error_client": _safe_text(e)}
+
+async def check_sib_mammals_2024() -> Dict[str, Any]:
+    try:
+        from .clients import sib_mammals_2024
+        ok = bool(await sib_mammals_2024.exists("Cerdocyon thous"))
+        return {"status": "OK" if ok else "FALLA", "via": "client"}
+    except Exception as e:
+        return {"status": "FALLA", "via": "client", "error_client": _safe_text(e)}
+
+async def check_cites_public() -> Dict[str, Any]:
+    try:
+        from .clients import cites_public
+        ok = bool(await cites_public.exists("Ateles belzebuth"))
+        return {"status": "OK" if ok else "FALLA", "via": "client"}
+    except Exception as e:
+        return {"status": "FALLA", "via": "client", "error_client": _safe_text(e)}
+
+# ---- Orquestador
 async def check_all() -> Dict[str, Dict[str, Any]]:
     results = await asyncio.gather(
         check_gbif(),
@@ -170,9 +212,17 @@ async def check_all() -> Dict[str, Dict[str, Any]]:
         check_itis(),
         check_iucn(),
         check_sib(),
+        check_reptile_db(),
+        check_batrachia(),
+        check_aco_birds(),
+        check_sib_mammals_2024(),
+        check_cites_public(),
         return_exceptions=False,
     )
-    keys = ["gbif", "col", "worms", "itis", "iucn", "sib"]
+    keys = [
+        "gbif", "col", "worms", "itis", "iucn", "sib",
+        "reptile_db", "batrachia", "aco_aves", "mamiferos_2024", "cites_public"
+    ]
     return {k: v for k, v in zip(keys, results)}
 
 if __name__ == "__main__":
