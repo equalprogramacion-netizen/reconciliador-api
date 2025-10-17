@@ -1,19 +1,27 @@
-# web
+# --- web ---
 fastapi==0.118.3
 uvicorn==0.37.0
 gunicorn==23.0.0
 httpx==0.28.1
 python-multipart==0.0.20
 
-# db
+# --- db ---
 SQLAlchemy==2.0.44
 pymysql==1.1.1
 python-dotenv==1.1.1
 
-# security / signing (para la cookie de sesión local)
+# --- security / signing ---
 itsdangerous==2.2.0
 
-# data
+# --- data ---
+# Numpy y Pandas compatibles. Si ya estás en numpy 2.3.3 no hay problema con pandas>=2.0.
 numpy==2.3.3
 pandas>=2.0
-openpyxl>=3.1.0
+
+# Lectura de Excel:
+# - openpyxl para .xlsx
+# - xlrd==1.2.0 para .xls (versiones nuevas de xlrd eliminaron soporte)
+# - pyxlsb para .xlsb
+openpyxl==3.1.5
+xlrd==1.2.0
+pyxlsb==1.0.10
