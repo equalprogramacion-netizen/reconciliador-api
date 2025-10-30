@@ -11,6 +11,7 @@ from collections import OrderedDict
 import logging
 from email.utils import parsedate_to_datetime
 from datetime import datetime, timezone
+import os  # <<< NUEVO: permite configurar el tamaño del caché por env var
 
 from ..models import Taxon, Synonym
 from ..clients import gbif, col  # iucn se importa lazy en _iucn_category_safe
@@ -86,7 +87,8 @@ async def fetch_json(url: str, params: dict | None = None, timeout=12, retries=2
                 backoff *= 2
 
 # --------- LRU cache muy simple para (provider, normalized_name) -> payload ---------
-_MAX_ASYNC_CACHE = 10_000
+# <<< CAMBIO: configurable por variable de entorno ASYNC_CACHE_MAX >>>
+_MAX_ASYNC_CACHE = int(os.getenv("ASYNC_CACHE_MAX", "10000"))
 _async_cache: "OrderedDict[Tuple[str, str], Any]" = OrderedDict()
 _cache_lock = asyncio.Lock()
 
@@ -823,7 +825,7 @@ def _src_rank(src: str) -> int:
     # soportar etiquetas compuestas "A,B"
     parts = [p.strip() for p in src.split(",") if p.strip()]
     best = -1
-    for p in parts or [""]:
+    for p in parts or [""] :
         base = p.split(":", 1)[0]
         if base == "CoL":
             base = "Catalogue of Life"
@@ -2123,3 +2125,4 @@ async def reconcile_name(db: Session, name: str) -> Taxon:
         log.exception("Persistencia de sinónimos falló para taxon_id=%s", getattr(taxon_obj, "id", None))
 
     return taxon_obj
+
