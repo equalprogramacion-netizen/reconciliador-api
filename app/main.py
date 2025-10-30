@@ -82,12 +82,9 @@ app.add_middleware(
 )
 
 # ------------------------------------------------------------
-# ====== Puerta SSO desde el Hub (ENV) ======
+# ====== Puerta SSO desde el Hub (ENV) + Tema ======
 # ------------------------------------------------------------
-GATEWAY_SHARED_SECRET       = os.getenv("GATEWAY_SHARED_SECRET", "cambia-esto-por-un-secreto-largo-y-unico")
-GATEWAY_SHARED_SECRET_PREV  = os.getenv("GATEWAY_SHARED_SECRET_PREV", "")
-GATE_AUD = os.getenv("GATE_AUD", "reconciliador")
-HUB_HOME = os.getenv("HUB_HOME", "http://127.0.0.1:8000/choose")
+# Entorno
 IS_PROD = os.getenv("ENV", "development").lower() == "production"
 GATE_BYPASS = os.getenv("GATE_BYPASS", "0") == "1"
 
@@ -104,6 +101,14 @@ THEME = {
     "ok":       os.getenv("HUB_COLOR_OK",     "#22c55e"),  # mismo verde
     "chip":     os.getenv("HUB_COLOR_CHIP",   "#0c1633"),
 }
+
+# ------------------------------------------------------------
+# ====== Puerta SSO desde el Hub (señales) ======
+# ------------------------------------------------------------
+GATEWAY_SHARED_SECRET       = os.getenv("GATEWAY_SHARED_SECRET", "cambia-esto-por-un-secreto-largo-y-unico")
+GATEWAY_SHARED_SECRET_PREV  = os.getenv("GATEWAY_SHARED_SECRET_PREV", "")  # rotación opcional
+GATE_AUD = os.getenv("GATE_AUD", "reconciliador")  # audiencia esperada
+HUB_HOME = os.getenv("HUB_HOME", "http://127.0.0.1:8000/choose")  # a dónde enviar si no hay sesión aquí
 
 # Cookie local de este servicio (no es la del Hub)
 SVC_SESSION_COOKIE = os.getenv("SVC_SESSION_COOKIE", "svc_reconciliador")
@@ -188,6 +193,7 @@ _svc_signer = TimestampSigner(GATEWAY_SHARED_SECRET)
 
 def _set_svc_session(resp, email: str):
     token = _svc_signer.sign(email.encode("utf-8")).decode("utf-8")
+    # Si estás detrás de HTTPS, cambia secure=True y considera samesite="strict"
     resp.set_cookie(
         SVC_SESSION_COOKIE, token,
         max_age=SVC_SESSION_TTL,
@@ -218,16 +224,20 @@ class GateGuardMiddleware(BaseHTTPMiddleware):
         if request.method.upper() == "OPTIONS":
             return await call_next(request)
 
+        # Sirve estáticos sin gate
         if path.startswith("/static") or path.startswith("/assets"):
             return await call_next(request)
 
+        # Anónimos permitidos
         if path in ANON_PATHS:
             return await call_next(request)
 
+        # Si ya hay cookie de sesión local, OK
         email = _get_svc_email(request)
         if email:
             return await call_next(request)
 
+        # Intenta validar st por query o Authorization: Bearer
         st = request.query_params.get("st")
         if not st:
             auth = request.headers.get("Authorization", "")
@@ -302,7 +312,8 @@ FRONTEND_URL = os.getenv("FRONTEND_URL")
 # ------------------------------------------------------------
 # Concurrencia controlada para lotes
 # ------------------------------------------------------------
-_SEM_BULK = asyncio.Semaphore(int(os.getenv("BULK_CONCURRENCY", "8")))
+# (1) Cambio solicitado: subir concurrencia por defecto de 8 -> 12
+_SEM_BULK = asyncio.Semaphore(int(os.getenv("BULK_CONCURRENCY", "12")))
 
 async def _resolve_one(db: Session, n: str, modo: str) -> dict:
     """Ejecuta reconcile_name con semáforo y arma la fila de salida."""
@@ -465,7 +476,7 @@ async def debug_col(q: str = Query(..., description="Nombre científico")):
         if detail.get("classification"):
             merged["classification"] = detail["classification"]
         for k in ("usage", "accepted", "acceptedName", "authorship", "author", "labelAuthorship", "status"):
-            if k in detail and detail[k] is not None:
+            if k in detail and k in detail and detail[k] is not None:
                 merged[k] = detail[k]
 
     parsed = _taxonomy_from_col(merged)
@@ -817,10 +828,43 @@ async def reconciliar_archivo(
     # Limpieza columna
     df[col_name] = df[col_name].astype(str).fillna("").str.strip()
 
-    # === Procesamiento paralelo controlado ===
-    nombres = [n for n in df[col_name].tolist() if (n or "").strip()]
-    tareas = [asyncio.create_task(_resolve_one(db, n, modo.lower())) for n in nombres]
-    registros: list[dict] = [r for r in await asyncio.gather(*tareas) if r]
+    # === (2) Procesamiento paralelo con DEDUPLICACIÓN ===
+    nombres = [n for n in df[col_name].astype(str).fillna("").str.strip().tolist() if n]
+    if not nombres:
+        raise HTTPException(status_code=400, detail="No se encontraron nombres válidos en la columna seleccionada.")
+
+    def _normkey(s: str) -> str:
+        return (s or "").strip().lower()
+
+    rep_por_clave: dict[str, str] = {}
+    ocurrencias: dict[str, list[str]] = {}
+    for n in nombres:
+        k = _normkey(n)
+        if k not in rep_por_clave:
+            rep_por_clave[k] = n
+        ocurrencias.setdefault(k, []).append(n)
+
+    unicos = list(rep_por_clave.values())
+    tareas = [asyncio.create_task(_resolve_one(db, n, modo.lower())) for n in unicos]
+    res_unicos = await asyncio.gather(*tareas)
+
+    res_por_clave: dict[str, dict] = {}
+    for n_rep, fila in zip(unicos, res_unicos):
+        if not fila:
+            continue
+        res_por_clave[_normkey(n_rep)] = fila
+
+    registros: list[dict] = []
+    for k, variantes in ocurrencias.items():
+        base = res_por_clave.get(k)
+        if not base:
+            for v in variantes:
+                registros.append({"nombre_original": v})
+            continue
+        for v in variantes:
+            r = dict(base)
+            r["nombre_original"] = v
+            registros.append(r)
 
     out_df = pd.DataFrame(registros)
 
@@ -1062,6 +1106,8 @@ async def ui_buscador():
       <div class="mt">
         <progress id="pbar" max="100" value="0" style="display:none"></progress>
         <div id="ptext" class="small muted"></div>
+        <!-- Marcador para estado simple de subida de archivo -->
+        <div id="progress" class="small" style="display:none;margin-top:.5rem;"></div>
       </div>
 
       <div class="twrap mt">
@@ -1214,11 +1260,13 @@ function parseNames(raw){
   ));
 }
 
+/* Progreso para bulk y también utilizable en subida de archivo */
 function startProgress(total){
   const p = $("#pbar");
   p.style.display = "block";
   p.removeAttribute("value"); // indeterminado hasta que llegue la 1a línea
   $("#ptext").textContent = total ? `Procesando ${total} nombres…` : "Procesando…";
+  const simple = $("#progress"); if(simple){ simple.style.display="block"; simple.textContent="Procesando…"; }
 }
 function updateProgress(done, total){
   const p = $("#pbar");
@@ -1229,6 +1277,7 @@ function updateProgress(done, total){
 function stopProgress(){
   $("#pbar").style.display = "none";
   $("#ptext").textContent = "";
+  const simple = $("#progress"); if(simple){ simple.style.display="none"; simple.textContent=""; }
 }
 
 async function streamBulk(names, modo){
@@ -1341,16 +1390,34 @@ async function downloadBlob(url, method, body, filename){
   URL.revokeObjectURL(a.href);
 }
 
+/* (3) Handler reemplazado: deshabilita botones y muestra “Procesando…” durante la subida */
 $("#proc").onclick = async () => {
   const f = $("#file").files[0];
   if(!f){ alert("Primero selecciona un archivo."); return; }
-  const fd = new FormData();
-  fd.append("file", f);
-  fd.append("output", "xlsx");
-  fd.append("modo", $("#modo").value);
-  fd.append("incluir_sinonimos", "true");
-  await downloadBlob("/reconciliar/archivo", "POST", fd, "reconciliado.xlsx");
+
+  $("#proc").disabled = true;
+  $("#go2").disabled = true;
+  $("#dlXlsx").disabled = true;
+  $("#dlCsv").disabled = true;
+  startProgress(); // “Procesando…”
+
+  try {
+    const fd = new FormData();
+    fd.append("file", f);
+    fd.append("output", "xlsx"); // por defecto
+    fd.append("modo", $("#modo").value);
+    fd.append("incluir_sinonimos", "true");
+
+    await downloadBlob("/reconciliar/archivo", "POST", fd, "reconciliado.xlsx");
+  } finally {
+    stopProgress();
+    $("#proc").disabled = false;
+    $("#go2").disabled = false;
+    $("#dlXlsx").disabled = false;
+    $("#dlCsv").disabled = false;
+  }
 };
+
 $("#dlCsv").onclick = async () => {
   const names = parseNames($("#q2").value);
   if(!names.length){ alert("Escribe nombres primero."); return; }
@@ -1421,3 +1488,4 @@ async def custom_swagger_ui():
 # ---------------- Main ----------------
 if __name__ == "__main__":
     uvicorn.run("app.main:app", host="0.0.0.0", port=8000, reload=True)
+
