@@ -47,6 +47,10 @@ from .clients import col as col_client
 from .ingestors import aco_birds as ing_aco
 from .ingestors import sib_mammals_2024 as ing_mam
 
+# --- NUEVO: router de lotes y cierre del cliente HTTP ---
+from .routes.reconcile_batch import router as reconcile_batch_router
+from .services.reconcile import close_http_client
+
 # ------------------------------------------------------------
 # Metadatos de tags para la documentación
 # ------------------------------------------------------------
@@ -84,11 +88,9 @@ app.add_middleware(
 # ------------------------------------------------------------
 # ====== Puerta SSO desde el Hub (ENV) + Tema ======
 # ------------------------------------------------------------
-# Entorno
 IS_PROD = os.getenv("ENV", "development").lower() == "production"
 GATE_BYPASS = os.getenv("GATE_BYPASS", "0") == "1"
 
-# ----------- Tema (una sola fuente de verdad, verde primario por defecto) -------------
 THEME = {
     "bg":       os.getenv("HUB_COLOR_BG",     "#0a0f1c"),
     "card":     os.getenv("HUB_COLOR_CARD",   "#0f172a"),
@@ -1485,7 +1487,21 @@ async def custom_swagger_ui():
     themed = body.replace("</head>", style + "</head>")
     return HTMLResponse(themed)
 
+# ------------------------------------------------------------
+# Registro de routers (NUEVO: lotes)
+# ------------------------------------------------------------
+app.include_router(reconcile_batch_router)
+
+# ------------------------------------------------------------
+# Shutdown: liberar cliente HTTP global de servicios (NUEVO)
+# ------------------------------------------------------------
+@app.on_event("shutdown")
+async def _shutdown():
+    try:
+        await close_http_client()
+    except Exception:
+        pass
+
 # ---------------- Main ----------------
 if __name__ == "__main__":
     uvicorn.run("app.main:app", host="0.0.0.0", port=8000, reload=True)
-
